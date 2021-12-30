@@ -33,7 +33,7 @@
 /config/master.key
 
 
-node_modules/
+/node_modules/
 bundle.js*
 .DS_Store
 npm-debug.log
