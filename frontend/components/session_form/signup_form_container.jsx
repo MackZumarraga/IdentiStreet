@@ -7,7 +7,11 @@ import React from "react";
 const mstp = (state, ownProps) => ({
     errors: Object.values(state.errors.session),
     formType: 'signup',
-    navLink: <Link to="/login">Login</Link>
+    navLink: <Link to="/login" style={{ textDecoration: 'none' }}>
+        <div className="continue">
+            Continue with Log in
+        </div>
+    </Link>
 });
 
 const mdtp = (dispatch, ownProps) => ({

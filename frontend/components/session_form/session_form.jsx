@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
         };
        
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
     handleSubmit(e) {
@@ -18,15 +19,24 @@ class SessionForm extends React.Component {
         this.props.processForm(user);
     };
 
+    handleDemoSubmit(e) {
+        e.preventDefault();
+        const demoUser = {
+            email: 'test@example.com',
+            password: 'password'
+        } 
+        this.props.processForm(demoUser);
+    };
+
     update(field) {
         return e => this.setState({[field]: e.currentTarget.value})
     };
 
     renderErrors() {
         return(
-            <ul>
+            <ul className="error-ul">
                 {this.props.errors.map((error, i) => (
-                    <li key={{i}}>
+                    <li className="error-li" key={{i}}>
                         {error}
                     </li>
                 ))}
@@ -36,11 +46,19 @@ class SessionForm extends React.Component {
 
 
     render() {
+        const formTypeName = this.props.formType === 'signup' ? 'Sign Up' : 'Log In';
 
         return(
-            <div>
-                <h3>{this.props.formType}</h3>
-                <form onSubmit={this.handleSubmit}>
+            <div className="session-form">
+                <h3 id="form-name">{formTypeName}</h3>
+                <br/>
+
+                <p className="session-message">Take full advantage of IdentiStreet's features</p>
+
+                <br/>
+                <br/>
+                <br/>
+                <form onSubmit={this.handleSubmit} >
                     <label>EMAIL
                         <br/>
                         <input type="text" value={this.state.email} onChange={this.update('email')}/>
@@ -52,15 +70,28 @@ class SessionForm extends React.Component {
                     </label>
                     <br/>
                     <br/>
-                    <button type="submit" value={this.props.formType}>{this.props.formType}</button>
-                </form>
-                <br/>
-                {this.renderErrors()}
-                <div>
-                    or
+                    <button type="submit" value={this.props.formType}>{formTypeName}</button>
+
                     <br/>
-                    {this.props.navLink} instead!
-                </div>
+
+                    <div className="or"></div>
+
+                    <br/>
+                    
+                    <button className="demo" onClick={this.handleDemoSubmit}>Demo</button>
+
+                    <br/>
+
+                    <div>
+                        {this.props.navLink}
+                    </div>
+
+                    <br/>
+                    <div className="errors">
+                        {this.renderErrors()}
+                    </div>
+                </form>
+                
             </div>
         )
     }
