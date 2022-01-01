@@ -2,23 +2,24 @@ import React from "react";
 import { Link, Route, HashRouter, Redirect, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 
+import NavBar from "./nav_bar/nav_bar";
+import Home from "./home/home";
 import HeaderContainer from "./header/header_container";
 import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
-import { AuthRoute } from "../util/route_util";
+import ListingsIndexContainer from "./listings/listing_index_container"
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
     <div>
-      <header>
-        <Link to="/">
-            <h1>IdentiStreet</h1>
-        </Link>
-      </header>
+      <Route path="/" component={HeaderContainer}/>
+      <Route path="/" component={NavBar}/>
+      <Route path="/" component={Home}/>
+      <Route path="/search/:filter" component={ListingsIndexContainer}/>
 
       <Switch>
-            <AuthRoute exact path="/login" component={LoginFormContainer}/>
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <Route exact path="/" component={HeaderContainer}/>
+            <AuthRoute path="/login" component={LoginFormContainer}/>
+            <AuthRoute path="/signup" component={SignupFormContainer}/>
       </Switch>
     </div>
   );

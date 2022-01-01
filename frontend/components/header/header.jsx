@@ -12,14 +12,24 @@ const Header = ({currentUser, logout}) => {
         </div>
     );
 
-    const personalGreeting = () => (
+    const loggedInView = () => (
         <div>
-            <h1>Greetings {currentUser.name}</h1>
+            <div>my activity link which holds tracked listings and saved searches</div>
+            <div>account link which gives a dropdown to user profile and the logout button</div>
             <button onClick={logout}>Log out</button>
         </div>
     )
     
-    return currentUser ? personalGreeting() : sessionLinks();
+    return (
+        <header>
+            <Link to="/">
+                <h1>IdentiStreet</h1>
+            </Link>
+            <div>
+                {currentUser ? loggedInView() : sessionLinks()}
+            </div>
+        </header>
+    )
 };
 
 export default Header;
