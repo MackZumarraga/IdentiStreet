@@ -14,9 +14,9 @@
  *= require_self
  */
 
- @import "./styles/reset.scss";
+@import "./styles/reset.scss";
 
- .session-form {
+.session-form {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -167,4 +167,19 @@
         text-decoration: none !important;
         color: rgb(0, 0, 0);    
     }
+}
+
+
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 984px;
+    background: #032765;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    position: relative;
+    box-sizing: border-box;
 }

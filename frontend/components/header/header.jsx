@@ -21,7 +21,7 @@ const Header = ({currentUser, logout}) => {
     )
     
     return (
-        <header>
+        <header className="header-container">
             <Link to="/">
                 <h1>IdentiStreet</h1>
             </Link>
