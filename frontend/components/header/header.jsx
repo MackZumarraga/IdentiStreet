@@ -17,6 +17,7 @@ const Header = ({currentUser, logout}) => {
             <div>account link which gives a dropdown to user profile and the logout button</div> */}
             <button className="account-dropdown-button">Account ▼</button>
             <div className="account-dropdown-content">
+                <Link to={`/my_profile`} className="account-dropdown-myprofile">Profile</Link>
                 <button onClick={logout} className="account-dropdown-logout">Log out</button>
             </div>
         </div>

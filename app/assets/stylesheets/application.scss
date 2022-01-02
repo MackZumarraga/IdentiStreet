@@ -239,9 +239,8 @@
         width: 100px;
         height: 30px;
     }
-    .account-dropdown-logout {
+    .account-dropdown-myprofile {
         text-decoration: none;
-        cursor: pointer;
         box-sizing: border-box;
         color: #1A1F2C;
         display: block;
@@ -255,6 +254,26 @@
         background: none;
         border: none;
         padding: 10px;
+    }
+    .account-dropdown-logout {
+        text-decoration: none;
+        cursor: pointer;
+        box-sizing: border-box;
+        color: #1A1F2C;
+        display: block;
+        line-height: 1.3;
+        position: relative;
+        text-align: left;
+        font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 10px;
+    }
+    .account-dropdown-content .account-dropdown-myprofile:hover {
+        background-color: #ddd;
+        text-decoration: underline;
     }
     .account-dropdown-content .account-dropdown-logout:hover {
         background-color: #ddd;
