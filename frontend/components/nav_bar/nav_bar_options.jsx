@@ -33,6 +33,9 @@ export default () => (
                 <Link to={`/searches/jersey-city`}>Jersey City</Link>
                 <Link to={`/searches/all`}>View All</Link>
             </div>
+            <div>
+                <img src="https://thumbs.dreamstime.com/z/modern-apartment-interior-grey-sofa-footstool-armcha-armchair-wooden-floor-tv-colorful-graphic-photo-concept-122713421.jpg" alt="apartment-photo" className="feature-rental"/>
+            </div>
         </div>
     </div>
 )
