@@ -1,14 +1,15 @@
 import React from 'react';
+import NavBarOptions from "./nav_bar_options"
+import NavBarSearch from "./nav_bar_search"
 
 export default () => (
   <div>
-    <div>Menu options including navlinks to rent, buy, sell, buildings, resources, blog</div>
-    <div>SearchBar component for address, buildings, agent
-      <form>
-        <input type="text" placeholder='e.g. address, building, agent'></input>
-        <button>O</button>
-      </form>
+    <div className="nav-menu-container">
+      <NavBarOptions/>
+      <NavBarSearch/>
     </div>
+
+
     <div>FilterBox component
       <form>
         <label>LOCATION
