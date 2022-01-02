@@ -12,13 +12,18 @@ const Header = ({currentUser, logout}) => {
     );
 
     const loggedInView = () => (
-        <div className="account-dropdown">
-            {/* <div>my activity link which holds tracked listings and saved searches</div>
-            <div>account link which gives a dropdown to user profile and the logout button</div> */}
-            <button className="account-dropdown-button">Account ▼</button>
-            <div className="account-dropdown-content">
-                <Link to={`/my_profile`} className="account-dropdown-myprofile">Profile</Link>
-                <button onClick={logout} className="account-dropdown-logout">Log out</button>
+        /* <div>my activity link which holds tracked listings and saved searches</div>
+            <div>account link which gives a dropdown to user profile and the logout button</div> */
+        <div>
+            <button className="activity-button">
+                <Link to={`/my_activity`} id="my-activity">My Activity</Link>
+            </button>
+            <div className="account-dropdown">
+                <button className="account-dropdown-button">Account ▼</button>
+                <div className="account-dropdown-content">
+                    <Link to={`/my_profile`} className="account-dropdown-myprofile">Profile</Link>
+                    <button onClick={logout} className="account-dropdown-logout">Log out</button>
+                </div>
             </div>
         </div>
     )

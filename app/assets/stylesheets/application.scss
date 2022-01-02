@@ -213,6 +213,26 @@
         text-decoration: underline;
     }
 
+
+    //activity
+    .activity-button {
+        background: none;
+        border: none;
+        text-decoration: none;
+    }
+    #my-activity {
+        text-decoration: none;
+        font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        background: none;
+        border: none;
+        color: #FFF;
+    }
+    .activity-button:hover #my-activity {
+        text-decoration: underline;
+    }
+
+
     //dropdown
     .account-dropdown {
         position: relative;
