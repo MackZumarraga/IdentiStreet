@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 const Header = ({currentUser, logout}) => {
 
     const sessionLinks = () => (
-        <div>
-            <Link to={`/login`}>Login</Link>
-            &nbsp;or&nbsp;
-            <Link to={`/signup`}>Signup</Link>
+        <div className="nav-session-link">
+            <Link to={`/login`} className="nav-session-link" id="nav-login">Log In</Link>
+            &nbsp;
+            <Link to={`/signup`} className="nav-session-link" id="nav-signup">Sign Up</Link>
         </div>
     );
 
@@ -23,7 +22,7 @@ const Header = ({currentUser, logout}) => {
     return (
         <header className="header-container">
             <Link to="/">
-                <h1>IdentiStreet</h1>
+                <img src="/logo3.svg" alt="" className="identiStreet-image"/>
             </Link>
             <div>
                 {currentUser ? loggedInView() : sessionLinks()}

@@ -176,10 +176,40 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 984px;
+    max-width: 100%;
+    height: 50px;
     background: #032765;
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     font-size: 14px;
     position: relative;
     box-sizing: border-box;
+    .identiStreet-image {
+        margin-top: 12px;
+        margin-left: 17px;
+        width: 120px;
+        height: 26px;
+    }
+    .nav-session-link {
+        text-decoration: none;
+        font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: normal;
+        background: none;
+        border: 0;
+        box-shadow: none;
+        color: #FFF;
+        cursor: pointer;
+        display: inline-block;
+        height: 50px;
+        padding: 0 15px;
+        position: relative;
+        margin-top: 8px;
+    }
+    #nav-login:hover {
+        text-decoration: underline;
+    }
+    #nav-signup:hover {
+        text-decoration: underline;
+    }
 }
