@@ -6,3 +6,26 @@
     flex-direction: row;
     margin-top: 10px;
 }
+
+
+//nav bar options
+.rental-dropdown-content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin: 10px 10px 10px 10px;
+}
+
+.areas-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 10px 10px 10px 10px;
+}
+
+.popular-neighborhoods-container {
+    display: flex;
+    // justify-content: space-between;
+    flex-direction: column;
+    margin: 10px 10px 10px 10px;
+}
