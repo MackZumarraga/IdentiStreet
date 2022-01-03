@@ -13,8 +13,10 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
     <div>
-      <Route path="/" component={HeaderContainer}/>
-      <Route path="/" component={NavBar}/>
+      <HeaderContainer/>
+      <NavBar/>
+      {/* <Route path="/" component={HeaderContainer}/>
+      <Route path="/" component={NavBar}/> */}
       <Route exact path="/" component={Home}/>
       <Route path="/" component={FooterContainer}/>
       <Route path="/search/:filter" component={ListingsIndexContainer}/>
