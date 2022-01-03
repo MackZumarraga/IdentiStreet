@@ -32,9 +32,18 @@ export default () => (
                 <Link to={`/searches/hoboken`}>Hoboken</Link>
                 <Link to={`/searches/jersey-city`}>Jersey City</Link>
                 <Link to={`/searches/all`}>View All</Link>
+
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
             <div>
-                <img src="https://thumbs.dreamstime.com/z/modern-apartment-interior-grey-sofa-footstool-armcha-armchair-wooden-floor-tv-colorful-graphic-photo-concept-122713421.jpg" alt="apartment-photo" className="feature-rental"/>
+                <img src="https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg" alt="apartment-photo" className="feature-rental"/>
             </div>
         </div>
     </div>
