@@ -4,7 +4,9 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    margin-top: 10px;
+    border-bottom: 1px solid #E6E6E6;
+    height: auto;
+    position: relative;
 }
 
 //rental dropdown
@@ -17,12 +19,12 @@
     text-decoration: none;
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     font-size: 12px;
-    line-height: 18px;
-    font-weight: normal;
+    line-height: 48px;
+    font-weight: 700;
     background: none;
     border: none;
     box-shadow: none;
-    color: rgb(0, 0, 0);
+    color: #1A1F2C;
     cursor: pointer;
     height: 50px;
     padding: 0 15px;
