@@ -18,8 +18,8 @@ const App = () => (
       {/* <Route path="/" component={HeaderContainer}/>
       <Route path="/" component={NavBar}/> */}
       <Route exact path="/" component={Home}/>
-      <Route path="/" component={FooterContainer}/>
       <Route path="/search/:filter" component={ListingsIndexContainer}/>
+      {/* <Route path="/" component={FooterContainer}/> */}
 
       <Switch>
             <AuthRoute path="/login" component={LoginFormContainer}/>
