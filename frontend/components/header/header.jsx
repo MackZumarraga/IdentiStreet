@@ -31,7 +31,7 @@ const Header = ({currentUser, logout}) => {
     return (
         <header className="header-container">
             <Link to="/">
-                <img src="/logo3.svg" alt="" className="identiStreet-image"/>
+                <img src={window.logo} alt="" className="identiStreet-image"/>
             </Link>
             <div>
                 {currentUser ? loggedInView() : sessionLinks()}
