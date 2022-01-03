@@ -15,3 +15,10 @@ u1 = User.create!(
     phone_number: '5555555555',
     password: 'password'
 )
+
+demo = User.create!(
+    email: 'test@example.com',
+    name: 'test',
+    phone_number: '4444444444',
+    password: 'password'
+)
