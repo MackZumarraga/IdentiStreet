@@ -20,6 +20,7 @@ const App = () => (
       <Route exact path="/" component={Home}/>
       <Route path="/search/:filter" component={ListingsIndexContainer}/>
       {/* <Route path="/" component={FooterContainer}/> */}
+      <FooterContainer/>
 
       <Switch>
             <AuthRoute path="/login" component={LoginFormContainer}/>
