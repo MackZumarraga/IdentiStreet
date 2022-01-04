@@ -18,6 +18,14 @@ class Api::UsersController < ApplicationController
         render json: @user.errors.full_messages, status: 404
       end
     end
+
+    def destroy
+      @user = User.find(params[:id])
+      if !@user.destroy
+        render json: @user.errors.full_messages, status: 404
+      @user.destroy
+      end
+    end
   
     private
   
