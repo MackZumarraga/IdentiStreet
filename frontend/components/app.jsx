@@ -15,11 +15,9 @@ const App = () => (
     <div>
       <HeaderContainer/>
       <NavBar/>
-      {/* <Route path="/" component={HeaderContainer}/>
-      <Route path="/" component={NavBar}/> */}
       <Route exact path="/" component={Home}/>
       <Route path="/search/:filter" component={ListingsIndexContainer}/>
-      {/* <Route path="/" component={FooterContainer}/> */}
+      {/* <ProtectedRoute exact path={`/account/:user_id`} component={AccountContainer}/> */}
       <FooterContainer/>
 
       <Switch>
