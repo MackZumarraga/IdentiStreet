@@ -4,6 +4,8 @@ import SessionForm from "./session_form";
 import { Link } from "react-router-dom";
 import React from "react";
 
+import { clearErrors } from "../../actions/session_actions";
+
 const mstp = (state, ownProps) => ({
     errors: state.errors.session,
     formType: 'login',
@@ -15,7 +17,8 @@ const mstp = (state, ownProps) => ({
 });
 
 const mdtp = (dispatch, ownProps) => ({
-    processForm: currentUser => dispatch(login(currentUser))
+    processForm: currentUser => dispatch(login(currentUser)),
+    clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(mstp, mdtp)(SessionForm);
