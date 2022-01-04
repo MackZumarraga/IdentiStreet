@@ -44,6 +44,8 @@
 
 .filter-box-label {
     padding-right: 10px;
+    align-self: flex-end;
+    width: 100%;
 }
 
 .label-title {
@@ -56,7 +58,7 @@
 .filter-box-range {
     display: flex;
     flex-direction: row;
-    padding-right: 10px;
+    padding-right: 12px;
 }
 
 .filter-box-input {
@@ -68,8 +70,11 @@
     font-weight: 400;
     height: 35px;
     text-align: left;
-    width: 100px;
     margin-top: 5px;
+    transition-duration: 0.3s;
+    transition-property: background-color, border-color, color;
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
 }
 
 .filter-box-input-range {
@@ -81,13 +86,34 @@
     font-weight: 400;
     height: 35px;
     text-align: left;
-    width: 100px;
     margin-top: 5px;
+    transition-duration: 0.3s;
+    transition-property: background-color, border-color, color;
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
+
+.filter-box-input-range-max {
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(148, 148, 148);
+    display: flex;
+    font-size: 14px;
+    font-weight: 400;
+    height: 35px;
+    text-align: left;
+    margin-top: 5px;
+    transition-duration: 0.3s;
+    transition-property: background-color, border-color, color;
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .filter-box-label {
     align-self: flex-end;
-    width: 100px;
+    width: 100%;
 }
 
 .filter-search-button {
@@ -112,6 +138,9 @@
     text-transform: uppercase;
     transition: background 200ms, border 200ms, color 200ms;
     white-space: nowrap;
-    width: 100px;
-    user-select: none
+    user-select: none;
+    transition-duration: 0.3s;
+    transition-property: background-color, border-color, color;
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
 }

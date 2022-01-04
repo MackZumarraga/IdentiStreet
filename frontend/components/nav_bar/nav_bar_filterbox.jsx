@@ -22,7 +22,7 @@ export default () => (
                         &nbsp;
                         <div>
                             <div className="label-title">MAXIMUM PRICE</div>
-                            <input type="text" placeholder='Any' className="filter-box-input-range"></input>
+                            <input type="text" placeholder='Any' className="filter-box-input-range-max"></input>
                         </div>
                     </label>
                     <label className="filter-box-label">
