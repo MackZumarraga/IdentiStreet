@@ -1,0 +1,117 @@
+.filter-box {
+    padding: 20px 0px 20px 15px;
+}
+
+.filter-box-container {
+    color: #1A1F2C;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+.filter-box-title {
+    color: #62646A;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 700;
+}
+
+.filter-box-type-title {
+    color: #8C8C8C;
+    display: inline-block;
+    // text-decoration: none !important;
+    border-bottom: 2px solid transparent;
+    transition: color 250ms, border 250ms;
+    margin-right: 13px;
+    font-size: 23px;
+    line-height: 38px;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    text-transform: none;
+}
+
+.filter-box-type-title:hover {
+    text-decoration: underline;
+    text-decoration-color: #1876DB;
+    color: #3b3838;
+}
+
+.classic-search {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0px 20px 0px;
+    // justify-content: space-between;
+}
+
+.filter-box-label {
+    padding-right: 10px;
+}
+
+.label-title {
+    color: rgb(98, 100, 106);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+}
+
+.filter-box-range {
+    display: flex;
+    flex-direction: row;
+    padding-right: 10px;
+}
+
+.filter-box-input {
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(148, 148, 148);
+    display: flex;
+    font-size: 14px;
+    font-weight: 400;
+    height: 35px;
+    text-align: left;
+    width: 100px;
+    margin-top: 5px;
+}
+
+.filter-box-input-range {
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(148, 148, 148);
+    display: flex;
+    font-size: 14px;
+    font-weight: 400;
+    height: 35px;
+    text-align: left;
+    width: 100px;
+    margin-top: 5px;
+}
+
+.filter-box-label {
+    align-self: flex-end;
+    width: 100px;
+}
+
+.filter-search-button {
+    background-color: #156ac4;
+    border-color: #156ac4;
+    background: none;
+    border-radius: 0;
+    color: #FFF;
+    text-decoration: none !important;
+    -webkit-appearance: none;
+    background-color: #135EAF;
+    border: 1px solid;
+    border-color: #135EAF;
+    cursor: pointer;
+    display: inline-block;
+    font: bold 12px/38px "Source Sans Pro", Helvetica, Arial, sans-serif;
+    height: 39px;
+    outline: none;
+    padding: 0 20px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background 200ms, border 200ms, color 200ms;
+    white-space: nowrap;
+    width: 100px;
+    user-select: none
+}
