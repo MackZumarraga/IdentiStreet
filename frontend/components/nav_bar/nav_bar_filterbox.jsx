@@ -30,7 +30,7 @@ export default () => (
                         <input type="text" placeholder='Studio 1 2 3 4+' className="filter-box-input"></input>
                     </label>
                     <label className="filter-box-label">
-                        <button className="filter-search-button">SEARCH</button>
+                        <Link to="/search" className="filter-search-button">SEARCH</Link>
                     </label>
                 </div>
                 <AdvancedSearch/>
