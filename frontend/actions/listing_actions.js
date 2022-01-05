@@ -31,8 +31,8 @@ export const fetchListings = (listings) => dispatch => (
     ListingApiUtil.fetchListings(listings).then(listings => dispatch(receiveListings(listings)), error => dispatch(receiveErrors(error.responseJSON)))
 );
 
-export const fetchListing = (listing) => dispatch => (
-    ListingApiUtil.fetchListing(listing).then((listing) => dispatch(receiveListing(listing)), error => dispatch(receiveErrors(error.responseJSON)))
+export const fetchListing = (listingId) => dispatch => (
+    ListingApiUtil.fetchListing(listingId).then((listing) => dispatch(receiveListing(listing)), error => dispatch(receiveErrors(error.responseJSON)))
 );
 
 export const createListing = (listing) => dispatch => (
@@ -40,9 +40,9 @@ export const createListing = (listing) => dispatch => (
 );
 
 export const updateListing = (listing) => dispatch => (
-    ListingApiUtil.fetchListing(listing).then((listing) => dispatch(receiveListing(listing)), error => dispatch(receiveErrors(error.responseJSON)))
+    ListingApiUtil.updateListing(listing).then((listing) => dispatch(receiveListing(listing)), error => dispatch(receiveErrors(error.responseJSON)))
 );
 
 export const deleteListing = (listingId) => dispatch => (
-    ListingApiUtil.fetchListing(listingId).then((listing) => dispatch(removeListing(listing.id)), error => dispatch(receiveErrors(error.responseJSON)))
+    ListingApiUtil.deleteListing(listingId).then((listing) => dispatch(removeListing(listing.id)), error => dispatch(receiveErrors(error.responseJSON)))
 );

@@ -5,6 +5,7 @@ import Root from "./components/root"
 
 import * as SessionActions from "./actions/session_actions"
 import * as ListingApiUtils from "./util/listing_api_util"
+import * as ListingActions from "./actions/listing_actions"
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -35,6 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
     window.createListing = ListingApiUtils.createListing;
     window.updateListing = ListingApiUtils.updateListing;
     window.deleteListing = ListingApiUtils.deleteListing;
+
+    window.fetchListings = ListingActions.fetchListings;
+    window.fetchListing = ListingActions.fetchListing;
+    window.createListing = ListingActions.createListing;
+    window.updateListing = ListingActions.updateListing;
+    window.deleteListing = ListingActions.deleteListing;
 
     ReactDOM.render(<Root store={store} />, root);    
 });
