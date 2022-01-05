@@ -5,3 +5,9 @@
 .listing-image {
     height: 194px;
 }
+
+.listing-ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
