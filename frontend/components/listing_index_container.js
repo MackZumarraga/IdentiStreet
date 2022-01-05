@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchListings } from '../../actions/session_actions';
+import ListingIndex from './listing_index';
 
 const mstp = state => ({
     listings: Object.values(state.entities.listings)
@@ -10,3 +11,6 @@ const mdtp = dispatch => ({
 });
 
 export default connect(mstp, mdtp)(ListingIndex);
+
+
+//-mack - adding favorite function here later?

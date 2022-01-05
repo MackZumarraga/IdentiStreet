@@ -7,7 +7,7 @@ import Home from "./home/home";
 import HeaderContainer from "./header/header_container";
 import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
-import ListingsIndexContainer from "./listings/listing_index_container"
+import ListingsIndexContainer from "./listing_index_container"
 import FooterContainer from "./footer/footer_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
