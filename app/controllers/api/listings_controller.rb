@@ -30,7 +30,7 @@ class Api::ListingsController < ApplicationController
     def update
         @listing = Listing.find_by(id: params[:id])
 
-        if @listing.update
+        if @listing.update(listing_params)
             render "api/listings/show"
         else
             render json: @listing.errors.full_messages, status: 422
