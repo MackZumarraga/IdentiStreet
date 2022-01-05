@@ -31,11 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.login = SessionActions.login;
     window.logout = SessionActions.logout;
 
-    window.fetchListings = ListingApiUtils.fetchListings;
-    window.fetchListing = ListingApiUtils.fetchListing;
-    window.createListing = ListingApiUtils.createListing;
-    window.updateListing = ListingApiUtils.updateListing;
-    window.deleteListing = ListingApiUtils.deleteListing;
+    window.apiFetchListings = ListingApiUtils.fetchListings;
+    window.apiFetchListing = ListingApiUtils.fetchListing;
+    window.apiCreateListing = ListingApiUtils.createListing;
+    window.apiUpdateListing = ListingApiUtils.updateListing;
+    window.apiDeleteListing = ListingApiUtils.deleteListing;
 
     window.fetchListings = ListingActions.fetchListings;
     window.fetchListing = ListingActions.fetchListing;
