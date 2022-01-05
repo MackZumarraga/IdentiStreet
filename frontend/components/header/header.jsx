@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = ({currentUser, logout}) => {
+const Header = ({currentUser, logout, openModal}) => {
 
     const sessionLinks = () => (
         <div className="nav-session-link">
-            <Link to={`/login`} className="nav-session-link" id="nav-login">Log In</Link>
+            {/* <Link to={`/login`} className="nav-session-link" id="nav-login">Log In</Link>
             &nbsp;
-            <Link to={`/signup`} className="nav-session-link" id="nav-signup">Sign Up</Link>
+            <Link to={`/signup`} className="nav-session-link" id="nav-signup">Sign Up</Link> */}
+            <button onClick={() => openModal('login')}>Log In</button>
+             &nbsp;/&nbsp;
+            <button onClick={() => openModal('signup')}>Sign Up</button>
         </div>
     );
 

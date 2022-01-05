@@ -1,24 +1,31 @@
 import { connect } from "react-redux";
 import { signup } from "../../actions/session_actions";
 import SessionForm from "./session_form";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { openModal, closeModal } from "../../actions/modal_actions";
 import React from "react";
 
 import { clearErrors } from "../../actions/session_actions";
 
 const mstp = (state, ownProps) => ({
     errors: Object.values(state.errors.session),
-    formType: 'signup',
-    navLink: <Link to="/login" style={{ textDecoration: 'none' }}>
-        <div className="continue">
-            Continue with Log in
-        </div>
-    </Link>
+    formType: 'signup'
+    // navLink: <Link to="/login" style={{ textDecoration: 'none' }}>
+    //     <div className="continue">
+    //         Continue with Log in
+    //     </div>
+    // </Link>
 });
 
 const mdtp = (dispatch, ownProps) => ({
     processForm: user => dispatch(signup(user)),
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    otherForm: (
+        <button onClick={() => dispatch(openModal('login'))}>
+          Continue with Log in
+        </button>
+      ),
+    closeModal: () => dispatch(closeModal())
 });
 
 export default connect(mstp, mdtp)(SessionForm);
