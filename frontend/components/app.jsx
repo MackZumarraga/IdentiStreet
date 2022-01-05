@@ -16,7 +16,7 @@ const App = () => (
       <HeaderContainer/>
       <NavBar/>
       <Route exact path="/" component={Home}/>
-      <Route path="/search/:filter" component={ListingsIndexContainer}/>
+      <Route path="/search" component={ListingsIndexContainer}/>
       {/* <ProtectedRoute exact path={`/account/:user_id`} component={AccountContainer}/> */}
 
       <Switch>

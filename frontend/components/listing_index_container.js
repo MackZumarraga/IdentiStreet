@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchListings } from '../../actions/session_actions';
+import { fetchListings } from '../actions/listing_actions';
 import ListingIndex from './listing_index';
 
 const mstp = state => ({
