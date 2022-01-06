@@ -41,13 +41,22 @@
 }
 
 //nav bar options
+.rental-dropdown-content-width-maker {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    width: 100vw;
+    border-bottom: 3px solid #E6E6E6;
+    max-width: 100%;
+}
 .rental-dropdown-content {
     display: none;
     // display: block;
     position: absolute;
     z-index: 1;
     background-color: white;
-    width: 2000px;
+    width: 75vw;
     border-bottom: 3px solid #E6E6E6;
     
     // display: flex;
@@ -120,7 +129,9 @@
     text-decoration: underline;
 }
 
-
+.rental-dropdown:hover .rental-dropdown-content-width-maker {
+    display: block;
+}
 
 //search
 .nav-search-container {

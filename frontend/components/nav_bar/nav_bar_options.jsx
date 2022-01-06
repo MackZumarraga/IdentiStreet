@@ -6,44 +6,46 @@ export default () => (
     // -mack - below to be replaced by a ul li map combo of areas (similar for all tabs) and neighborhood (dynamically listed for whichever's popular)
     <div className="rental-dropdown"> 
         <button className="rental-dropdown-button">RENT</button>
-        <div className="rental-dropdown-content">
-            <div className="areas-container">AREAS
-                <Link to={`/searches/manhattan`}>Manhattan</Link>
-                <Link to={`/searches/brooklyn`}>Brooklyn</Link>
-                <Link to={`/searches/queens`}>Queens</Link>
-                <Link to={`/searches/bronx`}>Bronx</Link>
-                <Link to={`/searches/staten-island`}>Staten Island</Link>
-                <Link to={`/searches/new-jersey`}>New Jersey</Link>
-                <Link to={`/searches/allnyc-nj`}>All NYC + NJ</Link>
-                <Link to={`/searches/near-me`}>Near Me</Link>
+        <div className="rental-dropdown-content-width-maker">
+            <div className="rental-dropdown-content">
+                <div className="areas-container">AREAS
+                    <Link to={`/searches/manhattan`}>Manhattan</Link>
+                    <Link to={`/searches/brooklyn`}>Brooklyn</Link>
+                    <Link to={`/searches/queens`}>Queens</Link>
+                    <Link to={`/searches/bronx`}>Bronx</Link>
+                    <Link to={`/searches/staten-island`}>Staten Island</Link>
+                    <Link to={`/searches/new-jersey`}>New Jersey</Link>
+                    <Link to={`/searches/allnyc-nj`}>All NYC + NJ</Link>
+                    <Link to={`/searches/near-me`}>Near Me</Link>
 
-                <br/>
-                <br/>
-                <div>BROWSE</div>
-                <Link to={`/searches/no-fee`}>No-Fee Apartments</Link>
-                <Link to={`/searches/pet-friendly`}>Pet-Friendly Rentals</Link>
-            </div>
-            <div className="popular-neighborhoods-container">POPULAR NEIGHBORHOODS 
-                <Link to={`/searches/tribeca`}>Tribeca</Link>
-                <Link to={`/searches/ues`}>Upper East Side</Link>
-                <Link to={`/searches/east-village`}>East Village</Link>
-                <Link to={`/searches/williamsburg`}>Williamsburg</Link>
-                <Link to={`/searches/astoria`}>Astoria</Link>
-                <Link to={`/searches/hoboken`}>Hoboken</Link>
-                <Link to={`/searches/jersey-city`}>Jersey City</Link>
-                <Link to={`/searches/all`}>View All</Link>
+                    <br/>
+                    <br/>
+                    <div>BROWSE</div>
+                    <Link to={`/searches/no-fee`}>No-Fee Apartments</Link>
+                    <Link to={`/searches/pet-friendly`}>Pet-Friendly Rentals</Link>
+                </div>
+                <div className="popular-neighborhoods-container">POPULAR NEIGHBORHOODS 
+                    <Link to={`/searches/tribeca`}>Tribeca</Link>
+                    <Link to={`/searches/ues`}>Upper East Side</Link>
+                    <Link to={`/searches/east-village`}>East Village</Link>
+                    <Link to={`/searches/williamsburg`}>Williamsburg</Link>
+                    <Link to={`/searches/astoria`}>Astoria</Link>
+                    <Link to={`/searches/hoboken`}>Hoboken</Link>
+                    <Link to={`/searches/jersey-city`}>Jersey City</Link>
+                    <Link to={`/searches/all`}>View All</Link>
 
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div>
-                <img src="https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg" alt="apartment-photo" className="feature-rental"/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    <img src="https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg" alt="apartment-photo" className="feature-rental"/>
+                </div>
             </div>
         </div>
     </div>
