@@ -1,16 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 
-// const ListingShow = ({ listing, listingId, fetchListing }) => {
-//     debugger
-//     return(
-//       <div className="listing-show-container">
-//           Hello I'm from Listing Show - the listing you're looking at is {listing} with id {listingId}
-//       </div>
-//     );
-//   };
-  
-//   export default ListingShow;
 
 class ListingShow extends React.Component {
     constructor(props) {
@@ -20,14 +9,13 @@ class ListingShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.id)
-        // debugger
     }
 
     render() {
-        // debugger
-        // if (!this.props.listing) {
-        //     return null;
-        // };
+
+        if (!this.props.listing) {
+            return null;
+        };
 
         const {address} = this.props.listing
         return(
