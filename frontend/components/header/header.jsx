@@ -22,7 +22,7 @@ const Header = ({currentUser, logout, openModal}) => {
                 <Link to={`/my_activity`} id="my-activity">My Activity</Link>
             </button>
             <div className="account-dropdown">
-                <button className="account-dropdown-button">Account ▼</button>
+                <button className="account-dropdown-button">Account &nbsp;⌵</button>
                 <div className="account-dropdown-content">
                     <Link to={`/my_profile`} className="account-dropdown-myprofile">Profile</Link>
                     <button onClick={logout} className="account-dropdown-logout">Log out</button>

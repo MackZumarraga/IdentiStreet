@@ -257,14 +257,19 @@
         height: 50px;
         padding: 0 15px;
     }
+    .logout-symbol {
+        font-weight: 0;
+    }
     .account-dropdown-content {
         display: none;
+        // display: block;
         position: absolute;
         z-index: 1;
         width: 200px;
-        height: 50px;
+        height: 71px;
         background-color: white;
-        
+        border: 1px solid #E6E6E6;
+        box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
     }
     .account-dropdown-myprofile {
         text-decoration: none;
