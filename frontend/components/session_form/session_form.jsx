@@ -50,7 +50,6 @@ class SessionForm extends React.Component {
     };
 
     errorTrue() {
-        debugger
         if (this.props.errors.length === 0) {
             return false;
         } else {
@@ -61,14 +60,6 @@ class SessionForm extends React.Component {
     render() {
         const formTypeName = this.props.formType === 'signup' ? 'Sign Up' : 'Log In';
         
-        // if (this.props.errors.count > 0) {
-        //     const errorTrue = true
-        // } else {
-        //     const errorTrue = false
-        // };
-
-        // const errorTrue = this.props.errors.count > 0 ? true : false;
-
         return(
             <div className="session-form">
                 <br/>

@@ -3,6 +3,7 @@
     width: 100vw;
     display: flex;
     justify-content: center;
+    max-width: 100%;
 }
 
 .menu-filter-container {
@@ -142,7 +143,7 @@
     font-size: 14px;
     height: 30px;
     padding: 5px 40px 5px 18px;
-    width: 100%;
+    width: 98%;
 }
 
 .search-button {
