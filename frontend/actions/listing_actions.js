@@ -32,7 +32,8 @@ export const fetchListings = (listings) => dispatch => (
 );
 
 export const fetchListing = (listingId) => dispatch => (
-    ListingApiUtil.fetchListing(listingId).then((listing) => dispatch(receiveListing(listing)), error => dispatch(receiveErrors(error.responseJSON)))
+    // ListingApiUtil.fetchListing(listingId).then((listing) => dispatch(receiveListing(listing)), error => dispatch(receiveErrors(error.responseJSON)))
+    ListingApiUtil.fetchListing(listingId).then((listing) => dispatch(receiveListing(listing)))
 );
 
 export const createListing = (listing) => dispatch => (

@@ -1,12 +1,22 @@
 import React from 'react';
-// import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class ListingIndexItem extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        const listingId = this.props.listing.id;
+        this.props.history.push(`/listing/${listingId}`);
+    }
 
     render() {
         const { address, neighborhood, category, image_url, price, bedrooms, baths, square_feet, listing_agent } = this.props.listing
         return (
-            <li className="listing-index-item">
+            <li className="listing-index-item" onClick={this.handleClick}>
                 <div className="listing-top">
                     <img src={image_url} alt="listing-image" className="listing-image"/>
                 </div>
@@ -31,4 +41,4 @@ class ListingIndexItem extends React.Component {
     }
 };
 
-export default ListingIndexItem;
+export default withRouter(ListingIndexItem);

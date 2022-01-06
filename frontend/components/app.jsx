@@ -8,7 +8,8 @@ import Home from "./home/home";
 import HeaderContainer from "./header/header_container";
 // import LoginFormContainer from "./session_form/login_form_container";
 // import SignupFormContainer from "./session_form/signup_form_container";
-import ListingsIndexContainer from "./listing_index_container"
+import ListingsIndexContainer from "./listings/listing_index_container"
+import ListingShowContainer from "./listings/listing_show_container";
 import FooterContainer from "./footer/footer_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
@@ -18,13 +19,15 @@ const App = () => (
       <HeaderContainer/>
       <NavBar/>
       <Route exact path="/" component={Home}/>
-      <Route path="/search" component={ListingsIndexContainer}/>
+      
       {/* <ProtectedRoute exact path={`/account/:user_id`} component={AccountContainer}/> */}
 
-      {/* <Switch> -- no longer needed since we have modal to render these
-            <AuthRoute path="/login" component={LoginFormContainer}/>
-            <AuthRoute path="/signup" component={SignupFormContainer}/>
-      </Switch> */}
+      <Switch>
+        <Route path="/search" component={ListingsIndexContainer}/>
+        <Route path="/listing/:id" component={ListingShowContainer}/>
+        {/* <AuthRoute path="/login" component={LoginFormContainer}/>
+        <AuthRoute path="/signup" component={SignupFormContainer}/> */}
+      </Switch>
       <FooterContainer/>
     </div>
   );
