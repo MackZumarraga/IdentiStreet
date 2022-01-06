@@ -8,9 +8,9 @@ const Header = ({currentUser, logout, openModal}) => {
             {/* <Link to={`/login`} className="nav-session-link" id="nav-login">Log In</Link>
             &nbsp;
             <Link to={`/signup`} className="nav-session-link" id="nav-signup">Sign Up</Link> */}
-            <button onClick={() => openModal('login')}>Log In</button>
-             &nbsp;/&nbsp;
-            <button onClick={() => openModal('signup')}>Sign Up</button>
+            <button onClick={() => openModal('login')} className="nav-session-link" id="nav-login">Log In / Sign Up</button>
+             {/* &nbsp;/&nbsp;
+            <button onClick={() => openModal('signup')}>Sign Up</button> */}
         </div>
     );
 

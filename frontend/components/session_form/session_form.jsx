@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
             email: 'guest@example.com',
             password: 'password'
         } 
-        this.props.processForm(demoUser);
+        this.props.processForm(demoUser).then(this.props.closeModal);
     };
 
     update(field) {
@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
         return(
             <ul className="error-ul">
                 {this.props.errors.map((error, i) => (
-                    <li className="error-li" key={{i}}>
+                    <li className="error-li" key={i}>
                         {error}
                     </li>
                 ))}
@@ -52,30 +52,47 @@ class SessionForm extends React.Component {
 
     render() {
         const formTypeName = this.props.formType === 'signup' ? 'Sign Up' : 'Log In';
+        
+        // if (this.props.errors.count > 0) {
+        //     const errorTrue = true
+        // } else {
+        //     const errorTrue = false
+        // };
+
+        // const errorTrue = this.props.errors.count > 0 ? true : false;
 
         return(
             <div className="session-form">
-                <div onClick={this.props.closeModal} className="close-x">X</div>
-                <h3 id="form-name">{formTypeName}</h3>
-                <br/>
-
-                <p className="session-message">Take full advantage of IdentiStreet's features</p>
-
-                <br/>
                 <br/>
                 <br/>
                 <form onSubmit={this.handleSubmit} >
+                    <div className="close-x-container">
+                        <div onClick={this.props.closeModal} className="close-x">X</div>
+                    </div>
+                    
+                    <br/>
+                    <h3 id="form-name">{formTypeName}</h3>
+                    <br/>
+
+                    <p className="session-message">Take full advantage of IdentiStreet's features</p>
+
+                    <br/>
                     <label>EMAIL
                         <br/>
-                        <input type="text" value={this.state.email} onChange={this.update('email')}/>
+                        <input type="text" value={this.state.email} onChange={this.update('email')} />
                     </label>
                     <br/>
                     <label>PASSWORD
                         <br/>
                         <input type="password" value={this.state.password} onChange={this.update('password')}/>
                     </label>
-                    <br/>
-                    <br/>
+                    
+                    <div className="errors">
+                        <br/>
+                        {this.renderErrors()}
+                        <br/>
+                    </div>
+                    
                     <button type="submit" value={this.props.formType}>{formTypeName}</button>
 
                     <br/>
@@ -92,10 +109,7 @@ class SessionForm extends React.Component {
                         {this.props.otherForm}
                     </div>
 
-                    <br/>
-                    <div className="errors">
-                        {this.renderErrors()}
-                    </div>
+                   
                 </form>
                 
             </div>
