@@ -4,24 +4,24 @@ import { fetchListing } from '../../actions/listing_actions'
 // import { selectListing } from '../../reducers/selectors';
 import ListingShow from './listing_show';
 
-// const mapStateToProps = (state, { match }) => {
-  const mapStateToProps = (state, ownProps) => {
-  // const listingId = parseInt(match.params.listingId);
-  // const listing = selectListing(state.entities, listingId);
-  debugger
-  return {
-    // listingId,
-    // listing
-    // listing: state.entities.listings[ownProps.match.params.listingId]
-    listing: state.entities.listings[ownProps.match.params.id]
+// // const mapStateToProps = (state, { match }) => {
+//   const mapStateToProps = (state, ownProps) => {
+//   // const listingId = parseInt(match.params.listingId);
+//   // const listing = selectListing(state.entities, listingId);
+//   debugger
+//   return {
+//     // listingId,
+//     // listing
+//     // listing: state.entities.listings[ownProps.match.params.listingId]
+//     listing: state.entities.listings[ownProps.match.params.id]
 
-  };
-};
+//   };
+// };
 
 function mstp(state, ownProps) {
   debugger
   return {
-    listing: state.entities.listings[ownProps.match.params.id]
+    listing: state.entities.listings.listing
   }
 }
 

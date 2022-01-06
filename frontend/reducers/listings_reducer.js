@@ -8,13 +8,14 @@ const listingsReducer = (state = {}, action) => {
       case RECEIVE_LISTINGS:
         return action.listings;
       case RECEIVE_LISTING:
-        const newListing = { [action.listing.id]: action.listing };
-        return Object.assign({}, state, newListing);
+        // const newListing = { [action.listing.id]: action.listing };
+        // return Object.assign({}, state, newListing);
+        return action.listing;
       case REMOVE_LISTING:
         delete nextState[action.listingId]
         return nextState;
-      case RECEIVE_ERRORS:
-        return [];
+      // case RECEIVE_ERRORS: 
+      //   return [];
       default:
         return state;
     }

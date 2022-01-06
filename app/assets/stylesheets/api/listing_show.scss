@@ -10,3 +10,17 @@
     width: 75vw;
     padding-left: 30px;
 }
+
+.listing-show-content {
+    display: flex;
+}
+
+.listing-show-left {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.listing-show-right {
+    width: 40%;
+}
