@@ -49,6 +49,14 @@ class SessionForm extends React.Component {
         )
     };
 
+    errorTrue() {
+        debugger
+        if (this.props.errors.length === 0) {
+            return false;
+        } else {
+            return true;
+        }
+    };
 
     render() {
         const formTypeName = this.props.formType === 'signup' ? 'Sign Up' : 'Log In';
@@ -67,7 +75,7 @@ class SessionForm extends React.Component {
                 <br/>
                 <form onSubmit={this.handleSubmit} >
                     <div className="close-x-container">
-                        <div onClick={this.props.closeModal} className="close-x">X</div>
+                        <div onClick={this.props.closeModal} className="close-x">✖</div>
                     </div>
                     
                     <br/>
@@ -79,16 +87,15 @@ class SessionForm extends React.Component {
                     <br/>
                     <label>EMAIL
                         <br/>
-                        <input type="text" value={this.state.email} onChange={this.update('email')} />
+                        <input type="text" value={this.state.email} onChange={this.update('email')} className={this.errorTrue() ? "error-true" : null}/>
                     </label>
                     <br/>
                     <label>PASSWORD
                         <br/>
-                        <input type="password" value={this.state.password} onChange={this.update('password')}/>
+                        <input type="password" value={this.state.password} onChange={this.update('password')} className={this.errorTrue() ? "error-true" : null}/>
                     </label>
                     
                     <div className="errors">
-                        <br/>
                         {this.renderErrors()}
                         <br/>
                     </div>
