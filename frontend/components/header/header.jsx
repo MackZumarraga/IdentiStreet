@@ -32,12 +32,14 @@ const Header = ({currentUser, logout, openModal}) => {
     )
     
     return (
-        <header className="header-container">
-            <Link to="/">
-                <img src={window.logo} alt="" className="identiStreet-image"/>
-            </Link>
-            <div>
-                {currentUser ? loggedInView() : sessionLinks()}
+        <header className="header-width-maker">
+            <div className="header-container">
+                <Link to="/">
+                    <img src={window.logo} alt="" className="identiStreet-image"/>
+                </Link>
+                <div>
+                    {currentUser ? loggedInView() : sessionLinks()}
+                </div>
             </div>
         </header>
     )

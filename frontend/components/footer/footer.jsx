@@ -4,72 +4,74 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <footer className="footer-container">
-            <div className="footer-navbar">
-                <div className="area-item-container">
-                    <Link to={`/searches/manhattan`}>Manhattan</Link>
-                    <Link to={`/searches/brooklyn`}>Brooklyn</Link>
-                    <Link to={`/searches/queens`}>Queens</Link>
-                    <Link to={`/searches/bronx`}>Bronx</Link>
+            <div className="footer-width-maker">
+                <div className="footer-navbar">
+                    <div className="area-item-container">
+                        <Link to={`/searches/manhattan`}>Manhattan</Link>
+                        <Link to={`/searches/brooklyn`}>Brooklyn</Link>
+                        <Link to={`/searches/queens`}>Queens</Link>
+                        <Link to={`/searches/bronx`}>Bronx</Link>
 
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
 
-                    <Link to={`/searches/manhattan`}>Manhattan</Link>
-                    <Link to={`/searches/brooklyn`}>Brooklyn</Link>
-                    <Link to={`/searches/queens`}>Queens</Link>
-                    <Link to={`/searches/bronx`}>Bronx</Link>
-                </div>
-                <div className="area-item-container">
-                    <Link to={`/searches/manhattan`}>Manhattan</Link>
-                    <Link to={`/searches/brooklyn`}>Brooklyn</Link>
-                    <Link to={`/searches/queens`}>Queens</Link>
-                    <Link to={`/searches/bronx`}>Bronx</Link>
-                    
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                        <Link to={`/searches/manhattan`}>Manhattan</Link>
+                        <Link to={`/searches/brooklyn`}>Brooklyn</Link>
+                        <Link to={`/searches/queens`}>Queens</Link>
+                        <Link to={`/searches/bronx`}>Bronx</Link>
+                    </div>
+                    <div className="area-item-container">
+                        <Link to={`/searches/manhattan`}>Manhattan</Link>
+                        <Link to={`/searches/brooklyn`}>Brooklyn</Link>
+                        <Link to={`/searches/queens`}>Queens</Link>
+                        <Link to={`/searches/bronx`}>Bronx</Link>
+                        
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
 
-                    <Link to={`/searches/manhattan`}>Manhattan</Link>
-                    <Link to={`/searches/brooklyn`}>Brooklyn</Link>
-                    <Link to={`/searches/queens`}>Queens</Link>
-                    <Link to={`/searches/bronx`}>Bronx</Link>
+                        <Link to={`/searches/manhattan`}>Manhattan</Link>
+                        <Link to={`/searches/brooklyn`}>Brooklyn</Link>
+                        <Link to={`/searches/queens`}>Queens</Link>
+                        <Link to={`/searches/bronx`}>Bronx</Link>
 
-                </div>
-                <div className="area-item-container">
-                    <Link to={`/searches/manhattan`}>Manhattan</Link>
-                    <Link to={`/searches/brooklyn`}>Brooklyn</Link>
-                    <Link to={`/searches/queens`}>Queens</Link>
-                    <Link to={`/searches/bronx`}>Bronx</Link>
-                    
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                    </div>
+                    <div className="area-item-container">
+                        <Link to={`/searches/manhattan`}>Manhattan</Link>
+                        <Link to={`/searches/brooklyn`}>Brooklyn</Link>
+                        <Link to={`/searches/queens`}>Queens</Link>
+                        <Link to={`/searches/bronx`}>Bronx</Link>
+                        
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
 
-                    <Link to={`/searches/manhattan`}>Manhattan</Link>
-                    <Link to={`/searches/brooklyn`}>Brooklyn</Link>
-                    <Link to={`/searches/queens`}>Queens</Link>
-                    <Link to={`/searches/bronx`}>Bronx</Link>
+                        <Link to={`/searches/manhattan`}>Manhattan</Link>
+                        <Link to={`/searches/brooklyn`}>Brooklyn</Link>
+                        <Link to={`/searches/queens`}>Queens</Link>
+                        <Link to={`/searches/bronx`}>Bronx</Link>
 
-                </div>
-                <div className="footer-nav-item">
-                    <Link to={`/blog`}>BLOG</Link>
-                    <Link to={`/hiring`}>WE'RE HIRING</Link>
-                    <Link to={`/submit`}>SUBMIT YOUR LISTINGS</Link>
-                    <Link to={`/searches/all`}>BROWSE ALL HOMES</Link>
+                    </div>
+                    <div className="footer-nav-item">
+                        <Link to={`/blog`}>BLOG</Link>
+                        <Link to={`/hiring`}>WE'RE HIRING</Link>
+                        <Link to={`/submit`}>SUBMIT YOUR LISTINGS</Link>
+                        <Link to={`/searches/all`}>BROWSE ALL HOMES</Link>
 
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
 
-                    <Link to={`/blog`}>BLOG</Link>
-                    <Link to={`/hiring`}>WE'RE HIRING</Link>
-                    <Link to={`/submit`}>SUBMIT YOUR LISTINGS</Link>
-                    <Link to={`/searches/all`}>BROWSE ALL HOMES</Link>
+                        <Link to={`/blog`}>BLOG</Link>
+                        <Link to={`/hiring`}>WE'RE HIRING</Link>
+                        <Link to={`/submit`}>SUBMIT YOUR LISTINGS</Link>
+                        <Link to={`/searches/all`}>BROWSE ALL HOMES</Link>
+                    </div>
                 </div>
             </div>
 

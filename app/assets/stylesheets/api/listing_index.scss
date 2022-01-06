@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.listing-index-width-maker {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.listing-index-container {
+    width: 75vw;
+    padding-left: 30px;
+}
+
 .listing-image {
     height: 194px;
 }

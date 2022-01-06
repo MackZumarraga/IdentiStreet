@@ -1,4 +1,13 @@
 //nav bar container
+.menu-filter-width-maker {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-filter-container {
+    width: 75vw;
+}
 
 .nav-menu-container {
     display: flex;
