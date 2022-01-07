@@ -24,3 +24,75 @@
 .listing-show-right {
     width: 40%;
 }
+
+//image-carousel
+.show-carousel-photo {
+    width: 100%;
+}
+
+.carousel-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    right: 32px;
+    font-size: 3rem;
+    color: #000;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.left-arrow {
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    font-size: 3rem;
+    color: #000;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.image {
+    opacity: 0;
+    transition-duration: 1s ease;
+}
+
+.image.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+}
+
+
+
+//lower left side
+.amenities-highlight {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.amenities-other {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+//upper right side
+
+.show-bed-bath {
+    display: flex;
+}
+
+.show-bed-bath div {
+    margin-right: 10px;
+}
+
+.show-short-desc {
+    text-transform: capitalize;
+}
