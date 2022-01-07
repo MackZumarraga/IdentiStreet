@@ -25,10 +25,7 @@ const ImageCarousel = ({listing}) => {
     
     return (
         <div className="carousel-holder">
-            <div className="arrow-holders">
-                <div className="left-arrow" onClick={prevImage}>◄</div>
-                <div className="right-arrow" onClick={nextImage}>►</div>
-            </div>
+            
             {images.map((img, idx) => {
                 return (
                     <div className={idx === current ? 'image active' : 'image'}
@@ -36,6 +33,10 @@ const ImageCarousel = ({listing}) => {
                         {idx === current && (
                             <img src={img.image} className="show-carousel-photo" />
                         )}
+                        <div className="arrow-holders">
+                            <div className="left-arrow" onClick={prevImage}>◄</div>
+                            <div className="right-arrow" onClick={nextImage}>►</div>
+                        </div>
                     </div>
                 );
             })}
