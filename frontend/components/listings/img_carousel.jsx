@@ -1,10 +1,16 @@
 import React, {useState} from "react";
 
 const ImageCarousel = ({listing}) => {
+    // const images = [
+    //     {image: 'https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg'},
+    //     {image: 'https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg'},
+    //     {image: 'https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg'}
+    // ]
+
     const images = [
-        {image: 'https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg'},
-        {image: 'https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg'},
-        {image: 'https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg'}
+        {image: listing.image_url},
+        {image: listing.image_url},
+        {image: listing.image_url}
     ]
 
     const [current, setCurrent] = useState(0);

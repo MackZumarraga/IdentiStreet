@@ -33,4 +33,5 @@ json.extract! listing,
     :pets_allowed,
     :swimming_pool,
     :leasing_launch_date,
-    :listing_agent    
+    :listing_agent
+   
