@@ -23,7 +23,7 @@ const ImageCarousel = ({listing}) => {
     const [current, setCurrent] = useState(0);
     const length = images.length;
 
-    console.log(current)
+    
 
     const nextImage = () => {
         setCurrent(current === length - 1 ? 0 : current + 1);

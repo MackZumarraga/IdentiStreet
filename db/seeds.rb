@@ -107,8 +107,12 @@ l2 = Listing.create!(
     listing_agent: 'Olympus Associates'
 )
 
-l2file = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
-l2.photo.attach(io: l2file, filename: 'bed_room.jpg')
+l2file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l2file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
+l2file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
+l2.photos.attach(io: l2file1, filename: 'bed_room.jpg')
+l2.photos.attach(io: l2file2, filename: 'bath_room.jpg')
+l2.photos.attach(io: l2file3, filename: 'living_room.jpg')
 
 l3 = Listing.create!(
     address: "333 DEF Street, New York NY 33333",
@@ -147,8 +151,12 @@ l3 = Listing.create!(
     listing_agent: 'Sparta Associates'
 )
 
-l3file = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
-l3.photo.attach(io: l3file, filename: 'bed_room.jpg')
+l3file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l3file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
+l3file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
+l3.photos.attach(io: l3file1, filename: 'bed_room.jpg')
+l3.photos.attach(io: l3file2, filename: 'bath_room.jpg')
+l3.photos.attach(io: l3file3, filename: 'living_room.jpg')
 
 l4 = Listing.create!(
     address: "111 GHI Avenue, New York NY 11111",
@@ -187,5 +195,9 @@ l4 = Listing.create!(
     listing_agent: 'Olympus Associates'
 )
 
-l4file = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
-l4.photo.attach(io: l4file, filename: 'bed_room.jpg')
+l4file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l4file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
+l4file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
+l4.photos.attach(io: l4file1, filename: 'bed_room.jpg')
+l4.photos.attach(io: l4file2, filename: 'bath_room.jpg')
+l4.photos.attach(io: l4file3, filename: 'living_room.jpg')
