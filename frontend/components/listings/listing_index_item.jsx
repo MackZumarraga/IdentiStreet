@@ -18,7 +18,7 @@ class ListingIndexItem extends React.Component {
         return (
             <li className="listing-index-item" onClick={this.handleClick}>
                 <div className="listing-top">
-                    <img src={image_url[0]} alt="listing-image" className="listing-image"/>
+                    <img src={image_url} alt="listing-image" className="listing-image"/>
                 </div>
                 <div className="listing-bottom">
                     <div className="upper-block">

@@ -28,7 +28,7 @@ class ListingShow extends React.Component {
                     <div className="listing-show-content">
                         <div className="listing-show-left">
                             <div className="show-left-top">
-                                <ImageCarousel listing={this.props.listing}/>
+                                {this.props.listing.image_urls ? <ImageCarousel listing={this.props.listing}/> : null}
                                 <div className="show-dates">
                                     <h3>AVAILABLE ON</h3>
                                     <div className="show-availability">{leasing_launch_date}</div>
