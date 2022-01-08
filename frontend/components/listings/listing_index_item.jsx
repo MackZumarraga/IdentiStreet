@@ -8,9 +8,6 @@ class ListingIndexItem extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchListings();
-    // }
 
     handleClick() {
         const listingId = this.props.listing.id;
@@ -19,15 +16,10 @@ class ListingIndexItem extends React.Component {
 
     render() {
 
-        // if (!this.props.listings) {
-        //     return null;
-        // };
-
-        const { address, neighborhood, category, image_urls, image_url, price, bedrooms, baths, square_feet, listing_agent } = this.props.listing
+        const { address, neighborhood, category, image_urls, price, bedrooms, baths, square_feet, listing_agent } = this.props.listing
         return (
             <li className="listing-index-item" onClick={this.handleClick}>
                 <div className="listing-top">
-                    {/* <img src={image_url} alt="listing-image" className="listing-image"/> */}
                     <img src={image_urls[0]} alt="listing-image" className="listing-image"/>
                 </div>
                 <div className="listing-bottom">
