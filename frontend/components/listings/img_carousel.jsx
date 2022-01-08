@@ -7,11 +7,19 @@ const ImageCarousel = ({listing}) => {
     //     {image: 'https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg'}
     // ]
 
+    // const images = [
+    //     {image: listing.image_url},
+    //     {image: listing.image_url},
+    //     {image: listing.image_url}
+    // ]
+
+
     const images = [
-        {image: listing.image_url},
-        {image: listing.image_url},
-        {image: listing.image_url}
+        {image: listing.image_urls[0]},
+        {image: listing.image_urls[1]},
+        {image: listing.image_urls[2]}
     ]
+    
 
     const [current, setCurrent] = useState(0);
     const length = images.length;

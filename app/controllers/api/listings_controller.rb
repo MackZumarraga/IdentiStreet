@@ -56,7 +56,6 @@ class Api::ListingsController < ApplicationController
             :latitude,
             :longitude,
             :category,
-            :image_url,
             :price,
             :bedrooms,
             :baths,
@@ -83,7 +82,8 @@ class Api::ListingsController < ApplicationController
             :pets_allowed,
             :swimming_pool,
             :leasing_launch_date,
-            :listing_agent
+            :listing_agent,
+            image_url: [],
         )
     end
 end

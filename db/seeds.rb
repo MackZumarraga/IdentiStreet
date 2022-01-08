@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+require 'open-uri'
 
 User.destroy_all
 Listing.destroy_all
@@ -63,6 +63,13 @@ l1 = Listing.create!(
     listing_agent: 'Sparta Associates'
 )
 
+l1file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l1file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
+l1file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
+l1.photos.attach(io: l1file1, filename: 'bed_room.jpg')
+l1.photos.attach(io: l1file2, filename: 'bath_room.jpg')
+l1.photos.attach(io: l1file3, filename: 'living_room.jpg')
+
 l2 = Listing.create!(
     address: "222 XYZ Avenue, New York NY 44444",
     area: "Brooklyn",
@@ -99,6 +106,9 @@ l2 = Listing.create!(
     leasing_launch_date: '10/25/2021',
     listing_agent: 'Olympus Associates'
 )
+
+l2file = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l2.photo.attach(io: l2file, filename: 'bed_room.jpg')
 
 l3 = Listing.create!(
     address: "333 DEF Street, New York NY 33333",
@@ -137,6 +147,9 @@ l3 = Listing.create!(
     listing_agent: 'Sparta Associates'
 )
 
+l3file = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l3.photo.attach(io: l3file, filename: 'bed_room.jpg')
+
 l4 = Listing.create!(
     address: "111 GHI Avenue, New York NY 11111",
     area: "Brooklyn",
@@ -173,3 +186,6 @@ l4 = Listing.create!(
     leasing_launch_date: '10/25/2021',
     listing_agent: 'Olympus Associates'
 )
+
+l4file = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l4.photo.attach(io: l4file, filename: 'bed_room.jpg')
