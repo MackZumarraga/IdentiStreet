@@ -12,8 +12,14 @@
 .listing-index-container {
     width: 75vw;
     padding-left: 30px;
+
+    overflow: scroll;
+    height: 700px;
 }
 
+.listing-index-container::-webkit-scrollbar {
+    display: none;
+}
 .listing-image {
     height: 194px;
 }
