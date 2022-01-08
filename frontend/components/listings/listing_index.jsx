@@ -17,7 +17,7 @@ class ListingIndex extends React.Component {
                     <h1>Listings</h1>
                     <ul className="listing-ul">
                         {this.props.listings.map(listing => (
-                            <ListingIndexItem listing={listing} key={Math.random()}/>
+                            <ListingIndexItem listing={listing} fetchListings={this.props.fetchListings} key={Math.random()}/>
                         ))}
                     </ul>
                 </div>
