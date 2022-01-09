@@ -13,13 +13,16 @@ class ListingIndex extends React.Component {
         // debugger
         return (
             <div className="listing-index-width-maker">
-                <div className="listing-index-container">
-                    <h1>Listings</h1>
-                    <ul className="listing-ul">
-                        {this.props.listings.map(listing => (
-                            <ListingIndexItem listing={listing} key={Math.random()}/>
-                        ))}
-                    </ul>
+                <div className="index-body-container">
+                    <div className="listing-index-container">
+                        <ul className="listing-ul">
+                            {this.props.listings.map(listing => (
+                                <ListingIndexItem listing={listing} key={Math.random()}/>
+                            ))}
+                        </ul>
+                        {/* <div className="map-column">Map Column</div> */}
+                    </div>
+                    <div className="map-column">Map Column</div>
                 </div>
             </div>
         )

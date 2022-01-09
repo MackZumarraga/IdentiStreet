@@ -9,23 +9,49 @@
     max-width: 100%;
 }
 
-.listing-index-container {
-    width: 75vw;
-    padding-left: 30px;
+.index-body-container {
+    display: flex;
+    // width: 75vw;
+    // margin-left: 2%;
+    width: 73vw;
+}
 
+.listing-index-container {
+    // width: 75vw;
+    // padding-left: 30px;
+
+    // overflow: scroll;
+    // height: 700px;
+
+    // display: flex;
+    // width: 70%;
+    width: 100%;
+    padding-left: 0px;
     overflow: scroll;
     height: 700px;
+    display: flex;
+    min-width: 70%;
 }
 
 .listing-index-container::-webkit-scrollbar {
     display: none;
 }
+
+.map-column {
+    // width: 30%;
+    width: 100%;
+    // min-width: 30%;
+}
+
 .listing-image {
     height: 194px;
+    width: 100%;
 }
 
 .listing-ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    width: 100%;
+    margin-right: 3%;
 }
