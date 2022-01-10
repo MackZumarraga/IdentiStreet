@@ -9,7 +9,7 @@ const Amenities = ({listing}) => {
 
     return (
         <div>
-            <h2>HIGHLIGHTS</h2>
+            <h2 className="highlights">HIGHLIGHTS</h2>
             <ul className="amenities-highlight">
                 {Object.keys(listing).map(amenity => {
                     if (listing[amenity] && !nonAmenities.includes(amenity) && highlightAmenities.includes(amenity)) {
@@ -19,7 +19,7 @@ const Amenities = ({listing}) => {
                 })
                 }
             </ul>
-            <h2>OTHER AMENITIES</h2>
+            <h2 className="other-amenities">OTHER AMENITIES</h2>
             <ul className="amenities-other">
                 {Object.keys(listing).map(amenity => {
                     if (listing[amenity] && !nonAmenities.includes(amenity) && otherAmenities.includes(amenity)) {

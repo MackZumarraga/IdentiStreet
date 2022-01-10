@@ -38,7 +38,7 @@ class ListingShow extends React.Component {
                                 <div className="listing-show-description-title">Description</div>
                                 <div className="listing-show-description-body">{description}</div>
                                 <div className="show-amenities">
-                                    <h1>Amenities</h1>
+                                    <h1 className="listing-amenity-title">Amenities</h1>
                                     <Amenities listing={this.props.listing}/>
                                 </div>
                             </div>

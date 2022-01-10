@@ -119,6 +119,7 @@
 //lower left side
 .show-left-bottom {
     margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .listing-show-description-title {
@@ -147,14 +148,39 @@
     font-size: 14px;
 }
 
+.listing-amenity-title {
+    font-size: 28px;
+    line-height: 30px;
+    margin-bottom: 12px;
+}
+
+.highlights {
+    color: #62646A;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 22px;
+}
+
 .amenities-highlight {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.other-amenities {
+    color: #62646A;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 22px;
 }
 
 .amenities-other {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    font-size: 12px;
+    line-height: 1.6;
 }
 
 
