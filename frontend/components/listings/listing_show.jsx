@@ -57,13 +57,14 @@ class ListingShow extends React.Component {
                                 </div>
                                 <div className="show-short-desc">{category} in {neighborhood}</div>
                             </div>
-                            <div>
-                                <button>♡ SAVE</button>
-                                <button>+ ADD NOTES TO THIS LISTING</button>
+                            <div className="right-feature-functions">
+                                <button className="save-button">♡ SAVE</button>
+                                <button className="request-tour">REQUEST A TOUR</button>
+                                {/* <button>+ ADD NOTES TO THIS LISTING</button> */}
                             </div>
                             <div>
-                                <button>REQUEST A TOUR</button>
-                                <button>ASK A QUESTION</button>
+                                {/* <button>REQUEST A TOUR</button> */}
+                                {/* <button>ASK A QUESTION</button> */}
                             </div>
                             <div className="contact-info">LISTED BY 
                                 <div>{listing_agent}</div>
