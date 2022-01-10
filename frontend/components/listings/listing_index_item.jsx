@@ -27,7 +27,7 @@ class ListingIndexItem extends React.Component {
                         <div className="upper-block">
                             <div className="listing-label">New {category} in {neighborhood}</div>
                             <div className="listing-address">{address}</div>
-                            <div className="listing-price">${price}</div>
+                            <div className="listing-price">${price.toLocaleString()}</div>
                         </div>
                         <div className="lower-block">
                             <div className="lower-block-details">
