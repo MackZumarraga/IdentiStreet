@@ -51,7 +51,8 @@
 .listing-ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    // align-items: center;
+    align-items: stretch;
     width: 700px;
     margin-right: 3%;
     column-gap: 20px;
