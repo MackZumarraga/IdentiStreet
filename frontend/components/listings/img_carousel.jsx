@@ -49,8 +49,10 @@ const ImageCarousel = ({listing}) => {
                             <img src={img.image} className="show-carousel-photo" />
                         )}
                         <div className="arrow-holders">
-                            <div className="left-arrow" onClick={prevImage}>◄</div>
-                            <div className="right-arrow" onClick={nextImage}>►</div>
+                            {/* <div className="left-arrow" onClick={prevImage}>◄</div>
+                            <div className="right-arrow" onClick={nextImage}>►</div> */}
+                            <div className="left-arrow" onClick={prevImage}>‹</div>
+                            <div className="right-arrow" onClick={nextImage}>›</div>
                         </div>
                     </div>
                 );

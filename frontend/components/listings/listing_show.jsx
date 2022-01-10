@@ -30,13 +30,13 @@ class ListingShow extends React.Component {
                             <div className="show-left-top">
                                 {this.props.listing.image_urls ? <ImageCarousel listing={this.props.listing}/> : null}
                                 <div className="show-dates">
-                                    <h3>AVAILABLE ON</h3>
+                                    <h3 className="available-on">AVAILABLE ON</h3>
                                     <div className="show-availability">{leasing_launch_date}</div>
                                 </div>
                             </div>
                             <div className="show-left-bottom">
-                                <h1>Description</h1>
-                                <div>{description}</div>
+                                <div className="listing-show-description-title">Description</div>
+                                <div className="listing-show-description-body">{description}</div>
                                 <div className="show-amenities">
                                     <h1>Amenities</h1>
                                     <Amenities listing={this.props.listing}/>
