@@ -8,7 +8,7 @@ class ListingMap extends React.Component {
     componentDidMount() {   
         const mapOptions = {
             center: { lat: 40.7484, lng: -73.9857 }, 
-            zoom: 13
+            zoom: 10
         };
         
         // const map = React.createRef();    
