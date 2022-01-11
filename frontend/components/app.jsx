@@ -8,8 +8,10 @@ import Home from "./home/home";
 import HeaderContainer from "./header/header_container";
 // import LoginFormContainer from "./session_form/login_form_container";
 // import SignupFormContainer from "./session_form/signup_form_container";
-import ListingsIndexContainer from "./listings/listing_index_container"
+import ListingsIndexContainer from "./listings/listing_index_container";
 import ListingShowContainer from "./listings/listing_show_container";
+import MyProfileContainer from "./profile/my_profile_container";
+// import ListingFormContainer from "./listing_form/listing_form_container";
 import FooterContainer from "./footer/footer_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
@@ -19,7 +21,9 @@ const App = () => (
       <HeaderContainer/>
       <NavBar/>
       <Route exact path="/" component={Home}/>
-      
+      {/* <Route exact path={`/add`} component={ListingFormContainer}/> */}
+      <ProtectedRoute exact path={`/my_profile`} component={MyProfileContainer}/>
+      {/* <ProtectedRoute exact path={`/add`} component={ListingFormContainer}/> */}
       {/* <ProtectedRoute exact path={`/account/:user_id`} component={AccountContainer}/> */}
 
       <Switch>
