@@ -5,7 +5,7 @@ class MarkerManager {
     }
   
     updateMarkers(listings){
-//     //   const benchesObj = {};
+        const listingsObj = {};
 //     //   benches.forEach(bench => benchesObj[bench.id] = bench);
   
 //     //   benches
@@ -18,10 +18,13 @@ class MarkerManager {
 
         console.log("time to update")
 //         const listingsObj = {};
-//         listings.forEach(listing => listingsObj[listing.id] = listing)
+        listings.forEach(listing => listingsObj[listing.id] = listing)
 
         let nonExistent = listings.filter(listing => !this.markers[listing.id])
         nonExistent.forEach(newListing => this.createMarkerFromListing(newListing))
+
+        let clearCurrent = Object.keys(this.markers).filter(listingId => !listingsObj[listingId])
+        clearCurrent.forEach((currentId) => this.removeMarker(this.markers[currentId]))
     };
 
     createMarkerFromListing(listing) {
@@ -35,23 +38,16 @@ class MarkerManager {
 //         marker.addListener('click', () => this.handleClick(listing));
         this.markers[marker.listingId] = marker;
     }
-  
-//     // createMarkerFromBench(bench) {
-//     //   const position = new google.maps.LatLng(bench.lat, bench.lng);
-//     //   const marker = new google.maps.Marker({
-//     //     position,
-//     //     map: this.map,
-//     //     benchId: bench.id
-//     //   });
+
   
 //     //   marker.addListener('click', () => this.handleClick(bench));
 //     //   this.markers[marker.benchId] = marker;
 //     // }
   
-//     // removeMarker(marker) {
-//     //   this.markers[marker.benchId].setMap(null);
-//     //   delete this.markers[marker.benchId];
-//     // }
+    removeMarker(marker) {
+      this.markers[marker.listingId].setMap(null);
+      delete this.markers[marker.listingId];
+    }
   }
   
 export default MarkerManager;

@@ -5,9 +5,13 @@ import ListingIndexItem from "./listing_index_item";
 
 class ListingIndex extends React.Component {
 
+    //some state - whatever info the marker needs and passed as prop to map
+
     componentDidMount() {
         this.props.fetchListings();
     }
+
+    //define a function to pass to index item to keep context
 
     render() {
         // const {listings} = this.props
@@ -24,7 +28,7 @@ class ListingIndex extends React.Component {
                         {/* <div className="map-column">Map Column</div> */}
                     </div>
                     <div className="map-column">
-                        <ListingMap listings={this.props.listings}/>
+                        <ListingMap listings={this.props.listings} updateBounds={this.props.updateBounds}/>
                     </div>
                 </div>
             </div>

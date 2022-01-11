@@ -1,11 +1,15 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import MarkerManager from '../../util/marker_manager';
+
 class ListingIndexItem extends React.Component {
     constructor(props) {
         super(props);
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleMouseOver = this.handleMouseOver.bind(this);
+        
     }
 
 
@@ -14,11 +18,17 @@ class ListingIndexItem extends React.Component {
         this.props.history.push(`/listing/${listingId}`);
     }
 
+    handleMouseOver() {
+        console.log(this.props.listing.latitude, this.props.listing.longitude)
+        console.log(this.props.listing.id)
+        // MarkerManager.updateMarkers(this.props.listing);
+    }
+
     render() {
 
         const { address, neighborhood, category, image_urls, price, bedrooms, baths, square_feet, listing_agent } = this.props.listing
         return (
-            <li className="listing-index-item" onClick={this.handleClick}>
+            <li className="listing-index-item" onClick={this.handleClick} onMouseOver={this.handleMouseOver}>
                 <div className="listing-top">
                     <img src={image_urls[0]} alt="listing-image" className="listing-image"/>
                 </div>

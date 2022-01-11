@@ -27,8 +27,8 @@ export const receiveErrors = errors => ({
 
 
 
-export const fetchListings = (listings) => dispatch => (
-    ListingApiUtil.fetchListings(listings).then(listings => dispatch(receiveListings(listings)), error => dispatch(receiveErrors(error.responseJSON)))
+export const fetchListings = (filters) => dispatch => (
+    ListingApiUtil.fetchListings(filters).then(listings => dispatch(receiveListings(listings)), error => dispatch(receiveErrors(error.responseJSON)))
 );
 
 export const fetchListing = (listingId) => dispatch => (
