@@ -23,8 +23,8 @@ class ListingIndex extends React.Component {
                         </ul>
                         {/* <div className="map-column">Map Column</div> */}
                     </div>
-                    <div className="map-column">Map Column
-                        <ListingMap />
+                    <div className="map-column">
+                        <ListingMap listings={this.props.listings}/>
                     </div>
                 </div>
             </div>
