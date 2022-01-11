@@ -3,6 +3,10 @@
   <head>
     <title>IdentiStreet</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+   
+    <script src='https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google_api_key %>'></script>
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

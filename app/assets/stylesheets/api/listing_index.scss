@@ -5,7 +5,7 @@
 .listing-index-width-maker {
     width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     max-width: 100%;
 }
 
@@ -13,7 +13,9 @@
     display: flex;
     // width: 75vw;
     // margin-left: 2%;
-    width: 73vw;
+    // width: 73vw;
+    width: 1000px;
+    margin-left: 13%;
 }
 
 .listing-index-container {
@@ -37,11 +39,6 @@
     display: none;
 }
 
-.map-column {
-    // width: 30%;
-    width: 100%;
-    // min-width: 30%;
-}
 
 .listing-image {
     height: 194px;
@@ -147,4 +144,18 @@
 
 .button-lifter {
     line-height: 5;
+}
+
+//map
+.map-column {
+    // width: 30%;
+    width: 100%;
+    // min-width: 30%;
+}
+
+#map-container {
+    overflow: hidden;
+    position: relative;
+    width: 300px;
+    height: 300px;
 }
