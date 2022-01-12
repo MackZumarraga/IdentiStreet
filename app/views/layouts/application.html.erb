@@ -14,6 +14,7 @@
     <script>
       window.logo = "<%= image_url("logo3.svg")%>"
       window.skyline = "<%= image_url("buildings.png")%>"
+      window.googleAPIKey = "<%= Rails.application.credentials.google_api_key %>"
     </script>
     <%= javascript_include_tag 'application' %>
   </head>

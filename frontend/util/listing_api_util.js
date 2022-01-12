@@ -36,3 +36,5 @@ export const deleteListing = id => {
       url: `api/listings/${id}`
     })
 };
+
+// export const fetchCoordinates

@@ -9,12 +9,61 @@ class ListingForm extends React.Component {
         this.state = this.props.listing
         
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.setCoordinates = this.setCoordinates.bind(this)
     }
+
+    // componentDidUpdate() {
+    //     console.log(this.state)
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
         debugger
-        this.props.createListing(this.state).then(this.props.history.push(`/search`));
+
+
+        const address = this.state.address
+        const addressString = address.split(" ").join("+")
+        const requestUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${addressString}&key=${window.googleAPIKey}`
+        
+        debugger
+        
+        const response = $.ajax({
+            method: 'GET',
+            url: requestUrl
+        })
+
+        debugger
+
+        let formatted_address, newLatitude, newLongitude
+        response.then(
+            () => {
+                debugger
+                formatted_address = response.responseJSON.results[0].formatted_address
+                newLatitude = response.responseJSON.results[0].geometry.location.lat
+                newLongitude = response.responseJSON.results[0].geometry.location.lng
+                debugger
+                this.setState({
+                    address: formatted_address,
+                    latitude: newLatitude,
+                    longitude: newLongitude
+                })
+                debugger
+            }, 
+            () => {
+                console.log("ERROR: Geocoding request failed")
+            }
+        ).then(
+            () => {
+                this.props.createListing(this.state).then(this.props.history.push(`/search`));
+            })
+
+        // response.fail(() => {
+        //     console.log("ERROR: Geocoding request failed")
+        // })
+
+        // this.setCoordinates();
+        // debugger
+        
         // this.props.createListing(this.state)
         // console.log(this.state)
     }
@@ -38,6 +87,43 @@ class ListingForm extends React.Component {
            
     //     )
     // };
+
+    setCoordinates() {
+        // const address = this.state.address
+        // const addressString = address.split(" ").join("+")
+        // const requestUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${addressString}&key=${window.googleAPIKey}`
+        
+        // debugger
+        
+        // const response = $.ajax({
+        //     method: 'GET',
+        //     url: requestUrl
+        // })
+
+        // debugger
+
+        // let formatted_address, newLatitude, newLongitude
+        // response.done(() => {
+        //     debugger
+        //     formatted_address = response.responseJSON.results[0].formatted_address
+        //     newLatitude = response.responseJSON.results[0].geometry.location.lat
+        //     newLongitude = response.responseJSON.results[0].geometry.location.lng
+        //     debugger
+        //     this.setState({
+        //         address: formatted_address,
+        //         latitude: newLatitude,
+        //         longitude: newLongitude
+        //     })
+        //     debugger
+        // })
+
+        // response.fail(() => {
+        //     console.log("ERROR: Geocoding request failed")
+        // })
+
+        // this.props.createListing(this.state).then(this.props.history.push(`/search`));
+    };
+
 
     render() {
         return (

@@ -43,5 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.updateListing = ListingActions.updateListing;
     window.deleteListing = ListingActions.deleteListing;
 
+
     ReactDOM.render(<Root store={store} />, root);    
 });
