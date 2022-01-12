@@ -1,5 +1,5 @@
 import React from 'react';
-// import { withRouter } from 'react-router';
+import { withRouter } from 'react-router';
 
 
 class ListingForm extends React.Component {
@@ -14,7 +14,8 @@ class ListingForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         debugger
-        this.props.createListing(this.state)
+        this.props.createListing(this.state).then(this.props.history.push(`/search`));
+        // this.props.createListing(this.state)
         // console.log(this.state)
     }
 
@@ -206,4 +207,4 @@ class ListingForm extends React.Component {
     }
 };
 
-export default ListingForm;
+export default withRouter(ListingForm);
