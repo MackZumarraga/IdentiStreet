@@ -24,13 +24,20 @@ class ListingForm extends React.Component {
         // return event => this.setState({[field]: event.target.value})
     }
 
-    // updateCheck(field, event) {
-    //     if (event.currentTarget.checked) {
-    //         return this.setState({[field]: true})
-    //     } else {
-    //         return this.setState({[field]: false})
-    //     }
-    // }
+
+    // renderErrors() {
+    //     debugger
+    //     return(
+    //         <ul>
+    //             {this.props.errors.map((error, i) => (
+    //                 <li className="error-li" key={i}>
+    //                     {error}
+    //                 </li>
+    //             ))}
+    //         </ul>
+           
+    //     )
+    // };
 
     render() {
         return (
@@ -199,8 +206,14 @@ class ListingForm extends React.Component {
                         <input type="text" value={this.state.listing_agent} onChange={this.update('listing_agent')}/>
                     </label>
 
+                    {/* <div>
+                        {this.renderErrors()}
+                        <br/>
+                    </div> */}
+                    
                     <button type="submit" >Submit</button>
                 </form>
+
 
             </div>
         )

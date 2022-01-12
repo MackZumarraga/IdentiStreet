@@ -38,7 +38,8 @@ const mapStateToProps = state => ({
         "swimming_pool": false,
         "leasing_launch_date": "",
         "listing_agent": ""
-    }
+    },
+    errors: state.errors.session
 });
 
 const mapDispatchToProps = dispatch => ({
