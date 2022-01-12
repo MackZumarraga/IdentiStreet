@@ -15,6 +15,8 @@ const sessionReducer = (state = _nullSession, action) => {
             return _nullSession;
         case RECEIVE_ERRORS:
             return action.errors;
+            // return nextState;
+            // return null;
         default:
             return state;
     }

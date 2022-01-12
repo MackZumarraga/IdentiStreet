@@ -6,51 +6,16 @@ class ListingForm extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            "address": "",
-            "area": "",
-            "neighborhood": "",
-            "latitude": 0,
-            "longitude": 0,
-            "category": "rental",
-            "image_url": "",
-            "price": 0,
-            "bedrooms": 0,
-            "baths": 0,
-            "description": "",
-            "square_feet": 0,
-            "dollars_per_sq_ft": 0,
-            "broker_fee": true,
-            "outdoor_space": false,
-            "dishwasher": false,
-            "washer_dryer_in_unit": false,
-            "washer_dryer_in_building": false,
-            "guarantors_accepted": false,
-            "furnished": false,
-            "fireplace": false,
-            "central_air": false,
-            "city_view": false,
-            "park_view": false,
-            "skyline_view": false,
-            "water_view": false,
-            "elevator": false,
-            "doorman": false,
-            "gym": false,
-            "garage_parking": false,
-            "pets_allowed": false,
-            "swimming_pool": false,
-            "leasing_launch_date": "",
-            "listing_agent": "Sparta Associates"
-        }
+        this.state = this.props.listing
         
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        // this.props.createListing(this.state)
-        this.setState({"dollars_per_sq_ft": this.state.price/this.state.square_feet})
-        console.log(this.state)
+        debugger
+        this.props.createListing(this.state)
+        // console.log(this.state)
     }
 
     update(field) {
@@ -81,6 +46,10 @@ class ListingForm extends React.Component {
                             <option value="Staten Island" onChange={this.update('area')}>Staten Island</option>
                             <option value="New Jersey" onChange={this.update('area')}>New Jersey</option>
                         </select>
+                    </label>
+
+                    <label>Neighborhood
+                        <input type="text" value={this.state.neighborhood} onChange={this.update('neighborhood')}/>
                     </label>
                     
                     <label>Address
@@ -213,6 +182,20 @@ class ListingForm extends React.Component {
                     <label className="container">Swimming Pool
                     <input type="checkbox" value={!this.state.swimming_pool} onChange={this.update('swimming_pool')}/>
                     <span className="checkmark"></span>
+                    </label>
+
+                    <label className="container">Broker Fee
+                    <input type="checkbox" value={!this.state.broker_fee} onChange={this.update('broker_fee')}/>
+                    <span className="checkmark"></span>
+                    </label>
+
+                    <label className="container">Guarantors Accepted
+                    <input type="checkbox" value={!this.state.guarantors_accepted} onChange={this.update('guarantors_accepted')}/>
+                    <span className="checkmark"></span>
+                    </label>
+
+                    <label>Listing Agent
+                        <input type="text" value={this.state.listing_agent} onChange={this.update('listing_agent')}/>
                     </label>
 
                     <button type="submit" >Submit</button>
