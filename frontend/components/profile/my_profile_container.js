@@ -37,7 +37,8 @@ const mapStateToProps = state => ({
         "pets_allowed": false,
         "swimming_pool": false,
         "leasing_launch_date": "",
-        "listing_agent": ""
+        "listing_agent": "",
+        "image_urls": null
     },
     errors: state.errors.session
 });

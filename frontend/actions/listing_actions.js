@@ -36,10 +36,12 @@ export const fetchListing = (listingId) => dispatch => (
     ListingApiUtil.fetchListing(listingId).then((listing) => dispatch(receiveListing(listing)))
 );
 
-export const createListing = (listing) => dispatch => (
+export const createListing = (listing) => dispatch => {
+    debugger
+    return (
     ListingApiUtil.createListing(listing).then((listing) => dispatch(receiveListing(listing)), error => dispatch(receiveErrors(error.responseJSON)))
     // ListingApiUtil.createListing(listing).then((listing) => dispatch(receiveListing(listing)))
-);
+)};
 
 export const updateListing = (listing) => dispatch => (
     ListingApiUtil.updateListing(listing).then((listing) => dispatch(receiveListing(listing)), error => dispatch(receiveErrors(error.responseJSON)))

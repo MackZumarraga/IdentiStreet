@@ -10,58 +10,133 @@ class ListingForm extends React.Component {
         
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
+        this.createFormData = this.createFormData.bind(this)
     }
 
   
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
-
+        
 
         const address = this.state.address
         const addressString = address.split(" ").join("+")
         const requestUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${addressString}&key=${window.googleAPIKey}`
         
-        debugger
-        
+             
         const response = $.ajax({
             method: 'GET',
             url: requestUrl
         })
 
-        debugger
 
         let formatted_address, newLatitude, newLongitude
         response.then(
             () => {
-                debugger
                 formatted_address = response.responseJSON.results[0].formatted_address
                 newLatitude = response.responseJSON.results[0].geometry.location.lat
                 newLongitude = response.responseJSON.results[0].geometry.location.lng
-                debugger
+                
                 this.setState({
                     address: formatted_address,
                     latitude: newLatitude,
                     longitude: newLongitude
                 })
-                debugger
             }, 
             () => {
                 console.log("ERROR: Geocoding request failed")
             }
         ).then(
             () => {
-                this.props.createListing(this.state).then(this.props.history.push(`/search`));
+                this.createFormData(e);                
+                // this.props.createListing(this.createFormData).then(this.props.history.push(`/search`));                
             })
+    };
+
+
+
+    createFormData(e) {
+        e.preventDefault();
+
+        const {image_urls} = this.state
+        debugger
+
+        const formData = new FormData();
+        debugger
+
+        // formData.append('listing[image_urls]', this.state.image_urls)
+        formData.append('listing[address]', this.state.address);
+        formData.append('listing[area]', this.state.area);
+        formData.append('listing[neighborhood]', this.state.neighborhood);
+        formData.append('listing[latitude]', this.state.latitude);
+        formData.append('listing[longitude]', this.state.longitude);
+        formData.append('listing[category]', this.state.category);
+        formData.append('listing[price]', this.state.price);
+        formData.append('listing[bedrooms]', this.state.bedrooms);
+        formData.append('listing[baths]', this.state.baths);
+        formData.append('listing[description]', this.state.description);
+        formData.append('listing[square_feet]', this.state.square_feet);
+        formData.append('listing[dollars_per_sq_ft]', this.state.dollars_per_sq_ft);
+        formData.append('listing[broker_fee]', this.state.broker_fee);
+        formData.append('listing[outdoor_space]', this.state.outdoor_space);
+        formData.append('listing[dishwasher]', this.state.dishwasher);
+        formData.append('listing[washer_dryer_in_unit]', this.state.washer_dryer_in_unit);
+        formData.append('listing[washer_dryer_in_building]', this.state.washer_dryer_in_building);
+        formData.append('listing[guarantors_accepted]', this.state.guarantors_accepted);
+        formData.append('listing[furnished]', this.state.furnished);
+        formData.append('listing[fireplace]', this.state.fireplace);
+        formData.append('listing[central_air]', this.state.central_air);
+        formData.append('listing[city_view]', this.state.city_view);
+        formData.append('listing[park_view]', this.state.park_view);
+        formData.append('listing[skyline_view]', this.state.skyline_view);
+        formData.append('listing[water_view]', this.state.water_view);
+        formData.append('listing[elevator]', this.state.elevator);
+        formData.append('listing[doorman]', this.state.doorman);
+        formData.append('listing[gym]', this.state.gym);
+        formData.append('listing[garage_parking]', this.state.garage_parking);
+        formData.append('listing[pets_allowed]', this.state.pets_allowed);
+        formData.append('listing[swimming_pool]', this.state.swimming_pool);
+        formData.append('listing[leasing_launch_date]', this.state.leasing_launch_date);
+        formData.append('listing[listing_agent]', this.state.listing_agent);
+        // formData.append('listing[image_urls]', null
+
+        for (let i = 0; i < image_urls.length; i++) {
+            debugger
+            formData.append('listing[photos][]', image_urls[i])
+        }
+
+        // for (let i = 0; i < Object.values(this.state).length; i++) {
+            
+        //     let key = Object.keys(this.state)[i]
+        //     let value = Object.values(this.state)[i]
+            
+        //     formData.append(`listing[${key}]`, value)
+            
+        // };
+
+        debugger
+        this.props.createListing(formData).then(() => this.props.history.push(`/search`))
+        // this.props.createListing(formData).then((prop) => this.props.history.push(`/listing/${prop.listing.id}`))
     }
+
+
 
     update(field) {
         return e => this.setState({[field]: e.currentTarget.value})
         // return event => this.setState({[field]: event.target.value})
     }
 
+    
+    handleFile(e) {
+        debugger
+        console.log(this.state.image_urls)
+        this.setState({image_urls: e.target.files});
+        console.log("after", this.state.image_urls)
+        debugger
+    }
 
+    
+    
     // renderErrors() {
     //     debugger
     //     return(
@@ -75,12 +150,6 @@ class ListingForm extends React.Component {
            
     //     )
     // };
-
-    handleFile() {
-        console.log("hello")
-    }
-
-
 
 
     render() {
@@ -256,7 +325,11 @@ class ListingForm extends React.Component {
                     </div> */}
 
                     <label>Upload Photos
-                        <input type="file" onChange={this.handleFile}/>
+                        <input 
+                            type="file" 
+                            onChange={this.handleFile} 
+                            multiple
+                        />
                     </label>
                     
                     <button type="submit" >Submit</button>

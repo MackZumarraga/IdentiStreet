@@ -18,7 +18,9 @@ export const createListing = listing => {
     return $.ajax({
       method: 'POST',
       url: 'api/listings',
-      data: { listing }
+      data: listing,
+      contentType: false,
+      processData: false
     })
 };
   

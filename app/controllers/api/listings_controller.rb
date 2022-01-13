@@ -20,6 +20,7 @@ class Api::ListingsController < ApplicationController
     end
 
     def create
+        debugger
         @listing = Listing.new(listing_params)
 
         if @listing.save
@@ -89,7 +90,7 @@ class Api::ListingsController < ApplicationController
             :swimming_pool,
             :leasing_launch_date,
             :listing_agent,
-            image_urls: [],
+            photos: []
         )
     end
 end

@@ -33,4 +33,5 @@ json.extract! listing,
     :swimming_pool,
     :leasing_launch_date,
     :listing_agent
+# json.image_urls listing.photos.map { |photo| url_for(photo) } #originally not here
    
