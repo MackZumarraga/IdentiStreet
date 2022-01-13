@@ -15,7 +15,7 @@ const listingsReducer = (state = {}, action) => {
         delete nextState[action.listingId]
         return nextState;
       case RECEIVE_ERRORS:
-        return action.errors
+        return action.errors;
       default:
         return state;
     }
