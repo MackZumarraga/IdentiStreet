@@ -20,12 +20,14 @@ class Api::ListingsController < ApplicationController
     end
 
     def create
-        debugger
+        # debugger
         @listing = Listing.new(listing_params)
 
         if @listing.save
+            # debugger
             render "api/listings/show"
         else
+            # debugger
             render json: @listing.errors.full_messages, status: 422
         end
     end

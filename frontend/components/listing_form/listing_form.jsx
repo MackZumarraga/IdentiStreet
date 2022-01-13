@@ -115,8 +115,11 @@ class ListingForm extends React.Component {
         // };
 
         debugger
-        this.props.createListing(formData).then(() => this.props.history.push(`/search`))
-        // this.props.createListing(formData).then((prop) => this.props.history.push(`/listing/${prop.listing.id}`))
+        // this.props.createListing(formData).then(() => this.props.history.push(`/search`))
+        // this.props.createListing(formData).then(resp => this.props.history.push(`/listing/${resp.id}`))
+        this.props.createListing(formData)
+        .then(resp => this.props.history.push(`/listing/${Object.keys(resp.listing)[0]}`))
+        // .then(resp => console.log((resp.listing.id)))
     }
 
 
