@@ -59,10 +59,10 @@ class ListingForm extends React.Component {
         e.preventDefault();
 
         const {image_urls} = this.state
-        debugger
+        
 
         const formData = new FormData();
-        debugger
+        
 
         // formData.append('listing[image_urls]', this.state.image_urls)
         formData.append('listing[address]', this.state.address);
@@ -101,7 +101,6 @@ class ListingForm extends React.Component {
         // formData.append('listing[image_urls]', null
 
         for (let i = 0; i < image_urls.length; i++) {
-            debugger
             formData.append('listing[photos][]', image_urls[i])
         }
 
@@ -114,12 +113,12 @@ class ListingForm extends React.Component {
             
         // };
 
-        debugger
+        
         // this.props.createListing(formData).then(() => this.props.history.push(`/search`))
         // this.props.createListing(formData).then(resp => this.props.history.push(`/listing/${resp.id}`))
         this.props.createListing(formData)
         .then(resp => this.props.history.push(`/listing/${Object.keys(resp.listing)[0]}`))
-        // .then(resp => console.log((resp.listing.id)))
+        
     }
 
 
@@ -131,28 +130,11 @@ class ListingForm extends React.Component {
 
     
     handleFile(e) {
-        debugger
-        console.log(this.state.image_urls)
         this.setState({image_urls: e.target.files});
-        console.log("after", this.state.image_urls)
-        debugger
     }
 
     
-    
-    // renderErrors() {
-    //     debugger
-    //     return(
-    //         <ul>
-    //             {this.props.errors.map((error, i) => (
-    //                 <li className="error-li" key={i}>
-    //                     {error}
-    //                 </li>
-    //             ))}
-    //         </ul>
-           
-    //     )
-    // };
+
 
 
     render() {

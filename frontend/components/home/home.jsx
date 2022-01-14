@@ -8,7 +8,6 @@ import ListingIndexItem from '../listings/listing_index_item';
 class Home extends React.Component {
 
   componentDidMount() {
-    debugger
     this.props.fetchListings();
   }
 
@@ -26,7 +25,7 @@ class Home extends React.Component {
       trendingListings.push(listings[Object.keys(listings)[i]])
     }
 
-    debugger
+    
     return (
       <div className="body-width-maker">
         <div className="body-container">
@@ -34,7 +33,7 @@ class Home extends React.Component {
           <ul className="trending-apartments-items">
             {trendingListings.map(listing => (
               <ListingIndexItem listing={listing} key={Math.random()} />
-              // console.log(listing)
+              
             ))}
           </ul>
         </div>

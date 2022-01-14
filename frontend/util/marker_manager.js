@@ -16,7 +16,7 @@ class MarkerManager {
 //     //     .filter(benchId => !benchesObj[benchId])
 //     //     .forEach((benchId) => this.removeMarker(this.markers[benchId]))
 
-        console.log("time to update")
+       
 //         const listingsObj = {};
         listings.forEach(listing => listingsObj[listing.id] = listing)
 
