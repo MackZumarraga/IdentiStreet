@@ -79,13 +79,19 @@ const Footer = () => {
 
             <ul className="favicons">
                 <li>
-                    <a className="github-link" href="https://github.com/MackZumarraga">O</a>
+                    <a className="github-link" href="https://github.com/MackZumarraga">
+                        <img src="http://www.github.com/favicon.ico"/>
+                    </a>
                 </li>
                 <li>
-                    <a className="github-link" href="https://github.com/MackZumarraga">O</a>
+                    <a className="github-link" href="https://www.linkedin.com/in/mackzumarraga/">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" className="linked-in-favicon"/>
+                    </a>
                 </li>
                 <li>
-                    <a className="github-link" href="https://github.com/MackZumarraga">O</a>
+                    <a className="github-link" href="https://medium.com/@mackinjoshzumarraga">
+                        <img src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Medium-512.png" className="medium-favicon"/>
+                    </a>
                 </li>
             </ul>
 
