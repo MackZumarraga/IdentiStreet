@@ -1,9 +1,56 @@
 import React from 'react';
 
-export default () => (
-  <div>
-    <div className="body-container"></div>
-    {/* <div className="body-container">Extras like, explore NYC, trending apartments, blogs</div> */}
-    {/* <div className="footer-container">Footer</div> */}
-  </div>
-);
+import { connect } from 'react-redux';
+import { fetchListings } from '../../actions/listing_actions';
+
+import ListingIndexItem from '../listings/listing_index_item';
+
+class Home extends React.Component {
+
+  componentDidMount() {
+    debugger
+    this.props.fetchListings();
+  }
+
+  // componentDidUpdate() {
+  //   this.props.fetchListings();
+  // }
+  
+  render() {
+    
+    const {listings} = this.props
+
+    let trendingListings = []
+
+    for (let i = 0; i < 4; i++) {
+      trendingListings.push(listings[Object.keys(listings)[i]])
+    }
+
+    debugger
+    return (
+      <div className="body-width-maker">
+        <div className="body-container">
+          <div className="trending-apartments-title">Trending Apartments in NYC</div>
+          <ul className="trending-apartments-items">
+            {trendingListings.map(listing => (
+              <ListingIndexItem listing={listing} key={Math.random()} />
+              // console.log(listing)
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
+  }
+}
+
+
+const mstp = state => ({
+  listings: Object.values(state.entities.listings)
+});
+
+const mdtp = dispatch => ({
+  fetchListings: (listings) => dispatch(fetchListings(listings))
+
+});
+
+export default connect(mstp, mdtp)(Home);

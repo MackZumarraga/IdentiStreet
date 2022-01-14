@@ -25,6 +25,9 @@ class ListingIndexItem extends React.Component {
     }
 
     render() {
+        if (!this.props.listing) {
+            return null;
+        };
 
         const { address, neighborhood, category, image_urls, price, bedrooms, baths, square_feet, listing_agent } = this.props.listing
         return (
