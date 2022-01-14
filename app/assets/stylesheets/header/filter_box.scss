@@ -59,6 +59,7 @@
     display: flex;
     flex-direction: row;
     padding-right: 12px;
+    width: 100%;
 }
 
 .filter-box-input {
@@ -77,6 +78,10 @@
     width: 100%;
 }
 
+.filter-box-input::placeholder {
+    text-align: center;
+}
+
 .filter-box-input-range {
     align-items: center;
     background-color: rgb(255, 255, 255);
@@ -91,6 +96,10 @@
     transition-property: background-color, border-color, color;
     transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     width: 100%;
+}
+
+.filter-box-input-range::placeholder {
+    text-align: center;
 }
 
 .filter-box-input-range-max {
@@ -109,6 +118,10 @@
     width: 100%;
     margin-left: 2px;
     margin-right: 2px;
+}
+
+.filter-box-input-range-max {
+    text-align: center;
 }
 
 .filter-box-label {
