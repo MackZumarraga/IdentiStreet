@@ -105,7 +105,7 @@ l2 = Listing.create!(
     listing_agent: 'Olympus Associates'
 )
 
-l2file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l2file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room2.jpg')
 l2file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l2file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l2.photos.attach(io: l2file1, filename: 'bed_room.jpg')
@@ -148,7 +148,7 @@ l3 = Listing.create!(
     listing_agent: 'Sparta Associates'
 )
 
-l3file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l3file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room3.jpg')
 l3file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l3file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l3.photos.attach(io: l3file1, filename: 'bed_room.jpg')
@@ -191,7 +191,7 @@ l4 = Listing.create!(
     listing_agent: 'Olympus Associates'
 )
 
-l4file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l4file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room4.jpg')
 l4file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l4file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l4.photos.attach(io: l4file1, filename: 'bed_room.jpg')
@@ -236,7 +236,7 @@ l5 = Listing.create!(
     listing_agent: 'Diamond Residentials'
 )
 
-l5file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l5file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room5.jpg')
 l5file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l5file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l5.photos.attach(io: l5file1, filename: 'bed_room.jpg')
@@ -279,7 +279,7 @@ l6 = Listing.create!(
     listing_agent: 'Barron Listings'
 )
 
-l6file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l6file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room6.jpg')
 l6file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l6file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l6.photos.attach(io: l6file1, filename: 'bed_room.jpg')
@@ -322,7 +322,7 @@ l7 = Listing.create!(
     listing_agent: 'Hecksher Associates'
 )
 
-l7file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l7file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room7.jpg')
 l7file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l7file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l7.photos.attach(io: l7file1, filename: 'bed_room.jpg')
@@ -365,7 +365,7 @@ l8 = Listing.create!(
     listing_agent: 'Tara Group LLC'
 )
 
-l8file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l8file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room8.jpg')
 l8file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l8file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l8.photos.attach(io: l8file1, filename: 'bed_room.jpg')
@@ -454,7 +454,7 @@ l10 = Listing.create!(
     listing_agent: 'Prominent Group'
 )
 
-l10file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l10file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room2.jpg')
 l10file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l10file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l10.photos.attach(io: l10file1, filename: 'bed_room.jpg')
@@ -497,7 +497,7 @@ l11 = Listing.create!(
     listing_agent: 'OOP Estates'
 )
 
-l11file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l11file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room3.jpg')
 l11file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l11file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l11.photos.attach(io: l11file1, filename: 'bed_room.jpg')
@@ -540,7 +540,7 @@ l12 = Listing.create!(
     listing_agent: 'Harborside Group'
 )
 
-l12file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l12file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room4.jpg')
 l12file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l12file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l12.photos.attach(io: l12file1, filename: 'bed_room.jpg')
@@ -586,7 +586,7 @@ l13 = Listing.create!(
     listing_agent: 'Carnegie Realty'
 )
 
-l13file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l13file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room5.jpg')
 l13file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l13file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l13.photos.attach(io: l13file1, filename: 'bed_room.jpg')
@@ -629,7 +629,7 @@ l14 = Listing.create!(
     listing_agent: 'J.J Group'
 )
 
-l14file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l14file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room6.jpg')
 l14file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l14file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l14.photos.attach(io: l14file1, filename: 'bed_room.jpg')
@@ -672,7 +672,7 @@ l15 = Listing.create!(
     listing_agent: 'Sparta Associates'
 )
 
-l15file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l15file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room7.jpg')
 l15file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l15file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l15.photos.attach(io: l15file1, filename: 'bed_room.jpg')
@@ -715,7 +715,7 @@ l16 = Listing.create!(
     listing_agent: 'Pierre Homes'
 )
 
-l16file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room.jpg')
+l16file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room8.jpg')
 l16file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
 l16file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
 l16.photos.attach(io: l16file1, filename: 'bed_room.jpg')
