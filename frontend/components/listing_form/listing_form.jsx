@@ -33,6 +33,7 @@ class ListingForm extends React.Component {
         let formatted_address, newLatitude, newLongitude
         response.then(
             () => {
+                console.log(response)
                 formatted_address = response.responseJSON.results[0].formatted_address
                 newLatitude = response.responseJSON.results[0].geometry.location.lat
                 newLongitude = response.responseJSON.results[0].geometry.location.lng
@@ -64,7 +65,6 @@ class ListingForm extends React.Component {
         const formData = new FormData();
         
 
-        // formData.append('listing[image_urls]', this.state.image_urls)
         formData.append('listing[address]', this.state.address);
         formData.append('listing[area]', this.state.area);
         formData.append('listing[neighborhood]', this.state.neighborhood);
@@ -98,24 +98,13 @@ class ListingForm extends React.Component {
         formData.append('listing[swimming_pool]', this.state.swimming_pool);
         formData.append('listing[leasing_launch_date]', this.state.leasing_launch_date);
         formData.append('listing[listing_agent]', this.state.listing_agent);
-        // formData.append('listing[image_urls]', null
+        
 
         for (let i = 0; i < image_urls.length; i++) {
             formData.append('listing[photos][]', image_urls[i])
         }
 
-        // for (let i = 0; i < Object.values(this.state).length; i++) {
-            
-        //     let key = Object.keys(this.state)[i]
-        //     let value = Object.values(this.state)[i]
-            
-        //     formData.append(`listing[${key}]`, value)
-            
-        // };
-
-        
-        // this.props.createListing(formData).then(() => this.props.history.push(`/search`))
-        // this.props.createListing(formData).then(resp => this.props.history.push(`/listing/${resp.id}`))
+  
         this.props.createListing(formData)
         .then(resp => this.props.history.push(`/listing/${Object.keys(resp.listing)[0]}`))
         
