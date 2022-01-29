@@ -1,5 +1,6 @@
 json.extract! listing, 
     :id,
+    :user_id,
     :address,
     :area,
     :neighborhood,

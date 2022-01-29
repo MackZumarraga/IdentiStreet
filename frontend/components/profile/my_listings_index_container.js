@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 
 import { fetchListings } from '../../actions/listing_actions';
+import ListingIndex from '../listings/listing_index';
 // import ListingForm from '../listing_form/listing_form';
-import MyProfile from './my_profile';
+// import MyProfile from './my_profile';
 
 const mapStateToProps = state => ({
-    listings: Object.values(state.entities.listings[state.session.id]),
+    listings: Object.values(state.entities.listings).filter(listing => listing["user_id"] === state.entities.users[1]["id"]),
     errors: state.errors.session
 });
 
@@ -17,4 +18,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 // )(ListingForm);
-)(MyProfile);
+)(ListingIndex);

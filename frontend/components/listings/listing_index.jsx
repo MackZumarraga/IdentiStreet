@@ -15,7 +15,7 @@ class ListingIndex extends React.Component {
 
     render() {
         // const {listings} = this.props
-        
+        debugger
         return (
             <div className="listing-index-width-maker">
                 <div className="index-body-container">
