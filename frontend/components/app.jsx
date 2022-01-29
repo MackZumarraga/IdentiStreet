@@ -11,7 +11,8 @@ import HeaderContainer from "./header/header_container";
 import ListingsIndexContainer from "./listings/listing_index_container";
 import ListingShowContainer from "./listings/listing_show_container";
 import MyProfileContainer from "./profile/my_profile_container";
-// import ListingFormContainer from "./listing_form/listing_form_container";
+import ListingFormContainer from "./listing_form/listing_form_container";
+// import ListingForm from "./listing_form/listing_form"
 import FooterContainer from "./footer/footer_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
@@ -23,6 +24,7 @@ const App = () => (
       <Route exact path="/" component={Home}/>
       {/* <Route exact path={`/add`} component={ListingFormContainer}/> */}
       <ProtectedRoute exact path={`/my_profile`} component={MyProfileContainer}/>
+      <ProtectedRoute exact path={`/add_listing`} component={ListingFormContainer}/>
       {/* <ProtectedRoute exact path={`/add`} component={ListingFormContainer}/> */}
       {/* <ProtectedRoute exact path={`/account/:user_id`} component={AccountContainer}/> */}
 
