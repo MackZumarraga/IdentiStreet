@@ -27,7 +27,7 @@ u1 = User.create!(
 
 #LISTINGS
 l1 = Listing.create!(
-    user_id: 1,
+    user_id: u1.id,
     address: "555 ABC Street, New York NY 55555",
     area: "Manhattan",
     neighborhood: "Upper West Side",

@@ -8,8 +8,10 @@ class User < ApplicationRecord
   
     after_initialize :ensure_session_token
 
-    # has_many :listings,
-    #   foreign_key :user_id
+    has_many :listings,
+      class_name: :Listing,
+      foreign_key: :user_id,
+      dependent: :destroy
 
     # has_many :favorited_listings,
     #     foreign_key :user_id
