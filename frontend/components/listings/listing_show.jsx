@@ -30,8 +30,11 @@ class ListingShow extends React.Component {
             return null;
         };
 
+        const saveClass = (this.props.currentUserId === this.props.listing.user_id) ? "save-none" : "save-button"
         const requestClass = (this.props.currentUserId === this.props.listing.user_id) ? "request-tour-none" : "request-tour"
         const deleteClass = (this.props.currentUserId === this.props.listing.user_id) ? "delete-listing" : "delete-listing-none"
+        const editClass = (this.props.currentUserId === this.props.listing.user_id) ? "update-listing" : "update-listing-none"
+
         debugger
         const {address, price, broker_fee, bedrooms, baths, category, description, listing_agent, neighborhood, leasing_launch_date} = this.props.listing
         return(
@@ -71,8 +74,9 @@ class ListingShow extends React.Component {
                                 <div className="show-short-desc">{category} in {neighborhood}</div>
                             </div>
                             <div className="right-feature-functions">
-                                <button className="save-button">♡ SAVE</button>
+                                <button className={saveClass}>♡ SAVE</button>
                                 <button className={requestClass}>REQUEST A TOUR</button>
+                                <button className={editClass}>EDIT</button>
                                 <button className={deleteClass} onClick={this.handleDelete}>DELETE</button>
                                 {/* <button>+ ADD NOTES TO THIS LISTING</button> */}
                             </div>
