@@ -41,7 +41,8 @@ const mapStateToProps = state => ({
         "listing_agent": "",
         "image_urls": null
     },
-    errors: state.errors.session
+    errors: state.errors.session,
+    currentUserId: state.session["id"]
 });
 
 const mapDispatchToProps = dispatch => ({

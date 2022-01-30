@@ -10,7 +10,8 @@ import HeaderContainer from "./header/header_container";
 // import SignupFormContainer from "./session_form/signup_form_container";
 import ListingsIndexContainer from "./listings/listing_index_container";
 import ListingShowContainer from "./listings/listing_show_container";
-import MyProfileContainer from "./profile/my_profile_container";
+// import MyProfileContainer from "./profile/my_profile_container";
+import MyProfile from "./profile/my_profile";
 import ListingFormContainer from "./listing_form/listing_form_container";
 import MyListingsIndexContainer from "./profile/my_listings_index_container";
 import FooterContainer from "./footer/footer_container";
@@ -23,7 +24,7 @@ const App = () => (
       <NavBar/>
       <Route exact path="/" component={Home}/>
       {/* <Route exact path={`/add`} component={ListingFormContainer}/> */}
-      <ProtectedRoute exact path={`/my_profile`} component={MyProfileContainer}/>
+      <ProtectedRoute exact path={`/my_profile`} component={MyProfile}/>
       <ProtectedRoute exact path={`/add_listing`} component={ListingFormContainer}/>
       <ProtectedRoute exact path={`/my_listings`} component={MyListingsIndexContainer}/>
       {/* <ProtectedRoute exact path={`/add`} component={ListingFormContainer}/> */}

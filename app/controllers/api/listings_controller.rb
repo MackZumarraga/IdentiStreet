@@ -89,6 +89,7 @@ class Api::ListingsController < ApplicationController
             :swimming_pool,
             :leasing_launch_date,
             :listing_agent,
+            :user_id,
             photos: []
         )
     end

@@ -17,7 +17,7 @@ class ListingForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        
+        debugger
 
         const address = this.state.address
         const addressString = address.split(" ").join("+")
@@ -98,6 +98,7 @@ class ListingForm extends React.Component {
         formData.append('listing[swimming_pool]', this.state.swimming_pool);
         formData.append('listing[leasing_launch_date]', this.state.leasing_launch_date);
         formData.append('listing[listing_agent]', this.state.listing_agent);
+        formData.append('listing[user_id]', this.props.currentUserId);
         
 
         for (let i = 0; i < image_urls.length; i++) {
@@ -107,6 +108,7 @@ class ListingForm extends React.Component {
   
         this.props.createListing(formData)
         .then(resp => this.props.history.push(`/listing/${Object.keys(resp.listing)[0]}`))
+        
         
     }
 
