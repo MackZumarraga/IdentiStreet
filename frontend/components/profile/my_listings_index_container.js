@@ -6,7 +6,7 @@ import ListingIndex from '../listings/listing_index';
 // import MyProfile from './my_profile';
 
 const mapStateToProps = state => ({
-    listings: Object.values(state.entities.listings).filter(listing => listing["user_id"] === state.entities.users[1]["id"]),
+    listings: Object.values(state.entities.listings).filter(listing => listing["user_id"] === state.session["id"]),
     errors: state.errors.session
 });
 

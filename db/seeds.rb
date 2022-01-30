@@ -18,6 +18,13 @@ u1 = User.create!(
     password: 'password'
 )
 
+u2 = User.create!(
+    email: 'guest2@example.com',
+    name: 'guest2',
+    phone_number: '1111111111',
+    password: 'password'
+)
+
 # demo = User.create!(
 #     email: 'test@example.com',
 #     name: 'test',
@@ -114,91 +121,93 @@ l2.photos.attach(io: l2file1, filename: 'bed_room.jpg')
 l2.photos.attach(io: l2file2, filename: 'bath_room.jpg')
 l2.photos.attach(io: l2file3, filename: 'living_room.jpg')
 
-# l3 = Listing.create!(
-#     address: "333 DEF Street, New York NY 33333",
-#     area: "Queens",
-#     neighborhood: "Long Island City",
-#     latitude: 40.744791,
-#     longitude: -73.953994,
-#     category: "rental",
-#     price: 2500,
-#     bedrooms: 2,
-#     baths: 2,
-#     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est ultricies integer quis auctor elit sed vulputate mi. Sed elementum tempus egestas sed sed. Vel facilisis volutpat est velit egestas dui id ornare. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Dolor purus non enim praesent elementum facilisis leo vel. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Adipiscing enim eu turpis egestas. Quam pellentesque nec nam aliquam sem. A erat nam at lectus urna duis. Platea dictumst vestibulum rhoncus est. Massa sed elementum tempus egestas sed. Auctor urna nunc id cursus metus aliquam eleifend. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Elementum curabitur vitae nunc sed velit. Pellentesque id nibh tortor id aliquet lectus proin. Tempor id eu nisl nunc. Mattis ullamcorper velit sed ullamcorper.",
-#     square_feet: 360,
-#     dollars_per_sq_ft: 133,
-#     broker_fee: true,
-#     outdoor_space: true,
-#     dishwasher: true,
-#     washer_dryer_in_unit: true,
-#     washer_dryer_in_building: true,
-#     guarantors_accepted: true,
-#     furnished: true,
-#     fireplace: true,
-#     central_air: true,
-#     city_view: true,
-#     park_view: true,
-#     skyline_view: true,
-#     water_view: true,
-#     elevator: true,
-#     doorman: true,
-#     gym: true,
-#     garage_parking: true,
-#     pets_allowed: true,
-#     swimming_pool: true,
-#     leasing_launch_date: '10/25/2021',
-#     listing_agent: 'Sparta Associates'
-# )
+l3 = Listing.create!(
+    user_id: u2.id,
+    address: "333 DEF Street, New York NY 33333",
+    area: "Queens",
+    neighborhood: "Long Island City",
+    latitude: 40.744791,
+    longitude: -73.953994,
+    category: "rental",
+    price: 2500,
+    bedrooms: 2,
+    baths: 2,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est ultricies integer quis auctor elit sed vulputate mi. Sed elementum tempus egestas sed sed. Vel facilisis volutpat est velit egestas dui id ornare. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Dolor purus non enim praesent elementum facilisis leo vel. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Adipiscing enim eu turpis egestas. Quam pellentesque nec nam aliquam sem. A erat nam at lectus urna duis. Platea dictumst vestibulum rhoncus est. Massa sed elementum tempus egestas sed. Auctor urna nunc id cursus metus aliquam eleifend. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Elementum curabitur vitae nunc sed velit. Pellentesque id nibh tortor id aliquet lectus proin. Tempor id eu nisl nunc. Mattis ullamcorper velit sed ullamcorper.",
+    square_feet: 360,
+    dollars_per_sq_ft: 133,
+    broker_fee: true,
+    outdoor_space: true,
+    dishwasher: true,
+    washer_dryer_in_unit: true,
+    washer_dryer_in_building: true,
+    guarantors_accepted: true,
+    furnished: true,
+    fireplace: true,
+    central_air: true,
+    city_view: true,
+    park_view: true,
+    skyline_view: true,
+    water_view: true,
+    elevator: true,
+    doorman: true,
+    gym: true,
+    garage_parking: true,
+    pets_allowed: true,
+    swimming_pool: true,
+    leasing_launch_date: '10/25/2021',
+    listing_agent: 'Sparta Associates'
+)
 
-# l3file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room3.jpg')
-# l3file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
-# l3file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
-# l3.photos.attach(io: l3file1, filename: 'bed_room.jpg')
-# l3.photos.attach(io: l3file2, filename: 'bath_room.jpg')
-# l3.photos.attach(io: l3file3, filename: 'living_room.jpg')
+l3file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room3.jpg')
+l3file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
+l3file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
+l3.photos.attach(io: l3file1, filename: 'bed_room.jpg')
+l3.photos.attach(io: l3file2, filename: 'bath_room.jpg')
+l3.photos.attach(io: l3file3, filename: 'living_room.jpg')
 
-# l4 = Listing.create!(
-#     address: "111 GHI Avenue, New York NY 11111",
-#     area: "Brooklyn",
-#     neighborhood: "Brooklyn Heights",
-#     latitude: 40.697594,
-#     longitude: -73.996068,
-#     category: "rental",
-#     price: 4500,
-#     bedrooms: 2,
-#     baths: 2,
-#     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est ultricies integer quis auctor elit sed vulputate mi. Sed elementum tempus egestas sed sed. Vel facilisis volutpat est velit egestas dui id ornare. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Dolor purus non enim praesent elementum facilisis leo vel. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Adipiscing enim eu turpis egestas. Quam pellentesque nec nam aliquam sem. A erat nam at lectus urna duis. Platea dictumst vestibulum rhoncus est. Massa sed elementum tempus egestas sed. Auctor urna nunc id cursus metus aliquam eleifend. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Elementum curabitur vitae nunc sed velit. Pellentesque id nibh tortor id aliquet lectus proin. Tempor id eu nisl nunc. Mattis ullamcorper velit sed ullamcorper.",
-#     square_feet: 360,
-#     dollars_per_sq_ft: 133,
-#     broker_fee: true,
-#     outdoor_space: true,
-#     dishwasher: true,
-#     washer_dryer_in_unit: true,
-#     washer_dryer_in_building: true,
-#     guarantors_accepted: true,
-#     furnished: true,
-#     fireplace: true,
-#     central_air: true,
-#     city_view: true,
-#     park_view: true,
-#     skyline_view: true,
-#     water_view: true,
-#     elevator: true,
-#     doorman: true,
-#     gym: true,
-#     garage_parking: true,
-#     pets_allowed: true,
-#     swimming_pool: true,
-#     leasing_launch_date: '10/25/2021',
-#     listing_agent: 'Olympus Associates'
-# )
+l4 = Listing.create!(
+    user_id: u2.id,
+    address: "111 GHI Avenue, New York NY 11111",
+    area: "Brooklyn",
+    neighborhood: "Brooklyn Heights",
+    latitude: 40.697594,
+    longitude: -73.996068,
+    category: "rental",
+    price: 4500,
+    bedrooms: 2,
+    baths: 2,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est ultricies integer quis auctor elit sed vulputate mi. Sed elementum tempus egestas sed sed. Vel facilisis volutpat est velit egestas dui id ornare. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Dolor purus non enim praesent elementum facilisis leo vel. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Adipiscing enim eu turpis egestas. Quam pellentesque nec nam aliquam sem. A erat nam at lectus urna duis. Platea dictumst vestibulum rhoncus est. Massa sed elementum tempus egestas sed. Auctor urna nunc id cursus metus aliquam eleifend. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Elementum curabitur vitae nunc sed velit. Pellentesque id nibh tortor id aliquet lectus proin. Tempor id eu nisl nunc. Mattis ullamcorper velit sed ullamcorper.",
+    square_feet: 360,
+    dollars_per_sq_ft: 133,
+    broker_fee: true,
+    outdoor_space: true,
+    dishwasher: true,
+    washer_dryer_in_unit: true,
+    washer_dryer_in_building: true,
+    guarantors_accepted: true,
+    furnished: true,
+    fireplace: true,
+    central_air: true,
+    city_view: true,
+    park_view: true,
+    skyline_view: true,
+    water_view: true,
+    elevator: true,
+    doorman: true,
+    gym: true,
+    garage_parking: true,
+    pets_allowed: true,
+    swimming_pool: true,
+    leasing_launch_date: '10/25/2021',
+    listing_agent: 'Olympus Associates'
+)
 
-# l4file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room4.jpg')
-# l4file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
-# l4file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
-# l4.photos.attach(io: l4file1, filename: 'bed_room.jpg')
-# l4.photos.attach(io: l4file2, filename: 'bath_room.jpg')
-# l4.photos.attach(io: l4file3, filename: 'living_room.jpg')
+l4file1 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bed_room4.jpg')
+l4file2 = URI.open('https://identistreet-seeds.s3.amazonaws.com/bath_room.jpg')
+l4file3 = URI.open('https://identistreet-seeds.s3.amazonaws.com/living_room.jpg')
+l4.photos.attach(io: l4file1, filename: 'bed_room.jpg')
+l4.photos.attach(io: l4file2, filename: 'bath_room.jpg')
+l4.photos.attach(io: l4file3, filename: 'living_room.jpg')
 
 # ######
 
