@@ -106,7 +106,7 @@ class ListingForm extends React.Component {
         }
 
   
-        this.props.createListing(formData)
+        this.props.submitListing(formData)
         .then(resp => this.props.history.push(`/listing/${Object.keys(resp.listing)[0]}`))
         
         
@@ -131,6 +131,7 @@ class ListingForm extends React.Component {
     render() {
         return (
             <div className="listing-form-width-maker">
+                <h1 className="form-type-header">{this.props.formType}</h1>
                 <form onSubmit={this.handleSubmit} className="big-form">
                     <h1 className="form-section-title">ADDRESS</h1>
                     <div className="form-section-content">
@@ -343,7 +344,7 @@ class ListingForm extends React.Component {
                     </div>
                     
                     <div className="form-button-listing-container">
-                        <button type="submit" className="form-button-listing">Submit</button>
+                        <button type="submit" className="form-button-listing" value={this.props.formType}>{this.props.formType}</button>
                     </div>
                 </form>
 

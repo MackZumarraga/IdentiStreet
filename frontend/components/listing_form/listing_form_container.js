@@ -42,11 +42,12 @@ const mapStateToProps = state => ({
         "image_urls": null
     },
     errors: state.errors.session,
-    currentUserId: state.session["id"]
+    currentUserId: state.session["id"],
+    formType: 'Submit'
 });
 
 const mapDispatchToProps = dispatch => ({
-  createListing: listing => dispatch(createListing(listing))
+  submitListing: listing => dispatch(createListing(listing))
 });
 
 export default connect(

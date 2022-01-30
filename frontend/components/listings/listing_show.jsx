@@ -10,6 +10,7 @@ class ListingShow extends React.Component {
         super(props);
 
         this.handleDelete = this.handleDelete.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
     }
 
 
@@ -22,6 +23,13 @@ class ListingShow extends React.Component {
         debugger
         this.props.deleteListing(this.props.match.params.id)
         .then(resp => this.props.history.push(`/my_listings`))
+    }
+
+    handleUpdate(e) {
+        debugger
+        e.preventDefault();
+        debugger
+        this.props.history.push(`/listing/${this.props.match.params.id}/edit`)
     }
 
     render() {
@@ -76,7 +84,7 @@ class ListingShow extends React.Component {
                             <div className="right-feature-functions">
                                 <button className={saveClass}>♡ SAVE</button>
                                 <button className={requestClass}>REQUEST A TOUR</button>
-                                <button className={editClass}>EDIT</button>
+                                <button className={editClass} onClick={this.handleUpdate}>EDIT</button>
                                 <button className={deleteClass} onClick={this.handleDelete}>DELETE</button>
                                 {/* <button>+ ADD NOTES TO THIS LISTING</button> */}
                             </div>

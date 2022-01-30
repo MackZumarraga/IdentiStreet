@@ -6,6 +6,7 @@ import ListingForm from './listing_form'
 class EditListingForm extends React.Component {
 
     componentDidMount() {
+      debugger
       this.props.fetchListing(this.props.listing.id)
     };
   
@@ -25,10 +26,20 @@ class EditListingForm extends React.Component {
     }
   }
   
-  const mstp = (state, ownProps) => ({
-    listing: state.listings[ownProps.match.params.listingId],
-    formType: 'Update Listing'
-  });
+//   const mstp = (state, ownProps) => ({
+//     listing: state.entities.listings[ownProps.match.params.listingId],
+//     formType: 'Update Listing'
+//   });
+
+  const mstp = (state, ownProps) => {
+      debugger
+      return (
+        {
+            listing: state.entities.listings[ownProps.match.params.listingId],
+            formType: 'Update Listing'
+        }
+      )
+  };
   
   const mdtp = dispatch => ({
     fetchListing: (listingId) => dispatch(fetchListing(listingId)),
