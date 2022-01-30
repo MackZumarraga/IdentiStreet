@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
-import { fetchListing } from '../../actions/listing_actions'
+import { deleteListing, fetchListing } from '../../actions/listing_actions'
 import ListingShow from './listing_show';
 
 
 const mapStateToProps = (state, ownProps) => ({
-listing: state.entities.listings[ownProps.match.params.id]
+listing: state.entities.listings[ownProps.match.params.id],
+currentUserId: state.session["id"]
 });
 
 
 const mapDispatchToProps = dispatch => ({
-  fetchListing: listingId => dispatch(fetchListing(listingId))
+  fetchListing: listingId => dispatch(fetchListing(listingId)),
+  deleteListing: listingId => dispatch(deleteListing(listingId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListingShow);

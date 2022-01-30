@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 import ImageCarousel from './img_carousel';
 import Amenities from './amenities';
@@ -7,11 +8,20 @@ import Amenities from './amenities';
 class ListingShow extends React.Component {
     constructor(props) {
         super(props);
+
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
 
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.id)
+    }
+
+    handleDelete(e) {
+        e.preventDefault();
+        debugger
+        this.props.deleteListing(this.props.match.params.id)
+        .then(resp => this.props.history.push(`/my_listings`))
     }
 
     render() {
@@ -20,6 +30,9 @@ class ListingShow extends React.Component {
             return null;
         };
 
+        const requestClass = (this.props.currentUserId === this.props.listing.user_id) ? "request-tour-none" : "request-tour"
+        const deleteClass = (this.props.currentUserId === this.props.listing.user_id) ? "delete-listing" : "delete-listing-none"
+        debugger
         const {address, price, broker_fee, bedrooms, baths, category, description, listing_agent, neighborhood, leasing_launch_date} = this.props.listing
         return(
             <div className="listing-show-width-maker">
@@ -59,7 +72,8 @@ class ListingShow extends React.Component {
                             </div>
                             <div className="right-feature-functions">
                                 <button className="save-button">♡ SAVE</button>
-                                <button className="request-tour">REQUEST A TOUR</button>
+                                <button className={requestClass}>REQUEST A TOUR</button>
+                                <button className={deleteClass} onClick={this.handleDelete}>DELETE</button>
                                 {/* <button>+ ADD NOTES TO THIS LISTING</button> */}
                             </div>
                             <div>
@@ -77,4 +91,4 @@ class ListingShow extends React.Component {
     }
 };
 
-export default ListingShow;
+export default withRouter(ListingShow);
