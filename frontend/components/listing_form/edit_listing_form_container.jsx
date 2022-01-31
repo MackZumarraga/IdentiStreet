@@ -13,7 +13,8 @@ class EditListingForm extends React.Component {
     render () {
       // DO NOT MODIFY THIS FUNCTION
       const { listing, formType, submitListing } = this.props;
-  
+      
+
       // Hint: The event will not exist on the first render - what do we need to do
       // to get it?
       if (!listing) return null;
