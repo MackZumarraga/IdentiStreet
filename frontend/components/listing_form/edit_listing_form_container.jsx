@@ -43,7 +43,7 @@ class EditListingForm extends React.Component {
   
   const mdtp = dispatch => ({
     fetchListing: (listingId) => dispatch(fetchListing(listingId)),
-    submitListing: (listing) => dispatch(updateListing(listing))
+    submitListing: (listing, listingId) => dispatch(updateListing(listing, listingId))
   });
   
   export default connect(mstp, mdtp)(EditListingForm);

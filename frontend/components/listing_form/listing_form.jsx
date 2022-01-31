@@ -105,10 +105,17 @@ class ListingForm extends React.Component {
             formData.append('listing[photos][]', image_urls[i])
         }
 
-  
-        this.props.submitListing(formData)
-        .then(resp => this.props.history.push(`/listing/${Object.keys(resp.listing)[0]}`))
-        
+        const listingId = this.props.listing.id
+        debugger
+
+        if (formType === 'Submit') {
+            this.props.submitListing(formData)
+            .then(resp => this.props.history.push(`/listing/${Object.keys(resp.listing)[0]}`))
+        } else {
+            this.props.submitListing(formData, listingId)
+            .then(resp => this.props.history.push(`/listing/${Object.keys(resp.listing)[0]}`))
+        }
+
         
     }
 
@@ -129,6 +136,9 @@ class ListingForm extends React.Component {
 
 
     render() {
+
+        const photosContainerClass = (this.props.formType === 'Submit') ? "photos-container" : "photos-container-none"
+
         return (
             <div className="listing-form-width-maker">
                 <h1 className="form-type-header">{this.props.formType}</h1>
@@ -328,19 +338,20 @@ class ListingForm extends React.Component {
                         <br/>
                     </div> */}
 
-
-                    <h1 className="form-section-title">PHOTOS</h1>
-                    <div className="form-section-content">
-                        <label className="form-section-content-input-photo">
-                            <div className="upload-photos">Upload Photos</div>
-                            <input
-                                className="choose-files"
-                                style={{border: "none"}} 
-                                type="file" 
-                                onChange={this.handleFile} 
-                                multiple
-                            />
-                        </label>
+                    <div className={photosContainerClass}>
+                        <h1 className="form-section-title">PHOTOS</h1>
+                        <div className="form-section-content">
+                            <label className="form-section-content-input-photo">
+                                <div className="upload-photos">Upload Photos</div>
+                                <input
+                                    className="choose-files"
+                                    style={{border: "none"}} 
+                                    type="file" 
+                                    onChange={this.handleFile} 
+                                    multiple
+                                />
+                            </label>
+                        </div>
                     </div>
                     
                     <div className="form-button-listing-container">

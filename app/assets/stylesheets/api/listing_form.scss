@@ -39,6 +39,14 @@
     margin-bottom: 3%;
 }
 
+.photos-container {
+    display: flex;
+}
+
+.photos-container-none {
+    display: none;
+}
+
 .form-section-content-input {
     display: grid;
     grid-template-columns: 100px 200px;

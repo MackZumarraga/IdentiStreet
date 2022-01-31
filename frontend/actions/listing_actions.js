@@ -42,8 +42,8 @@ export const createListing = (listing) => dispatch => {
     // ListingApiUtil.createListing(listing).then((listing) => dispatch(receiveListing(listing)))
 )};
 
-export const updateListing = (listing) => dispatch => (
-    ListingApiUtil.updateListing(listing).then((listing) => dispatch(receiveListing(listing)), error => dispatch(receiveErrors(error.responseJSON)))
+export const updateListing = (listing, listingId) => dispatch => (
+    ListingApiUtil.updateListing(listing, listingId).then((listing) => dispatch(receiveListing(listing)), error => dispatch(receiveErrors(error.responseJSON)))
 );
 
 export const deleteListing = (listingId) => dispatch => (
