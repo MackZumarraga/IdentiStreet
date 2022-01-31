@@ -12,6 +12,7 @@ class ListingForm extends React.Component {
         this.handleUpdate = this.handleUpdate.bind(this)
         this.handleFile = this.handleFile.bind(this)
         this.createFormData = this.createFormData.bind(this)
+        // this.handleErrors = this.handleErrors(this)
     }
 
   
@@ -19,6 +20,15 @@ class ListingForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         debugger
+
+        if (this.state.address === "" || 
+            this.state.area === "" ||
+            this.state.bedrooms === 0 ||
+            this.state.baths === 0 ||
+            this.state.image_urls === null) {
+                // console.log("Some error handling happens")
+                return null;
+        }
 
         const address = this.state.address
         const addressString = address.split(" ").join("+")
@@ -59,6 +69,7 @@ class ListingForm extends React.Component {
     handleUpdate(e) {
         e.preventDefault();
         debugger
+
 
         const address = this.state.address
         const addressString = address.split(" ").join("+")
@@ -176,7 +187,16 @@ class ListingForm extends React.Component {
         this.setState({image_urls: e.target.files});
     }
 
-    
+
+    // handleErrors() {
+    //     if (this.state.address === "" || 
+    //         this.state.area === "" ||
+    //         this.state.bedrooms === 0 ||
+    //         this.state.baths === 0 ||
+    //         this.state.image_urls === null) {
+    //             console.log("Some error handling happens")
+    //         }
+    // }    
 
 
 
