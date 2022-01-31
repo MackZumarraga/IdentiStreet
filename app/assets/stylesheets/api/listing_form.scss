@@ -53,6 +53,17 @@
     margin-bottom: 1%;
 }
 
+.address-form {
+    // border-color: rgb(219, 59, 41);
+    // background-color: rgb(255, 243, 241);
+    background-color: white;
+}
+
+.address-error {
+    border-color: rgb(219, 59, 41);
+    background-color: rgb(255, 243, 241);
+}
+
 .form-section-content-input-photo {
     display: flex;
     flex-direction: column;

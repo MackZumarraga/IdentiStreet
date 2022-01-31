@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 
 
+
 class ListingForm extends React.Component {
     constructor(props) {
         super(props);
@@ -13,6 +14,7 @@ class ListingForm extends React.Component {
         this.handleFile = this.handleFile.bind(this)
         this.createFormData = this.createFormData.bind(this)
         // this.handleErrors = this.handleErrors(this)
+        this.addressClass = this.addressClass.bind(this)
     }
 
   
@@ -21,13 +23,17 @@ class ListingForm extends React.Component {
         e.preventDefault();
         debugger
 
-        if (this.state.address === "" || 
-            this.state.area === "" ||
-            this.state.bedrooms === 0 ||
-            this.state.baths === 0 ||
-            this.state.image_urls === null) {
-                // console.log("Some error handling happens")
-                return null;
+        // if (this.state.address === "" || 
+        //     this.state.area === "" ||
+        //     this.state.bedrooms === 0 ||
+        //     this.state.baths === 0 ||
+        //     this.state.image_urls === null) {
+        //         // console.log("Some error handling happens")
+        //         return null;
+        // }
+        this.addressClass()
+        if (this.state.address === "") {
+            return
         }
 
         const address = this.state.address
@@ -198,13 +204,20 @@ class ListingForm extends React.Component {
     //         }
     // }    
 
-
+    addressClass() {
+        if (this.state.address === "") {
+            this.setState({addressClass: "address-error"})
+        } else {
+            this.setState({addressClass: "address-form"})
+        }
+    }       
 
     render() {
 
         const photosContainerClass = (this.props.formType === 'Submit') ? "photos-container" : "photos-container-none"
         const handlerType = (this.props.formType === 'Submit') ? this.handleSubmit : this.handleUpdate
-    
+        const addressClass = addressClass
+
         return (
             <div className="listing-form-width-maker">
                 <h1 className="form-type-header">{this.props.formType}</h1>
@@ -228,7 +241,7 @@ class ListingForm extends React.Component {
                         </label>
                         
                         <label className="form-section-content-input">Address
-                            <input type="text" value={this.state.address} onChange={this.update('address')}/>
+                            <input className={this.state.addressClass} type="text" value={this.state.address} onChange={this.update('address')}/>
                         </label>
                         
                         <label className="form-section-content-input">Unit #

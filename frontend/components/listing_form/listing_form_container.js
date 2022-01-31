@@ -39,7 +39,8 @@ const mapStateToProps = state => ({
         "swimming_pool": false,
         "leasing_launch_date": "",
         "listing_agent": "",
-        "image_urls": null
+        "image_urls": null,
+        "addressClass": 'address-form'
     },
     errors: state.errors.session,
     currentUserId: state.session["id"],
