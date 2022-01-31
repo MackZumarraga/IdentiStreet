@@ -275,7 +275,12 @@ class ListingForm extends React.Component {
                         </label>
                         
                         <label className="form-section-content-input">Address
-                            <input className={this.state.addressClass} placeholder={this.state.formMessage} type="text" value={this.state.address} onChange={this.update('address')}/>
+                            <input 
+                                className={this.state.addressClass} 
+                                placeholder={this.state.formMessage} 
+                                type="text" 
+                                value={this.state.address} 
+                                onChange={this.update('address')}/>
                         </label>
                         
                         <label className="form-section-content-input">Unit #
@@ -318,7 +323,11 @@ class ListingForm extends React.Component {
                     <h1 className="form-section-title">PRICE</h1>
                     <div className="form-section-content">
                         <label className="form-section-content-input">Monthly rent $
-                            <input className={this.state.priceClass} type="text" value={this.state.priceMessage === "" ? this.state.price : this.state.priceMessage} onChange={this.state.priceMessage !== "" ? this.update('priceMessage') : this.update('price')}/>
+                            <input 
+                                className={this.state.priceClass} 
+                                type="text" 
+                                value={this.state.priceMessage === "" ? this.state.price : this.state.priceMessage} 
+                                onChange={this.state.priceMessage !== "" ? this.update('priceMessage') : this.update('price')}/>
                         </label>
 
                         <label className="form-section-content-input">Available On
