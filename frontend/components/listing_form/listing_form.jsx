@@ -16,6 +16,7 @@ class ListingForm extends React.Component {
         // this.handleErrors = this.handleErrors(this)
         this.addressClass = this.addressClass.bind(this)
         this.areaClass = this.areaClass.bind(this)
+        this.priceClass = this.priceClass.bind(this)
     }
 
   
@@ -34,9 +35,12 @@ class ListingForm extends React.Component {
         // }
         this.addressClass()
         this.areaClass()
+        this.priceClass()
 
         if (this.state.address === "" ||
-            this.state.area === undefined) {
+            this.state.area === "" ||
+            this.state.price === 0 ||
+            this.state.price === "") {
             return
         }
 
@@ -79,6 +83,14 @@ class ListingForm extends React.Component {
     handleUpdate(e) {
         e.preventDefault();
         debugger
+
+        this.addressClass()
+        this.areaClass()
+
+        if (this.state.address === "" ||
+            this.state.area === "") {
+            return
+        }
 
 
         const address = this.state.address
@@ -211,7 +223,7 @@ class ListingForm extends React.Component {
     addressClass() {
         if (this.state.address === "") {
             this.setState({addressClass: "form-error"})
-            this.setState({addressMessage: "Invalid location or empty"})
+            this.setState({formMessage: "Invalid entry or empty"})
         } else {
             this.setState({addressClass: "form-correct"})
         }
@@ -222,6 +234,15 @@ class ListingForm extends React.Component {
             this.setState({areaClass: "form-error"})
         } else {
             this.setState({areaClass: "form-correct"})
+        }
+    }
+
+    priceClass() {
+        if (this.state.price === 0 || this.state.price === "") {
+            this.setState({priceClass: "form-error"})
+            this.setState({priceMessage: "Invalid entry or empty"})
+        } else {
+            this.setState({priceClass: "form-correct"})
         }
     }
 
@@ -254,7 +275,7 @@ class ListingForm extends React.Component {
                         </label>
                         
                         <label className="form-section-content-input">Address
-                            <input className={this.state.addressClass} placeholder={this.state.addressMessage} type="text" value={this.state.address} onChange={this.update('address')}/>
+                            <input className={this.state.addressClass} placeholder={this.state.formMessage} type="text" value={this.state.address} onChange={this.update('address')}/>
                         </label>
                         
                         <label className="form-section-content-input">Unit #
@@ -297,7 +318,7 @@ class ListingForm extends React.Component {
                     <h1 className="form-section-title">PRICE</h1>
                     <div className="form-section-content">
                         <label className="form-section-content-input">Monthly rent $
-                            <input type="text" value={this.state.price} onChange={this.update('price')}/>
+                            <input className={this.state.priceClass} type="text" value={this.state.priceMessage === "" ? this.state.price : this.state.priceMessage} onChange={this.state.priceMessage !== "" ? this.update('priceMessage') : this.update('price')}/>
                         </label>
 
                         <label className="form-section-content-input">Available On
