@@ -30,11 +30,11 @@ class Api::ListingsController < ApplicationController
     end
 
     def update
-        debugger
+        # debugger
         @listing = Listing.find_by(id: params[:id])
 
         if @listing.update(listing_params)
-            debugger
+            # debugger
             render "api/listings/show"
         else
             render json: @listing.errors.full_messages, status: 422
@@ -57,6 +57,7 @@ class Api::ListingsController < ApplicationController
     end
 
     def listing_params
+        # debugger
         params.require(:listing).permit(
             :address,
             :area,
@@ -91,7 +92,11 @@ class Api::ListingsController < ApplicationController
             :swimming_pool,
             :leasing_launch_date,
             :listing_agent,
-            :user_id,
+            # :user_id,
+            # :id,
+            # :latitude,
+            # :longitude,
+            # :image_urls,
             photos: []
         )
     end

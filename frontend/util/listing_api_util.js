@@ -28,9 +28,9 @@ export const updateListing = (listing, listingId) => {
       method: 'PATCH',
       url: `api/listings/${listingId}`,
       // data: { listing }
-      data: listing,
-      contentType: false,
-      processData: false
+      data: {listing},
+      // contentType: false,
+      // processData: false
     })
 };
 

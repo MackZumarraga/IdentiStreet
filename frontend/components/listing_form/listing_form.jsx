@@ -9,6 +9,7 @@ class ListingForm extends React.Component {
         this.state = this.props.listing
         
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleUpdate = this.handleUpdate.bind(this)
         this.handleFile = this.handleFile.bind(this)
         this.createFormData = this.createFormData.bind(this)
     }
@@ -51,6 +52,45 @@ class ListingForm extends React.Component {
             () => {
                 this.createFormData(e);                
                 // this.props.createListing(this.createFormData).then(this.props.history.push(`/search`));                
+            })
+    };
+
+
+    handleUpdate(e) {
+        e.preventDefault();
+        debugger
+
+        const address = this.state.address
+        const addressString = address.split(" ").join("+")
+        const requestUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${addressString}&key=${window.googleAPIKey}`
+        
+             
+        const response = $.ajax({
+            method: 'GET',
+            url: requestUrl
+        })
+
+
+        let formatted_address, newLatitude, newLongitude
+        response.then(
+            () => {
+                console.log(response)
+                formatted_address = response.responseJSON.results[0].formatted_address
+                newLatitude = response.responseJSON.results[0].geometry.location.lat
+                newLongitude = response.responseJSON.results[0].geometry.location.lng
+                
+                this.setState({
+                    address: formatted_address,
+                    latitude: newLatitude,
+                    longitude: newLongitude
+                })
+            }, 
+            () => {
+                console.log("ERROR: Geocoding request failed")
+            }
+        ).then(() =>{
+            this.props.submitListing(this.state, this.props.listing.id)
+            .then(() => this.props.history.push(`/listing/${this.props.listing.id}`))
             })
     };
 
@@ -105,18 +145,23 @@ class ListingForm extends React.Component {
             formData.append('listing[photos][]', image_urls[i])
         }
 
-        const listingId = this.props.listing.id
-        debugger
+        // const listingId = this.props.listing.id
+        // debugger
 
-        if (formType === 'Submit') {
-            this.props.submitListing(formData)
-            .then(resp => this.props.history.push(`/listing/${Object.keys(resp.listing)[0]}`))
-        } else {
-            this.props.submitListing(formData, listingId)
-            .then(resp => this.props.history.push(`/listing/${Object.keys(resp.listing)[0]}`))
-        }
+        // if (this.props.formType === 'Submit') {
+        //     debugger
+        //     this.props.submitListing(formData)
+        //     .then(resp => this.props.history.push(`/listing/${Object.keys(resp.listing)[0]}`))
+        // } else {
+        //     this.props.submitListing(formData, listingId)
+        //     // .then(resp => this.props.history.push(`/listing/${Object.keys(resp.listing)[0]}`))
+        //     .then(() => this.props.history.push(`/listing/${listingId}`))
+        // }
 
-        
+        this.props.submitListing(formData)
+            .then(resp => this.props.history.push(`/listing/${Object.keys(resp.listing)[0]}`))
+
+    
     }
 
 
@@ -138,11 +183,12 @@ class ListingForm extends React.Component {
     render() {
 
         const photosContainerClass = (this.props.formType === 'Submit') ? "photos-container" : "photos-container-none"
-
+        const handlerType = (this.props.formType === 'Submit') ? this.handleSubmit : this.handleUpdate
+    
         return (
             <div className="listing-form-width-maker">
                 <h1 className="form-type-header">{this.props.formType}</h1>
-                <form onSubmit={this.handleSubmit} className="big-form">
+                <form onSubmit={handlerType} className="big-form">
                     <h1 className="form-section-title">ADDRESS</h1>
                     <div className="form-section-content">
                         <label className="form-section-content-input">Area
