@@ -40,7 +40,9 @@ const mapStateToProps = state => ({
         "leasing_launch_date": "",
         "listing_agent": "",
         "image_urls": null,
-        "addressClass": 'address-form'
+        "addressClass": 'form-correct',
+        "addressMessage": "",
+        "areaClass": 'form-correct'
     },
     errors: state.errors.session,
     currentUserId: state.session["id"],

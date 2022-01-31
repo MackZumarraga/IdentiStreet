@@ -15,6 +15,7 @@ class ListingForm extends React.Component {
         this.createFormData = this.createFormData.bind(this)
         // this.handleErrors = this.handleErrors(this)
         this.addressClass = this.addressClass.bind(this)
+        this.areaClass = this.areaClass.bind(this)
     }
 
   
@@ -32,7 +33,10 @@ class ListingForm extends React.Component {
         //         return null;
         // }
         this.addressClass()
-        if (this.state.address === "") {
+        this.areaClass()
+
+        if (this.state.address === "" ||
+            this.state.area === undefined) {
             return
         }
 
@@ -206,11 +210,20 @@ class ListingForm extends React.Component {
 
     addressClass() {
         if (this.state.address === "") {
-            this.setState({addressClass: "address-error"})
+            this.setState({addressClass: "form-error"})
+            this.setState({addressMessage: "Invalid location or empty"})
         } else {
-            this.setState({addressClass: "address-form"})
+            this.setState({addressClass: "form-correct"})
         }
-    }       
+    }
+    
+    areaClass() {
+        if (this.state.area === "") {
+            this.setState({areaClass: "form-error"})
+        } else {
+            this.setState({areaClass: "form-correct"})
+        }
+    }
 
     render() {
 
@@ -225,8 +238,8 @@ class ListingForm extends React.Component {
                     <h1 className="form-section-title">ADDRESS</h1>
                     <div className="form-section-content">
                         <label className="form-section-content-input">Area
-                            <select value={this.state.area} onChange={this.update('area')}>
-                                <option value={undefined}>Select Area</option>
+                            <select className={this.state.areaClass} value={this.state.area} onChange={this.update('area')}>
+                                <option value="undefined">Select Area</option>
                                 <option value="Manhattan" onChange={this.update('area')}>Manhattan</option>
                                 <option value="Brooklyn" onChange={this.update('area')}>Brooklyn</option>
                                 <option value="Queens" onChange={this.update('area')}>Queens</option>
@@ -241,7 +254,7 @@ class ListingForm extends React.Component {
                         </label>
                         
                         <label className="form-section-content-input">Address
-                            <input className={this.state.addressClass} type="text" value={this.state.address} onChange={this.update('address')}/>
+                            <input className={this.state.addressClass} placeholder={this.state.addressMessage} type="text" value={this.state.address} onChange={this.update('address')}/>
                         </label>
                         
                         <label className="form-section-content-input">Unit #
