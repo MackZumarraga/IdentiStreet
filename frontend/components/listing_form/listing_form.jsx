@@ -86,9 +86,12 @@ class ListingForm extends React.Component {
 
         this.addressClass()
         this.areaClass()
+        this.priceClass()
 
         if (this.state.address === "" ||
-            this.state.area === "") {
+            this.state.area === "" ||
+            this.state.price === 0 ||
+            this.state.price === "") {
             return
         }
 
