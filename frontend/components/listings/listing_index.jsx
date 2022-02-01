@@ -2,6 +2,7 @@ import React from "react";
 import ListingMap from "../listing_map/listing_map";
 // import { Link } from "react-router-dom";
 import ListingIndexItem from "./listing_index_item";
+import NavBar from "../nav_bar/nav_bar";
 
 class ListingIndex extends React.Component {
 
@@ -18,6 +19,9 @@ class ListingIndex extends React.Component {
         debugger
         return (
             <div className="listing-index-width-maker">
+                <div className="nav-bar-container">
+                    <NavBar />
+                </div>
                 <div className="index-body-container">
                     <div className="listing-index-container">
                         <ul className="listing-ul">

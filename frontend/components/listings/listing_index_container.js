@@ -3,8 +3,9 @@ import { fetchListings } from '../../actions/listing_actions';
 import { updateBounds } from '../../actions/filter_actions';
 import ListingIndex from './listing_index';
 
-const mstp = state => ({
-    listings: Object.values(state.entities.listings)
+const mstp = (state, ownProps) => ({
+    listings: Object.values(state.entities.listings),
+    ownProp: ownProps
 });
 
 const mdtp = dispatch => ({

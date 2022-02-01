@@ -22,7 +22,8 @@ const App = () => (
     <div>
       <Modal/>
       <HeaderContainer/>
-      <NavBar/>
+      {/* <NavBar/> */}
+      <Route exact path="/" component={NavBar}/>
       <Route exact path="/" component={Home}/>
       {/* <Route exact path={`/add`} component={ListingFormContainer}/> */}
       <ProtectedRoute exact path={`/my_profile`} component={MyProfile}/>
