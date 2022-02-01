@@ -17,6 +17,8 @@ class ListingForm extends React.Component {
         this.addressClass = this.addressClass.bind(this)
         this.areaClass = this.areaClass.bind(this)
         this.priceClass = this.priceClass.bind(this)
+
+        this.handleCancel = this.handleCancel.bind(this)
     }
 
   
@@ -249,6 +251,10 @@ class ListingForm extends React.Component {
         }
     }
 
+    handleCancel() {
+        this.props.history.goBack();
+    }
+
     render() {
 
         const photosContainerClass = (this.props.formType === 'Submit') ? "photos-container" : "photos-container-none"
@@ -257,7 +263,6 @@ class ListingForm extends React.Component {
 
         return (
             <div className="listing-form-width-maker">
-                <h1 className="form-type-header">{this.props.formType}</h1>
                 <form onSubmit={handlerType} className="big-form">
                     <h1 className="form-section-title">ADDRESS</h1>
                     <div className="form-section-content">
@@ -480,7 +485,10 @@ class ListingForm extends React.Component {
                     </div>
                     
                     <div className="form-button-listing-container">
-                        <button type="submit" className="form-button-listing" value={this.props.formType}>{this.props.formType}</button>
+                        <div className="button-container">
+                            <button type="submit" className="form-button-listing" value={this.props.formType}>{this.props.formType}</button>
+                            <button onClick={this.handleCancel} className="form-cancel-listing">Cancel</button>
+                        </div>
                     </div>
                 </form>
 

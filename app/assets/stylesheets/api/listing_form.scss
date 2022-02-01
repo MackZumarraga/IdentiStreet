@@ -82,6 +82,15 @@
     margin-top: 5%;
 }
 
+.button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-button-listing {
+    // width: 100px;
+    margin-bottom: 10px;
+}
 
 
 // .form-section-content-input {

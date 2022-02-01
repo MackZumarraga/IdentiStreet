@@ -72,7 +72,8 @@ class ListingShow extends React.Component {
                                 <h1 className="address-title">{address}</h1>
                                 <div className="show-price">${price.toLocaleString()}
                                     <span className="show-price-text"> for&nbsp;rent</span>
-                                    <span className="show-fee">{broker_fee ? " NO FEE" : null}</span>
+                                    {/* <span className="show-fee">{broker_fee ? " NO FEE" : null}</span> */}
+                                    <span className={broker_fee ? null : "show-fee"}>{broker_fee ? null : " NO FEE"}</span>
                                 </div>
                                 <div className="show-bed-bath">
                                     <div>{bedrooms + baths}&nbsp;rooms</div>
