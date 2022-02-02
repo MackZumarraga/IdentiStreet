@@ -13,8 +13,11 @@ class ListingIndex extends React.Component {
     }
 
     // componentDidUpdate() {
-    //     this.props.fetchListings(getState().ui.filters)
+    //     this.props.fetchListings()
     // }
+    componentWillUnmount() {
+        this.props.clearFilter();
+    }
 
     //define a function to pass to index item to keep context
 

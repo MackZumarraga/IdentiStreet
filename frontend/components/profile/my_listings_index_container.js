@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import { fetchListings } from '../../actions/listing_actions';
+import { clearFilter } from '../../actions/filter_actions';
 import ListingIndex from '../listings/listing_index';
 // import ListingForm from '../listing_form/listing_form';
 // import MyProfile from './my_profile';
@@ -11,7 +12,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchListings: (listings) => dispatch(fetchListings(listings))
+  fetchListings: (listings) => dispatch(fetchListings(listings)),
+  clearFilter: () => dispatch(clearFilter())
 });
 
 export default connect(

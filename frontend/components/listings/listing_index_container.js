@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchListings } from '../../actions/listing_actions';
 import { updateFilter } from '../../actions/filter_actions';
+import { clearFilter } from '../../actions/filter_actions';
 import ListingIndex from './listing_index';
 
 const mstp = state => ({
@@ -13,7 +14,8 @@ const mstp = state => ({
 
 const mdtp = dispatch => ({
     fetchListings: (filters) => dispatch(fetchListings(filters)), //-mack listings argument necessary here? - replace with filters
-    updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
+    updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+    clearFilter: () => dispatch(clearFilter())
 });
 
 export default connect(mstp, mdtp)(ListingIndex);
