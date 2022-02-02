@@ -3,7 +3,9 @@ class Api::ListingsController < ApplicationController
     before_action :require_logged_in, only: [:create, :update, :destroy]
 
     def index
-        @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
+        # debugger
+        # @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
+        @listings = params[:minPrice] && params[:maxPrice] ? Listing.where(price: (params[:minPrice]..params[:maxPrice])) : Listing.all
 
         # @listings = Listing.all
         render "api/listings/index"

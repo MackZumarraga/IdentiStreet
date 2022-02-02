@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
+// import { Link } from 'react-router-dom';
 
 import AdvancedSearch from './advanced_search';
 
@@ -49,13 +50,13 @@ class NavBarFilterBox extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this); 
-        this.update = this.update.bind(this)      ;
+        this.update = this.update.bind(this);
     }
 
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.updateFilter(this.state)
+        this.props.history.push("/search")
     };
 
     update(filter) {
@@ -76,7 +77,7 @@ class NavBarFilterBox extends React.Component {
                         <div className="classic-search">
                             <label className="filter-box-label">
                                 <div className="label-title">LOCATION</div>
-                                <input type="text" placeholder='Manhattan' className="filter-box-input" value={location} onChange={this.update('location')}></input>
+                                <input type="text" placeholder='Manhattan' className="filter-box-input" onChange={this.update('location')}></input>
                             </label>
                             <label className="filter-box-range">
                                 <div>
@@ -106,4 +107,4 @@ class NavBarFilterBox extends React.Component {
     }
 };
 
-export default NavBarFilterBox;
+export default withRouter(NavBarFilterBox);
