@@ -1,15 +1,19 @@
 import { connect } from 'react-redux';
-import { fetchListings } from '../../actions/listing_actions';
-import { updateBounds } from '../../actions/filter_actions'; //change to updatefilters
+// import { fetchListings } from '../../actions/listing_actions';
+import { updateFilter } from '../../actions/filter_actions'; //change to updatefilters
 import NavBar from './nav_bar';//require NavBar component
 
 const mstp = state => ({
-    listings: Object.values(state.entities.listings)
+    listings: Object.values(state.entities.listings),
     //add filters such as min and max price, location, bedrooms, advanced options
+    minPrice: state.ui.filters.minPrice,
+    maxPrice: state.ui.filters.maxPrice,
+    location: state.ui.filters.location,
+    bedrooms: state.ui.filters.bedrooms
 });
 
 const mdtp = dispatch => ({
-    updateBounds: (bounds) => dispatch(updateBounds(bounds)) //change to updatefilters
+    updateFilter: (filter, value) => dispatch(updateFilter(filter, value)) //change to updatefilters
 });
 
 export default connect(mstp, mdtp)(NavBar); //change to Navbar

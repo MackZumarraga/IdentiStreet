@@ -3,6 +3,7 @@ import { Link, Route, HashRouter, Redirect, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import Modal from "./modal/modal";
+import SearchContainer from "./nav_bar/search_container";
 import NavBar from "./nav_bar/nav_bar";
 import Home from "./home/home";
 import HeaderContainer from "./header/header_container";
@@ -23,7 +24,7 @@ const App = () => (
       <Modal/>
       <HeaderContainer/>
       {/* <NavBar/> */}
-      <Route exact path="/" component={NavBar}/>
+      <Route exact path="/" component={SearchContainer}/>
       <Route exact path="/" component={Home}/>
       {/* <Route exact path={`/add`} component={ListingFormContainer}/> */}
       <ProtectedRoute exact path={`/my_profile`} component={MyProfile}/>
