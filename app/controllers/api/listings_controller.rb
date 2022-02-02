@@ -3,16 +3,19 @@ class Api::ListingsController < ApplicationController
     before_action :require_logged_in, only: [:create, :update, :destroy]
 
     def index
+        #location
+        location = params[:location] == "" || params[:location].nil? ? nil : params[:location]
 
+        #price
         default_max_price = 9999999999
         default_min_price = 1
-        min_price = params[:minPrice].nil? ? default_min_price : params[:minPrice].to_i
+        min_price = params[:minPrice].nil? || params[:minPrice] == ""  ? default_min_price : params[:minPrice].to_i
         max_price = params[:maxPrice].nil? || params[:maxPrice] == "" ? default_max_price : params[:maxPrice].to_i
         # debugger
         # debugger
         # @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
         # debugger
-        @listings = params[:location] ? Listing.where("neighborhood = ? or area = ?", params[:location], params[:location]) : Listing.all
+        @listings = !location.nil? ? Listing.where("neighborhood = ? or area = ?", params[:location], params[:location]) : Listing.all
         # debugger
         # @listings = params[:minPrice] || params[:maxPrice] ? @listings.where(price: (min_price..max_price)) : @listings.all
         @listings = @listings.where(price: (min_price..max_price))
