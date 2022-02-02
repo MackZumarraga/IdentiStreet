@@ -15,12 +15,19 @@ class ListingIndex extends React.Component {
     //define a function to pass to index item to keep context
 
     render() {
-        // const {listings} = this.props
+        const {minPrice, maxPrice, location, bedrooms, updateFilter} = this.props
+
         debugger
         return (
             <div className="listing-index-width-maker">
                 <div className="nav-bar-container">
-                    <NavBar />
+                    <NavBar
+                        minPrice={minPrice}
+                        maxPrice={maxPrice}
+                        location={location}
+                        bedrooms={bedrooms}
+                        updateFilter={updateFilter}
+                    />
                 </div>
                 <div className="index-body-container">
                     <div className="listing-index-container">

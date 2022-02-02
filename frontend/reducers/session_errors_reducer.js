@@ -6,7 +6,11 @@ const sessionErrorsReducer = (state = [], action) => {
 
     switch(action.type) {
         case RECEIVE_ERRORS:
-            return action.errors
+            if (action.errors === undefined) {
+                return state;
+            } else {
+                return action.errors
+            }
         case RECEIVE_CURRENT_USER:
             return [];
         case CLEAR_ERRORS:

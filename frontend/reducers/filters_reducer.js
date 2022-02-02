@@ -1,10 +1,10 @@
 import { UPDATE_FILTER } from '../actions/filter_actions';
 
 const defaultFilters = Object.freeze({
-  minPrice: "",
-  maxPrice: "",
+  minPrice: 0,
+  maxPrice: 10000,
   location: "",
-  bedrooms: ""
+  bedrooms: 5
 });
 
 const filtersReducer = (state = defaultFilters, action) => {
