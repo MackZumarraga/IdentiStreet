@@ -12,6 +12,9 @@ class Api::ListingsController < ApplicationController
         min_price = params[:minPrice].nil? || params[:minPrice] == ""  ? default_min_price : params[:minPrice].to_i
         max_price = params[:maxPrice].nil? || params[:maxPrice] == "" ? default_max_price : params[:maxPrice].to_i
         # debugger
+
+        #bedrooms
+        bedrooms = params[:bedrooms] == "" || params[:bedrooms].nil? ? nil : params[:bedrooms]
         # debugger
         # @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
         # debugger
@@ -20,7 +23,7 @@ class Api::ListingsController < ApplicationController
         # @listings = params[:minPrice] || params[:maxPrice] ? @listings.where(price: (min_price..max_price)) : @listings.all
         @listings = @listings.where(price: (min_price..max_price))
         # debugger
-        # @listings = params[:bedrooms] ? @listings.where(bedrooms: params[:bedrooms]) : @listings.all
+        @listings = !bedrooms.nil? ? @listings.where(bedrooms: params[:bedrooms]) : @listings.all
         # @listings = Listing.all
         render "api/listings/index"
     end
