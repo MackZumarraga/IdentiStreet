@@ -4,15 +4,20 @@ class Api::ListingsController < ApplicationController
 
     def index
 
-        default_max_price = 9999999999;
+        default_max_price = 9999999999
+        default_min_price = 1
+        min_price = params[:minPrice].nil? ? default_min_price : params[:minPrice].to_i
+        max_price = params[:maxPrice].nil? || params[:maxPrice] == "" ? default_max_price : params[:maxPrice].to_i
+        # debugger
         # debugger
         # @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
         # debugger
         @listings = params[:location] ? Listing.where("neighborhood = ? or area = ?", params[:location], params[:location]) : Listing.all
         # debugger
-        @listings = params[:minPrice] && params[:maxPrice] ? @listings.where(price: (params[:minPrice]..params[:maxPrice])) : @listings.all
+        # @listings = params[:minPrice] || params[:maxPrice] ? @listings.where(price: (min_price..max_price)) : @listings.all
+        @listings = @listings.where(price: (min_price..max_price))
         # debugger
-        @listings = params[:bedrooms] ? @listings.where(bedrooms: params[:bedrooms]) : @listings.all
+        # @listings = params[:bedrooms] ? @listings.where(bedrooms: params[:bedrooms]) : @listings.all
         # @listings = Listing.all
         render "api/listings/index"
     end
