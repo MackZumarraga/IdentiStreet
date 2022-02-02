@@ -53,9 +53,13 @@ class NavBarFilterBox extends React.Component {
         this.update = this.update.bind(this);
     }
 
+    // componentDidMount() {
+    //     this.props.fetchListings(getState().ui.filters)
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.fetchListings(getState().ui.filters)
         this.props.history.push("/search")
     };
 
@@ -66,7 +70,7 @@ class NavBarFilterBox extends React.Component {
 
 
     render() {
-        const {minPrice, maxPrice, location, bedrooms} = this.props
+        // const {minPrice, maxPrice, location, bedrooms} = this.props
         
         return (
             <div className="filter-box"> 

@@ -12,7 +12,7 @@ const mstp = state => ({
 });
 
 const mdtp = dispatch => ({
-    fetchListings: (listings) => dispatch(fetchListings(listings)), //-mack listings argument necessary here?
+    fetchListings: (filters) => dispatch(fetchListings(filters)), //-mack listings argument necessary here? - replace with filters
     updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
 });
 

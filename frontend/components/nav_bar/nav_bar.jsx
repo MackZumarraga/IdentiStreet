@@ -19,7 +19,7 @@ class NavBar extends React.Component {
 
 
   render() {
-      const {minPrice, maxPrice, location, bedrooms, updateFilter} = this.props
+      const {minPrice, maxPrice, location, bedrooms, updateFilter, fetchListings} = this.props
 
       return (
         <div className="menu-filter-width-maker">
@@ -34,6 +34,7 @@ class NavBar extends React.Component {
               location={location}
               bedrooms={bedrooms}
               updateFilter={updateFilter}
+              fetchListings={fetchListings}
             />
           </div>
         </div>

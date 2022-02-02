@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-// import { fetchListings } from '../../actions/listing_actions';
+import { fetchListings } from '../../actions/listing_actions';
 import { updateFilter } from '../../actions/filter_actions'; //change to updatefilters
 import NavBar from './nav_bar';//require NavBar component
 
@@ -13,7 +13,8 @@ const mstp = state => ({
 });
 
 const mdtp = dispatch => ({
-    updateFilter: (filter, value) => dispatch(updateFilter(filter, value)) //change to updatefilters
+    updateFilter: (filter, value) => dispatch(updateFilter(filter, value)), //change to updatefilters
+    fetchListings: (filters) => dispatch(fetchListings(filters))
 });
 
 export default connect(mstp, mdtp)(NavBar); //change to Navbar

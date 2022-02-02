@@ -9,13 +9,17 @@ class ListingIndex extends React.Component {
     //some state - whatever info the marker needs and passed as prop to map
 
     componentDidMount() {
-        this.props.fetchListings();
+        this.props.fetchListings(getState().ui.filters);
     }
+
+    // componentDidUpdate() {
+    //     this.props.fetchListings(getState().ui.filters)
+    // }
 
     //define a function to pass to index item to keep context
 
     render() {
-        const {minPrice, maxPrice, location, bedrooms, updateFilter} = this.props
+        const {minPrice, maxPrice, location, bedrooms, updateFilter, fetchListings} = this.props
 
         debugger
         return (
@@ -27,6 +31,7 @@ class ListingIndex extends React.Component {
                         location={location}
                         bedrooms={bedrooms}
                         updateFilter={updateFilter}
+                        fetchListings={fetchListings}
                     />
                 </div>
                 <div className="index-body-container">
