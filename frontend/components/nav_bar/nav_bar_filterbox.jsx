@@ -82,17 +82,17 @@ class NavBarFilterBox extends React.Component {
                             <label className="filter-box-range">
                                 <div>
                                     <div className="label-title">MINIMUM PRICE</div>
-                                    <input type="text" placeholder='Any' className="filter-box-input-range" value={minPrice} onChange={this.update('minPrice')}></input>
+                                    <input type="text" placeholder='Any' className="filter-box-input-range" onChange={this.update('minPrice')}></input>
                                 </div>
                                 &nbsp;
                                 <div>
                                     <div className="label-title">MAXIMUM PRICE</div>
-                                    <input type="text" placeholder='Any' className="filter-box-input-range-max" value={maxPrice} onChange={this.update('maxPrice')}></input>
+                                    <input type="text" placeholder='Any' className="filter-box-input-range-max" onChange={this.update('maxPrice')}></input>
                                 </div>
                             </label>
                             <label className="filter-box-label">
                                 <div className="label-title">BEDROOMS</div>
-                                <input type="text" placeholder='Studio 1 2 3 4+' className="filter-box-input" value={bedrooms} onChange={this.update('bedrooms')}></input>
+                                <input type="text" placeholder='Studio 1 2 3 4+' className="filter-box-input" onChange={this.update('bedrooms')}></input>
                             </label>
                             <label className="filter-box-label">
                                 {/* <Link to="/search" className="filter-search-button">SEARCH</Link> */}
