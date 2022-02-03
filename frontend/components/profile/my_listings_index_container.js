@@ -10,8 +10,7 @@ import MyListingsIndex from './my_listings_index';
 
 const mapStateToProps = (state, ownProps) => ({
     listings: Object.values(state.entities.listings).filter(listing => listing["user_id"] === state.session["id"]),
-    errors: state.errors.session,
-    inMyListings: ownProps.match.params
+    errors: state.errors.session
 });
 
 const mapDispatchToProps = dispatch => ({

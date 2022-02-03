@@ -29,10 +29,10 @@ class NavBar extends React.Component {
               <NavBarSearch/>
             </div>
             <NavBarFilterBox
-              minPrice={minPrice}
-              maxPrice={maxPrice}
-              location={location}
-              bedrooms={bedrooms}
+              // minPrice={minPrice}
+              // maxPrice={maxPrice}
+              // location={location}
+              // bedrooms={bedrooms}
               updateFilter={updateFilter}
               fetchListings={fetchListings}
             />

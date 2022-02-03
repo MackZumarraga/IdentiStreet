@@ -4,6 +4,8 @@ import { withRouter } from 'react-router';
 import ImageCarousel from './img_carousel';
 import Amenities from './amenities';
 
+import NavBar from '../nav_bar/nav_bar';
+
 
 class ListingShow extends React.Component {
     constructor(props) {
@@ -45,9 +47,14 @@ class ListingShow extends React.Component {
 
         debugger
         const {address, price, broker_fee, bedrooms, baths, category, description, listing_agent, neighborhood, leasing_launch_date} = this.props.listing
+        const { updateFilter, fetchListings } = this.props
         return(
             <div className="listing-show-width-maker">
                 <div className="listing-show-container">
+                    <NavBar 
+                        updateFilter={updateFilter}
+                        fetchListings={fetchListings}
+                    />
                     <div className="listing-show-header"></div>
                     <div className="listing-show-content">
                         <div className="listing-show-left">
