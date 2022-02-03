@@ -29,7 +29,10 @@ class NavBar extends React.Component {
                updateFilter={updateFilter}
                fetchListings={fetchListings}
               />
-              <NavBarSearch/>
+              <NavBarSearch
+               updateFilter={updateFilter}
+               fetchListings={fetchListings}
+              />
             </div>
             <NavBarFilterBox
               minPrice={minPrice}
