@@ -1,10 +1,11 @@
 import React from "react";
+// import ListingMap from "../listing_map/listing_map";
 import ListingMap from "../listing_map/listing_map";
 // import { Link } from "react-router-dom";
-import ListingIndexItem from "./listing_index_item";
+import ListingIndexItem from "../listings/listing_index_item";
 import NavBar from "../nav_bar/nav_bar";
 
-class ListingIndex extends React.Component {
+class MyListingsIndex extends React.Component {
 
     //some state - whatever info the marker needs and passed as prop to map
 
@@ -15,14 +16,14 @@ class ListingIndex extends React.Component {
     // componentDidUpdate() {
     //     this.props.fetchListings()
     // }
-    componentWillUnmount() {
-        debugger
+    // componentWillUnmount() {
+    //     debugger
         // if (!this.props.match.path === '/my_listings') {
         //     this.props.clearFilter();
         // }
         // this.props.match.path === '/search' ? null: this.props.clearFilter();
-        this.props.clearFilter();
-    }
+    //     this.props.clearFilter();
+    // }
 
     //define a function to pass to index item to keep context
 
@@ -60,7 +61,7 @@ class ListingIndex extends React.Component {
     }
 };
 
-export default ListingIndex;
+export default MyListingsIndex;
 
 
 //-mack - sorting & number of available listings as header for search result
