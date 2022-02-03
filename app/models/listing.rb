@@ -5,9 +5,17 @@ class Listing < ApplicationRecord
         class_name: :User,
         foreign_key: :user_id
 
-    # has_many :favorites
+    has_many :favorites,
+      class_name: :Favorite,
+      foreign_key: :listing_id,
+      dependent: :destroy
+      
     # has_one_attached :photo
     has_many_attached :photos
+
+    def favorited?(user)
+        !!self.favorites.find{ |favorite| favorite.user_id == user.id }
+    end
 
     def self.in_bounds(bounds)
         self.where("lat < ?", bounds[:northEast][:lat])
