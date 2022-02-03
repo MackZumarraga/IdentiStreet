@@ -103,7 +103,7 @@ class NavBarFilterBox extends React.Component {
                                 <button type="submit" className="filter-search-button">SEARCH</button>
                             </label>
                         </div>
-                        <AdvancedSearch/>
+                        {/* <AdvancedSearch/> */}
                     </form>
                 </div>
             </div>          
