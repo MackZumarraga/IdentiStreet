@@ -60,6 +60,15 @@ class ListingShow extends React.Component {
         debugger
         const {address, price, broker_fee, bedrooms, baths, category, description, listing_agent, neighborhood, leasing_launch_date} = this.props.listing
         const { updateFilter, fetchListings } = this.props
+
+        const {liked_by_current} = this.props.listing
+        const openHeart = liked_by_current ? "open-heart-none" : "open-heart-show"
+        const closeHeart = liked_by_current ? "close-heart-show" : "close-heart-none"
+        // const openHeart = liked_by_current ? "open-heart-none" : "open-heart-show"
+        // const closeHeart = liked_by_current ? "close-heart-show" : "close-heart-none"
+        const saveText = liked_by_current ? "save-text-none" : "save-text"
+        const savedText = liked_by_current ? "saved-text" : "saved-text-none"
+
         return(
             <div className="listing-show-width-maker">
                 <div className="listing-show-container">
@@ -102,7 +111,12 @@ class ListingShow extends React.Component {
                                 <div className="show-short-desc">{category} in {neighborhood}</div>
                             </div>
                             <div className="right-feature-functions">
-                                <button className={saveClass} onClick={this.handleSave}>♡ SAVE</button>
+                                <button className={saveClass} onClick={this.handleSave}>
+                                    <span id={openHeart}>♡ </span>
+                                    <span id={closeHeart}>♥ </span>
+                                    <span id={saveText}>SAVE </span>
+                                    <span id={savedText}>SAVED </span>
+                                    </button>
                                 <button className={requestClass}>REQUEST A TOUR</button>
                                 <button className={editClass} onClick={this.handleUpdate}>EDIT</button>
                                 <button className={deleteClass} onClick={this.handleDelete}>DELETE</button>
