@@ -45,6 +45,9 @@ class ListingIndexItem extends React.Component {
         const openHeart = liked_by_current ? "open-heart-none" : "open-heart-show"
         const closeHeart = liked_by_current ? "close-heart-show" : "close-heart-none"
 
+        const ownListing = (this.props.currentUserId === this.props.listing.user_id) ? "own-listing-show" : "own-listing-none"
+        const displayHeart = (this.props.currentUserId === this.props.listing.user_id) ? "favorite-listing-button-none" : "favorite-listing-button"
+
         return (
             <li className="listing-index-item" onClick={this.handleClick}>
                 <div className="listing-top">
@@ -67,7 +70,8 @@ class ListingIndexItem extends React.Component {
                         </div>
                     </div>
                     <div className="favorite-wrapper">
-                        <button type="submit" className="favorite-listing-button" onClick={this.handleHeart}>
+                        <span className={ownListing}>OWN&nbsp;LISTING</span>
+                        <button type="submit" className={displayHeart} onClick={this.handleHeart}>
                             <span id={openHeart}>♡ </span>
                             <span id={closeHeart}>♥ </span>
                         </button>

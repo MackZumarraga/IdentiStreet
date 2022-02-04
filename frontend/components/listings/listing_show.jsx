@@ -51,7 +51,7 @@ class ListingShow extends React.Component {
         if (!this.props.listing) {
             return null;
         };
-
+        debugger
         const saveClass = (this.props.currentUserId === this.props.listing.user_id) ? "save-none" : "save-button"
         const requestClass = (this.props.currentUserId === this.props.listing.user_id) ? "request-tour-none" : "request-tour"
         const deleteClass = (this.props.currentUserId === this.props.listing.user_id) ? "delete-listing" : "delete-listing-none"
