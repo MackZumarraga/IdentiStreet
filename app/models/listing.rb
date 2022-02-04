@@ -9,12 +9,12 @@ class Listing < ApplicationRecord
       class_name: :Favorite,
       foreign_key: :listing_id,
       dependent: :destroy
-      
+
     # has_one_attached :photo
     has_many_attached :photos
 
-    def favorited?(user)
-        !!self.favorites.find{ |favorite| favorite.user_id == user.id }
+    def favorited?(currentUserId)
+        !!self.favorites.find{ |favorite| favorite.user_id == currentUserId }
     end
 
     def self.in_bounds(bounds)

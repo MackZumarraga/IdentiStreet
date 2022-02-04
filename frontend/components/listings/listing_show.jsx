@@ -13,12 +13,14 @@ class ListingShow extends React.Component {
 
         this.handleDelete = this.handleDelete.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleSave = this.handleSave.bind(this);
     }
 
 
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.id)
     }
+
 
     handleDelete(e) {
         e.preventDefault();
@@ -32,6 +34,16 @@ class ListingShow extends React.Component {
         e.preventDefault();
         debugger
         this.props.history.push(`/listing/${this.props.match.params.id}/edit`)
+    }
+
+    handleSave(e) {
+        e.preventDefault();
+        debugger
+        if (!this.props.listing.liked_by_current) {
+            this.props.favoriteListing(this.props.currentUserId, this.props.listing.id).then(() => this.props.fetchListing(this.props.match.params.id))
+        } else {
+            this.props.unfavoriteListing(this.props.currentUserId, this.props.listing.id).then(() => this.props.fetchListing(this.props.match.params.id))
+        }
     }
 
     render() {
@@ -90,7 +102,7 @@ class ListingShow extends React.Component {
                                 <div className="show-short-desc">{category} in {neighborhood}</div>
                             </div>
                             <div className="right-feature-functions">
-                                <button className={saveClass}>♡ SAVE</button>
+                                <button className={saveClass} onClick={this.handleSave}>♡ SAVE</button>
                                 <button className={requestClass}>REQUEST A TOUR</button>
                                 <button className={editClass} onClick={this.handleUpdate}>EDIT</button>
                                 <button className={deleteClass} onClick={this.handleDelete}>DELETE</button>

@@ -49,3 +49,4 @@ export const updateListing = (listing, listingId) => dispatch => (
 export const deleteListing = (listingId) => dispatch => (
     ListingApiUtil.deleteListing(listingId).then((listing) => dispatch(removeListing(listing.id)), error => dispatch(receiveErrors(error.responseJSON)))
 );
+

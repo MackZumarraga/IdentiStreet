@@ -41,4 +41,32 @@ export const deleteListing = id => {
     })
 };
 
+export const favoriteListing = (userId, listingId) => {
+  // debugger
+  return $.ajax({
+    method: 'POST',
+    url: `api/favorites`,
+    data: {
+      favorite: {
+        user_id: userId,
+        listing_id: listingId
+      }
+    }
+  })
+};
+
+export const unfavoriteListing = (userId, listingId) => {
+  // debugger
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/favorites`,
+    data: {
+      favorite: {
+        user_id: userId,
+        listing_id: listingId
+      }
+    }
+  })
+};
+
 // export const fetchCoordinates

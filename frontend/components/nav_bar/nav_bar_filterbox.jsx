@@ -64,7 +64,7 @@ class NavBarFilterBox extends React.Component {
     };
 
     update(filter) {
-        debugger
+        // debugger
         return e => this.props.updateFilter(filter, e.currentTarget.value)
     }
 
