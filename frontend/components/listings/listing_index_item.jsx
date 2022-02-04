@@ -8,6 +8,7 @@ class ListingIndexItem extends React.Component {
         super(props);
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleHeart = this.handleHeart.bind(this);
         // this.handleMouseOver = this.handleMouseOver.bind(this);
         
     }
@@ -23,12 +24,27 @@ class ListingIndexItem extends React.Component {
     //     console.log(this.props.listing.id)
     // }
 
+    handleHeart(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!this.props.listing.liked_by_current) {
+            this.props.favoriteListing(this.props.currentUserId, this.props.listing.id).then(() => this.props.fetchListings(getState().ui.filters))
+        } else {
+            this.props.unfavoriteListing(this.props.currentUserId, this.props.listing.id).then(() => this.props.fetchListings(getState().ui.filters))
+        }
+    }
+
     render() {
         if (!this.props.listing) {
             return null;
         };
 
         const { address, neighborhood, category, image_urls, price, bedrooms, baths, square_feet, listing_agent } = this.props.listing
+
+        const {liked_by_current} = this.props.listing
+        const openHeart = liked_by_current ? "open-heart-none" : "open-heart-show"
+        const closeHeart = liked_by_current ? "close-heart-show" : "close-heart-none"
+
         return (
             <li className="listing-index-item" onClick={this.handleClick}>
                 <div className="listing-top">
@@ -51,7 +67,10 @@ class ListingIndexItem extends React.Component {
                         </div>
                     </div>
                     <div className="favorite-wrapper">
-                        <button type="submit" className="favorite-listing-button">♡</button>
+                        <button type="submit" className="favorite-listing-button" onClick={this.handleHeart}>
+                            <span id={openHeart}>♡ </span>
+                            <span id={closeHeart}>♥ </span>
+                        </button>
                         <div className="button-lifter"></div>
                     </div>
                 </div>

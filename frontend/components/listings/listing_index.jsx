@@ -27,7 +27,7 @@ class ListingIndex extends React.Component {
     //define a function to pass to index item to keep context
 
     render() {
-        const {minPrice, maxPrice, location, bedrooms, updateFilter, fetchListings} = this.props
+        const {minPrice, maxPrice, location, bedrooms, updateFilter, fetchListings, favoriteListing, unfavoriteListing, currentUserId} = this.props
 
         debugger
         return (
@@ -46,7 +46,14 @@ class ListingIndex extends React.Component {
                     <div className="listing-index-container">
                         <ul className="listing-ul">
                             {this.props.listings.map(listing => (
-                                <ListingIndexItem listing={listing} key={Math.random()}/>
+                                <ListingIndexItem 
+                                    listing={listing} 
+                                    key={Math.random()}
+                                    favoriteListing={favoriteListing}
+                                    unfavoriteListing={unfavoriteListing}
+                                    currentUserId={currentUserId}
+                                    fetchListings={fetchListings}
+                                />
                             ))}
                         </ul>
                         {/* <div className="map-column">Map Column</div> */}
