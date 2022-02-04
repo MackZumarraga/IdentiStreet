@@ -12,6 +12,7 @@ class MyProfile extends React.Component {
 
     render() {
         const myProfileFormClass = this.props.match.path === `/my_profile` ? "my-profile-form-container-show" : "my-profile-form-container-none"
+        const { currentUser, updateCurrentUser, deleteCurrentUser } = this.props
 
         return (
             <div>
@@ -21,7 +22,11 @@ class MyProfile extends React.Component {
                     <Link to={`/my_profile/my_listings`}>My Listings</Link>
                 </div>
                 <div className={myProfileFormClass}>
-                    <MyProfileForm/>
+                    <MyProfileForm
+                        currentUser={currentUser}
+                        updateCurrentUser={updateCurrentUser}
+                        deleteCurrentUser={deleteCurrentUser}
+                    />
                 </div>
             </div>
         )

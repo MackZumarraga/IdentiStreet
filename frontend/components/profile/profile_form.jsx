@@ -4,26 +4,60 @@ import React from 'react';
 class MyProfileForm extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = this.props.currentUser
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        this.update = this.update.bind(this);
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.updateCurrentUser(this.state)
+    }
+
+    handleDelete(e) {
+        e.preventDefault();
+        this.props.deleteCurrentUser(this.state.id)
+    }
+
+    update(field) {
+        return e => this.setState({[field]: e.currentTarget.value})
     }
 
     render() {
+        debugger
         return (
             <div>
                 <div>
-                    <form>
+                    <form onSubmit={this.handleSubmit}>
                         <label>NAME
-                            <input></input>
+                            <input 
+                                type="text" 
+                                value={this.state.name}
+                                onChange={this.update('name')}
+                            />
                         </label>
                         <label>EMAIL
-                            <input></input>
+                            <input 
+                                type="text" 
+                                value={this.state.email}
+                                onChange={this.update('email')}
+                            />
                         </label>
                         <label>PHONE
-                            <input></input>
+                            <input 
+                                type="text" 
+                                value={this.state.phone_number}
+                                onChange={this.update('phone_number')}
+                            />
                         </label>
+                        <button type="submit">SAVE CHANGES</button>
                     </form>
                 </div>
                 <div>
-                    <button>DELETE ACCOUNT</button>
+                    <button onClick={this.handleDelete}>DELETE ACCOUNT</button>
                 </div>
             </div>
         )
