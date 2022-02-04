@@ -28,8 +28,8 @@ const App = () => (
       <Route exact path="/" component={Home}/>
       {/* <Route exact path={`/add`} component={ListingFormContainer}/> */}
       <ProtectedRoute exact path={`/my_profile`} component={MyProfile}/>
-      <ProtectedRoute exact path={`/add_listing`} component={ListingFormContainer}/>
-      <ProtectedRoute exact path={`/my_listings`} component={MyListingsIndexContainer}/>
+      <ProtectedRoute exact path={`/my_profile/add_listing`} component={ListingFormContainer}/>
+      <ProtectedRoute exact path={`/my_profile/my_listings`} component={MyListingsIndexContainer}/>
       
       {/* <ProtectedRoute exact path={`/add`} component={ListingFormContainer}/> */}
       {/* <ProtectedRoute exact path={`/account/:user_id`} component={AccountContainer}/> */}

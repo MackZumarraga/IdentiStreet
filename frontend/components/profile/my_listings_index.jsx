@@ -4,6 +4,7 @@ import ListingMap from "../listing_map/listing_map";
 // import { Link } from "react-router-dom";
 import ListingIndexItem from "../listings/listing_index_item";
 import NavBar from "../nav_bar/nav_bar";
+import MyProfile from "./my_profile";
 
 class MyListingsIndex extends React.Component {
 
@@ -43,6 +44,7 @@ class MyListingsIndex extends React.Component {
                         fetchListings={fetchListings}
                     />
                 </div>
+                <div><MyProfile/></div>
                 <div className="index-body-container">
                     <div className="listing-index-container">
                         <ul className="listing-ul">

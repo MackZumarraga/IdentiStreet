@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import MyProfile from '../profile/my_profile';
 
 
 
@@ -263,6 +264,7 @@ class ListingForm extends React.Component {
 
         return (
             <div className="listing-form-width-maker">
+                <div><MyProfile/></div>
                 <form onSubmit={handlerType} className="big-form">
                     <h1 className="form-section-title">ADDRESS</h1>
                     <div className="form-section-content">

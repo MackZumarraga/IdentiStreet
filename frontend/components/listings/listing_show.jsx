@@ -26,7 +26,7 @@ class ListingShow extends React.Component {
         e.preventDefault();
         debugger
         this.props.deleteListing(this.props.match.params.id)
-        .then(resp => this.props.history.push(`/my_listings`))
+        .then(resp => this.props.history.push(`/my_profile/my_listings`))
     }
 
     handleUpdate(e) {

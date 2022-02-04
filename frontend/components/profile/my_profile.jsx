@@ -12,8 +12,8 @@ class MyProfile extends React.Component {
         return (
             <div>
                 <Link to={`/my_profile`}>Profile</Link>
-                <Link to={`/add_listing`}>Add Listing</Link>
-                <Link to={`/my_listings`}>My Listings</Link>
+                <Link to={`/my_profile/add_listing`}>Add Listing</Link>
+                <Link to={`/my_profile/my_listings`}>My Listings</Link>
             </div>
         )
     }
