@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = ({currentUser, logout, openModal}) => {
+const Header = ({currentUser, logout, openModal, fetchListings}) => {
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+        logout().then(() => fetchListings(getState().ui.filters))
+    };
 
     const sessionLinks = () => (
         <div className="nav-session-link">
@@ -25,7 +30,8 @@ const Header = ({currentUser, logout, openModal}) => {
                 <button className="account-dropdown-button">Account &nbsp;⌵</button>
                 <div className="account-dropdown-content">
                     <Link to={`/my_profile`} className="account-dropdown-myprofile">Profile</Link>
-                    <button onClick={logout} className="account-dropdown-logout">Log out</button>
+                    {/* <button onClick={logout} className="account-dropdown-logout">Log out</button> */}
+                    <button onClick={handleLogout} className="account-dropdown-logout">Log out</button>
                 </div>
             </div>
         </div>
