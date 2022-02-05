@@ -3,7 +3,6 @@ import { withRouter } from 'react-router';
 import MyProfile from '../profile/my_profile';
 
 
-
 class ListingForm extends React.Component {
     constructor(props) {
         super(props);
@@ -258,13 +257,22 @@ class ListingForm extends React.Component {
 
     render() {
 
+        const { currentUser, fetchCurrentUser, updateCurrentUser, deleteCurrentUser } = this.props
+
         const photosContainerClass = (this.props.formType === 'Submit') ? "photos-container" : "photos-container-none"
         const handlerType = (this.props.formType === 'Submit') ? this.handleSubmit : this.handleUpdate
         const addressClass = addressClass
 
         return (
             <div className="listing-form-width-maker">
-                <div><MyProfile/></div>
+                <div>
+                    <MyProfile
+                        fetchCurrentUser={fetchCurrentUser}
+                        currentUser={currentUser}
+                        updateCurrentUser={updateCurrentUser}
+                        deleteCurrentUser={deleteCurrentUser}
+                    />
+                </div>
                 <form onSubmit={handlerType} className="big-form">
                     <h1 className="form-section-title">ADDRESS</h1>
                     <div className="form-section-content">

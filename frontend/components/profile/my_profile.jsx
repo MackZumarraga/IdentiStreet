@@ -11,6 +11,7 @@ class MyProfile extends React.Component {
     }
 
     render() {
+        debugger
         const myProfileFormClass = this.props.match.path === `/my_profile` ? "my-profile-form-container-show" : "my-profile-form-container-none"
         const { currentUser, fetchCurrentUser, updateCurrentUser, deleteCurrentUser } = this.props
 

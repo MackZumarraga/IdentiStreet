@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 
 import { createListing } from '../../actions/listing_actions';
+import { fetchCurrentUser, updateCurrentUser, deleteCurrentUser } from '../../actions/profile_actions';
+
 import ListingForm from './listing_form';
 // import MyProfile from './my_profile';
 
@@ -47,12 +49,16 @@ const mapStateToProps = state => ({
         "priceMessage": ""
     },
     errors: state.errors.session,
+    formType: 'Submit',
     currentUserId: state.session["id"],
-    formType: 'Submit'
+    currentUser: state.entities.users[state.session.id]
 });
 
 const mapDispatchToProps = dispatch => ({
-  submitListing: listing => dispatch(createListing(listing))
+  submitListing: listing => dispatch(createListing(listing)),
+  fetchCurrentUser: (currentUserId) => dispatch(fetchCurrentUser(currentUserId)),
+  updateCurrentUser: (currentUser) => dispatch(updateCurrentUser(currentUser)),
+  deleteCurrentUser: (currentUserId) => dispatch(deleteCurrentUser(currentUserId)) 
 });
 
 export default connect(
