@@ -30,6 +30,7 @@ class MyListingsIndex extends React.Component {
 
     render() {
         const {minPrice, maxPrice, location, bedrooms, updateFilter, fetchListings} = this.props
+        const { currentUser, fetchCurrentUser, updateCurrentUser, deleteCurrentUser } = this.props
 
         debugger
         return (
@@ -44,7 +45,14 @@ class MyListingsIndex extends React.Component {
                         fetchListings={fetchListings}
                     />
                 </div>
-                <div><MyProfile/></div>
+                <div>
+                    <MyProfile
+                        fetchCurrentUser={fetchCurrentUser}
+                        currentUser={currentUser}
+                        updateCurrentUser={updateCurrentUser}
+                        deleteCurrentUser={deleteCurrentUser}
+                    />
+                </div>
                 <div className="index-body-container">
                     <div className="listing-index-container">
                         <ul className="listing-ul">
