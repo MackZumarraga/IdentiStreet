@@ -21,7 +21,9 @@ class MyProfileForm extends React.Component {
 
     handleDelete(e) {
         e.preventDefault();
-        this.props.deleteCurrentUser(this.state.id)
+        this.props.deleteCurrentUser(this.state.id);
+        this.props.logout();
+        this.props.fetchListings(getState().ui.filters);
     }
 
     update(field) {
@@ -29,7 +31,10 @@ class MyProfileForm extends React.Component {
     }
 
     render() {
-        // debugger
+        debugger
+        const nameTempValue = this.state.name == null ? "" : this.state.name
+        const phoneNoTempValue = this.state.phone_number == null ? "" : this.state.phone_number
+
         return (
             <div>
                 <div>
@@ -37,7 +42,7 @@ class MyProfileForm extends React.Component {
                         <label>NAME
                             <input 
                                 type="text" 
-                                value={this.state.name}
+                                value={nameTempValue}
                                 onChange={this.update('name')}
                             />
                         </label>
@@ -51,7 +56,7 @@ class MyProfileForm extends React.Component {
                         <label>PHONE
                             <input 
                                 type="text" 
-                                value={this.state.phone_number}
+                                value={phoneNoTempValue}
                                 onChange={this.update('phone_number')}
                             />
                         </label>

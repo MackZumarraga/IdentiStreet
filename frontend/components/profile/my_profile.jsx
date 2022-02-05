@@ -13,7 +13,7 @@ class MyProfile extends React.Component {
     render() {
         debugger
         const myProfileFormClass = this.props.match.path === `/my_profile` ? "my-profile-form-container-show" : "my-profile-form-container-none"
-        const { currentUser, fetchCurrentUser, updateCurrentUser, deleteCurrentUser } = this.props
+        const { currentUser, fetchCurrentUser, updateCurrentUser, deleteCurrentUser, logout, fetchListings } = this.props
 
         return (
             <div>
@@ -28,6 +28,8 @@ class MyProfile extends React.Component {
                         currentUser={currentUser}
                         updateCurrentUser={updateCurrentUser}
                         deleteCurrentUser={deleteCurrentUser}
+                        logout={logout}
+                        fetchListings={fetchListings}
                     />
                 </div>
             </div>
