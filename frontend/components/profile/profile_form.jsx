@@ -1,4 +1,5 @@
 import React from 'react';
+import { fetchCurrentUser } from '../../util/profile_api_util';
 
 
 class MyProfileForm extends React.Component {
@@ -14,7 +15,8 @@ class MyProfileForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.updateCurrentUser(this.state)
+        // this.props.updateCurrentUser(this.state).then(() => fetchCurrentUser(this.state.id));
+        this.props.updateCurrentUser(this.state);
     }
 
     handleDelete(e) {
@@ -27,7 +29,7 @@ class MyProfileForm extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         return (
             <div>
                 <div>

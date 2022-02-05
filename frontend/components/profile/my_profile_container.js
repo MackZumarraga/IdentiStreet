@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 // import { fetchListings } from '../../actions/listing_actions';
 // import ListingForm from '../listing_form/listing_form';
-import { updateCurrentUser, deleteCurrentUser } from '../../actions/profile_actions';
+import { updateCurrentUser, deleteCurrentUser, fetchCurrentUser } from '../../actions/profile_actions';
 
 import MyProfile from './my_profile';
 
@@ -12,6 +12,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  fetchCurrentUser: (currentUserId) => dispatch(fetchCurrentUser(currentUserId)),
   updateCurrentUser: (currentUser) => dispatch(updateCurrentUser(currentUser)),
   deleteCurrentUser: (currentUserId) => dispatch(deleteCurrentUser(currentUserId))
 });

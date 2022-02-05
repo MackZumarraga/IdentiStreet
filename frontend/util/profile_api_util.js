@@ -1,8 +1,15 @@
-export const updateCurrentUser = (currentUser) => {
+export const fetchCurrentUser = (currentUserId) => {
     return $.ajax({
-      url: `/api/users/${currentUser.id}`,
+      url: `/api/users/${currentUserId}`,
+      method: 'GET'
+    });
+};
+
+export const updateCurrentUser = (user) => {
+    return $.ajax({
+      url: `/api/users/${user.id}`,
       method: 'PATCH',
-      data: {currentUser}
+      data: {user}
     });
 };
 
