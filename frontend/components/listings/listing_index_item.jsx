@@ -25,13 +25,23 @@ class ListingIndexItem extends React.Component {
     // }
 
     handleHeart(e) {
+        const { listing, currentUserId, fetchListings, favoriteListing, unfavoriteListing, openModal } = this.props
+
         e.preventDefault();
         e.stopPropagation();
-        if (!this.props.listing.liked_by_current) {
-            this.props.favoriteListing(this.props.currentUserId, this.props.listing.id).then(() => this.props.fetchListings(getState().ui.filters))
+        // if (!this.props.listing.liked_by_current) {
+        //     this.props.favoriteListing(this.props.currentUserId, this.props.listing.id).then(() => this.props.fetchListings(getState().ui.filters))
+        // } else {
+        //     this.props.unfavoriteListing(this.props.currentUserId, this.props.listing.id).then(() => this.props.fetchListings(getState().ui.filters))
+        // }
+        debugger
+        if (listing.logged_in && !listing.liked_by_current) {
+            favoriteListing(currentUserId, listing.id).then(() => fetchListings(getState().ui.filters))
+        } else if (listing.logged_in && listing.liked_by_current) {
+            unfavoriteListing(currentUserId, listing.id).then(() => fetchListings(getState().ui.filters))
         } else {
-            this.props.unfavoriteListing(this.props.currentUserId, this.props.listing.id).then(() => this.props.fetchListings(getState().ui.filters))
-        }
+            openModal('login')
+        };
     }
 
     render() {

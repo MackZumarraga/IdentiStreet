@@ -8,4 +8,5 @@ json.set! @listing.id do
     json.liked_by_current self.logged_in? ? @listing.favorited?(current_user.id) : false
     # debugger
     # json.liked_by_current true
+    json.logged_in self.logged_in? ? true : false
 end

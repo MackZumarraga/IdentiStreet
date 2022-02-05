@@ -3,6 +3,7 @@ import { fetchListings } from '../../actions/listing_actions';
 import { updateFilter } from '../../actions/filter_actions';
 import { clearFilter } from '../../actions/filter_actions';
 import { favoriteListing, unfavoriteListing } from '../../actions/favorite_actions';
+import { openModal } from '../../actions/modal_actions';
 import ListingIndex from './listing_index';
 
 const mstp = state => ({
@@ -19,7 +20,8 @@ const mdtp = dispatch => ({
     updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
     clearFilter: () => dispatch(clearFilter()),
     favoriteListing: (userId, ListingId) => dispatch(favoriteListing(userId, ListingId)),
-    unfavoriteListing: (userId, ListingId) => dispatch(unfavoriteListing(userId, ListingId))
+    unfavoriteListing: (userId, ListingId) => dispatch(unfavoriteListing(userId, ListingId)),
+    openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(mstp, mdtp)(ListingIndex);

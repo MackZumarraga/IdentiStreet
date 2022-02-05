@@ -27,7 +27,7 @@ class ListingIndex extends React.Component {
     //define a function to pass to index item to keep context
 
     render() {
-        const {minPrice, maxPrice, location, bedrooms, updateFilter, fetchListings, favoriteListing, unfavoriteListing, currentUserId} = this.props
+        const { minPrice, maxPrice, location, bedrooms, updateFilter, fetchListings, favoriteListing, unfavoriteListing, currentUserId, openModal } = this.props
 
         debugger
         return (
@@ -53,6 +53,7 @@ class ListingIndex extends React.Component {
                                     unfavoriteListing={unfavoriteListing}
                                     currentUserId={currentUserId}
                                     fetchListings={fetchListings}
+                                    openModal={openModal}
                                 />
                             ))}
                         </ul>

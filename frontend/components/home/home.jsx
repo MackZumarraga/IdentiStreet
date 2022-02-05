@@ -22,7 +22,7 @@ class Home extends React.Component {
     //   return null;
     // };
     
-    const {listings} = this.props
+    const {listings, fetchListings, openModal} = this.props
 
     let trendingListings = []
 
@@ -37,7 +37,12 @@ class Home extends React.Component {
           <div className="trending-apartments-title">Trending Apartments in NYC</div>
           <ul className="trending-apartments-items">
             {trendingListings.map(listing => (
-              <ListingIndexItem listing={listing} key={Math.random()} />
+              <ListingIndexItem 
+                listing={listing} 
+                key={Math.random()} 
+                fetchListings={fetchListings}
+                openModal={openModal}
+              />
               
             ))}
           </ul>
