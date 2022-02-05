@@ -5,7 +5,8 @@ import { Provider } from "react-redux";
 import Modal from "./modal/modal";
 import SearchContainer from "./nav_bar/search_container";
 import NavBar from "./nav_bar/nav_bar";
-import Home from "./home/home";
+// import Home from "./home/home";
+import HomeContainer from "./home/home_container";
 import HeaderContainer from "./header/header_container";
 // import LoginFormContainer from "./session_form/login_form_container";
 // import SignupFormContainer from "./session_form/signup_form_container";
@@ -25,7 +26,8 @@ const App = () => (
       <HeaderContainer/>
       {/* <NavBar/> */}
       <Route exact path="/" component={SearchContainer}/>
-      <Route exact path="/" component={Home}/>
+      {/* <Route exact path="/" component={Home}/> */}
+      <Route exact path="/" component={HomeContainer}/>
       {/* <Route exact path={`/add`} component={ListingFormContainer}/> */}
       <ProtectedRoute exact path={`/my_profile`} component={MyProfileContainer}/>
       <ProtectedRoute exact path={`/my_profile/add_listing`} component={ListingFormContainer}/>

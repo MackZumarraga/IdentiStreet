@@ -1,14 +1,16 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
-import { fetchListings } from '../../actions/listing_actions';
-
 import ListingIndexItem from '../listings/listing_index_item';
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
 
   componentDidMount() {
-    this.props.fetchListings();
+    debugger
+    this.props.fetchListings(getState().ui.filters);
   }
 
   // componentDidUpdate() {
@@ -16,6 +18,9 @@ class Home extends React.Component {
   // }
   
   render() {
+    // if (!this.props.listings) {
+    //   return null;
+    // };
     
     const {listings} = this.props
 
@@ -37,19 +42,12 @@ class Home extends React.Component {
             ))}
           </ul>
         </div>
+        {/* Hello */}
       </div>
     );
   }
-}
+};
+
+export default Home;
 
 
-const mstp = state => ({
-  listings: Object.values(state.entities.listings)
-});
-
-const mdtp = dispatch => ({
-  fetchListings: (listings) => dispatch(fetchListings(listings))
-
-});
-
-export default connect(mstp, mdtp)(Home);
