@@ -22,7 +22,7 @@ class Home extends React.Component {
     //   return null;
     // };
     
-    const {listings, fetchListings, openModal, currentUserId} = this.props
+    const { listings, fetchListings, openModal, currentUserId, favoriteListing, unfavoriteListing } = this.props
 
     let trendingListings = []
 
@@ -43,6 +43,8 @@ class Home extends React.Component {
                 fetchListings={fetchListings}
                 openModal={openModal}
                 currentUserId={currentUserId}
+                favoriteListing={favoriteListing}
+                unfavoriteListing={unfavoriteListing}
               />
               
             ))}
