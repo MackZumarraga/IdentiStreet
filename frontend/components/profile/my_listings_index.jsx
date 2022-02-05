@@ -30,7 +30,7 @@ class MyListingsIndex extends React.Component {
 
     render() {
         const {minPrice, maxPrice, location, bedrooms, updateFilter, fetchListings} = this.props
-        const { currentUser, currentUserId, fetchCurrentUser, updateCurrentUser, deleteCurrentUser } = this.props
+        const { currentUser, currentUserId, fetchCurrentUser, updateCurrentUser, deleteCurrentUser, favoriteListing, unfavoriteListing } = this.props
 
         debugger
         return (
@@ -61,6 +61,9 @@ class MyListingsIndex extends React.Component {
                                     listing={listing} 
                                     key={Math.random()}
                                     currentUserId={currentUserId}
+                                    favoriteListing={favoriteListing}
+                                    unfavoriteListing={unfavoriteListing}
+                                    fetchListings={fetchListings}
                                 />
                             ))}
                         </ul>

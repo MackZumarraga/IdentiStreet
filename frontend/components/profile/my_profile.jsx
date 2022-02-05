@@ -21,6 +21,7 @@ class MyProfile extends React.Component {
                     <Link to={`/my_profile`}>Profile</Link>
                     <Link to={`/my_profile/add_listing`}>Add Listing</Link>
                     <Link to={`/my_profile/my_listings`}>My Listings</Link>
+                    <Link to={`/my_profile/my_favorite_listings`}>Saved Listings</Link>
                 </div>
                 <div className={myProfileFormClass}>
                     <MyProfileForm
