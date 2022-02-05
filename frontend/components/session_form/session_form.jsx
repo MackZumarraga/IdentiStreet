@@ -15,7 +15,11 @@ class SessionForm extends React.Component {
     }
 
     componentWillUnmount() {
+        const {fetchListings} = this.props
+        const listingsFilterState = getState().ui.filters
+
         this.props.clearErrors();
+        fetchListings(listingsFilterState);
     }
 
     handleSubmit(e) {
@@ -30,7 +34,10 @@ class SessionForm extends React.Component {
             email: 'guest@example.com',
             password: 'password'
         } 
+
         this.props.processForm(demoUser).then(this.props.closeModal);
+        // debugger
+        // this.props.processForm(demoUser).then(fetchListings(listingsFilterState)).then(this.props.closeModal);
     };
 
     update(field) {

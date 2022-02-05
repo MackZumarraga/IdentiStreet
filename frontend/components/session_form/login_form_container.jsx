@@ -3,9 +3,11 @@ import { login } from "../../actions/session_actions";
 import SessionForm from "./session_form";
 // import { Link } from "react-router-dom";
 import { openModal, closeModal } from "../../actions/modal_actions";
+import { clearErrors } from "../../actions/session_actions";
+import { fetchListings } from "../../actions/listing_actions";
+
 import React from "react";
 
-import { clearErrors } from "../../actions/session_actions";
 
 const mstp = (state, ownProps) => ({
     errors: state.errors.session,
@@ -25,7 +27,8 @@ const mdtp = (dispatch, ownProps) => ({
           Continue with Sign Up
         </button>
       ),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    fetchListings: (filters) => dispatch(fetchListings(filters))
 });
 
 export default connect(mstp, mdtp)(SessionForm);
