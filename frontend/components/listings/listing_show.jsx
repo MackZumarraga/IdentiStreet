@@ -63,6 +63,7 @@ class ListingShow extends React.Component {
             return null;
         };
         debugger
+        const ownListingClass = (this.props.currentUserId === this.props.listing.user_id) ? "own-listing-right-show" : "own-listing-right-none"
         const saveClass = (this.props.currentUserId === this.props.listing.user_id) ? "save-none" : "save-button"
         const requestClass = (this.props.currentUserId === this.props.listing.user_id) ? "request-tour-none" : "request-tour"
         const deleteClass = (this.props.currentUserId === this.props.listing.user_id) ? "delete-listing" : "delete-listing-none"
@@ -122,6 +123,7 @@ class ListingShow extends React.Component {
                                 <div className="show-short-desc">{category} in {neighborhood}</div>
                             </div>
                             <div className="right-feature-functions">
+                                <h3 className={ownListingClass}>OWN LISTING</h3>
                                 <button className={saveClass} onClick={this.handleSave}>
                                     <span id={openHeart}>♡ </span>
                                     <span id={closeHeart}>♥ </span>

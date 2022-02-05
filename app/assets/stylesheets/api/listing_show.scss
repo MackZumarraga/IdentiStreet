@@ -254,6 +254,16 @@
     flex-direction: column;
 }
 
+.own-listing-right-show {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.own-listing-right-none {
+    display: none;
+}
+
 #open-heart-show {
     // display: flex;
     font-size: large;
