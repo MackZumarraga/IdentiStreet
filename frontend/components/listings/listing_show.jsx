@@ -37,13 +37,24 @@ class ListingShow extends React.Component {
     }
 
     handleSave(e) {
+        const { listing, currentUserId, fetchListing, favoriteListing, unfavoriteListing, openModal } = this.props
+        const { listingId } = this.props.match.params.id
+
         e.preventDefault();
         debugger
-        if (!this.props.listing.liked_by_current) {
-            this.props.favoriteListing(this.props.currentUserId, this.props.listing.id).then(() => this.props.fetchListing(this.props.match.params.id))
+        // if (!this.props.listing.liked_by_current) {
+        //     this.props.favoriteListing(this.props.currentUserId, this.props.listing.id).then(() => this.props.fetchListing(this.props.match.params.id))
+        // } else {
+        //     this.props.unfavoriteListing(this.props.currentUserId, this.props.listing.id).then(() => this.props.fetchListing(this.props.match.params.id))
+        // }
+
+        if (listing.logged_in && !listing.liked_by_current) {
+            favoriteListing(currentUserId, listing.id).then(() => fetchListing(listingId))
+        } else if (listing.logged_in && listing.liked_by_current) {
+            unfavoriteListing(currentUserId, listing.id).then(() => fetchListings(listingId))
         } else {
-            this.props.unfavoriteListing(this.props.currentUserId, this.props.listing.id).then(() => this.props.fetchListing(this.props.match.params.id))
-        }
+            openModal('login')
+        };
     }
 
     render() {

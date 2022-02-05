@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { deleteListing, fetchListing, fetchListings } from '../../actions/listing_actions'
 import { updateFilter } from '../../actions/filter_actions';
 import { favoriteListing, unfavoriteListing } from '../../actions/favorite_actions';
+import { openModal } from '../../actions/modal_actions';
 import ListingShow from './listing_show';
 
 
@@ -18,7 +19,8 @@ const mapDispatchToProps = dispatch => ({
   deleteListing: listingId => dispatch(deleteListing(listingId)),
   updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
   favoriteListing: (userId, ListingId) => dispatch(favoriteListing(userId, ListingId)),
-  unfavoriteListing: (userId, ListingId) => dispatch(unfavoriteListing(userId, ListingId))
+  unfavoriteListing: (userId, ListingId) => dispatch(unfavoriteListing(userId, ListingId)),
+  openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListingShow);
