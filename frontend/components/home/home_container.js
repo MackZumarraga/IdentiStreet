@@ -6,7 +6,8 @@ import { openModal } from '../../actions/modal_actions';
 import Home from './home';
 
 const mstp = state => ({
-    listings: Object.values(state.entities.listings)
+    listings: Object.values(state.entities.listings),
+    currentUserId: state.session["id"]
 });
   
 const mdtp = dispatch => ({

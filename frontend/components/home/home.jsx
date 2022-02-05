@@ -22,7 +22,7 @@ class Home extends React.Component {
     //   return null;
     // };
     
-    const {listings, fetchListings, openModal} = this.props
+    const {listings, fetchListings, openModal, currentUserId} = this.props
 
     let trendingListings = []
 
@@ -42,6 +42,7 @@ class Home extends React.Component {
                 key={Math.random()} 
                 fetchListings={fetchListings}
                 openModal={openModal}
+                currentUserId={currentUserId}
               />
               
             ))}
