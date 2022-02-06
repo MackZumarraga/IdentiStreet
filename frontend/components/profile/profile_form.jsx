@@ -11,6 +11,8 @@ class MyProfileForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
         this.update = this.update.bind(this);
+        this.validEmail = this.validEmail.bind(this);
+        this.validPhone = this.validPhone.bind(this);
     }
 
     componentDidMount() {
@@ -19,8 +21,14 @@ class MyProfileForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger
         // this.props.updateCurrentUser(this.state).then(() => fetchCurrentUser(this.state.id));
-        this.props.updateCurrentUser(this.state);
+        if (this.validEmail() && this.validPhone()) {
+            // this.props.updateCurrentUser(this.state);
+            console.log('Will update current user')
+        } else {
+            console.log('Invalid form data')
+        }
         // this.props.fetchUsers();
     }
 
@@ -39,8 +47,9 @@ class MyProfileForm extends React.Component {
     validEmail() {
         debugger
         const { users } = this.props
-        const { ownEmail } = this.state
-        const emails = [];
+        const ownEmail = this.props.currentUser["email"]
+        const typedEmail = this.state["email"]
+        const emails = []; //other emails different from current user's email
 
         for (let i = 0; i < users.length; i++) {
             const currEmail = users[i]["email"]
@@ -49,18 +58,21 @@ class MyProfileForm extends React.Component {
             }
         };
 
-        emailAtWords = ownEmail.split('@')
-        emailDotWords = ownEmail.split('.')
+        const emailAtWords = typedEmail.split('@')
+        const emailDotWords = typedEmail.split('.')
 
-        emails.includes(ownEmail) || 
+        const result = (emails.includes(typedEmail) || 
         !ownEmail.includes('@') || 
         emailAtWords.length !== 2 || 
-        emailDotWords.length !== 2 ? false : true
+        emailDotWords.length !== 2) ? false : true
+        
+        return result;
     }
 
     validPhone() {
         const { users } = this.props
-        const ownPhone = this.state["phone_number"]
+        const ownPhone = this.props.currentUser["phone_number"]
+        const typedPhone = this.state["phone_number"]
         const phones = [];
         const alpha = "abcdefghijklmnopqrstuvwxyz"
 
@@ -72,8 +84,12 @@ class MyProfileForm extends React.Component {
         };
 
         const anyAlpha = ownPhone.split('').some(letter => alpha.includes(letter))
-
-        phones.includes(ownPhone) || ownPhone.length !== 10 || anyAlpha ? false : true
+        
+        
+        const result = (phones.includes(typedPhone) || ownPhone.length !== 10 || anyAlpha) ? false : true
+        debugger
+        return result;
+        
     }
 
     render() {
