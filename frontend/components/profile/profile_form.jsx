@@ -46,12 +46,16 @@ class MyProfileForm extends React.Component {
     }
 
     validEmail() {
+        
         debugger
         const { users } = this.props
         const ownEmail = this.props.currentUser["email"]
         const typedEmail = this.state["email"]
         const emails = []; //other emails different from current user's email
 
+        if (!users) return null;
+
+        debugger
         for (let i = 0; i < users.length; i++) {
             const currEmail = users[i]["email"]
             if (ownEmail !== currEmail) {
@@ -76,6 +80,8 @@ class MyProfileForm extends React.Component {
         const typedPhone = this.state["phone_number"]
         const phones = [];
         const alpha = "abcdefghijklmnopqrstuvwxyz"
+
+        if (!users) return null;
 
         for (let i = 0; i < users.length; i++) {
             const currPhone = users[i]["phone_number"]
