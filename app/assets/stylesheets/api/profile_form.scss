@@ -93,6 +93,48 @@
     width: 288px;
 }
 
+.email-input-error {
+    height: 30px;
+    margin-bottom: 10px;
+    text-indent: 10px;
+    width: 288px;
+    border-color: #db3b29;
+    background-color: rgb(235, 144, 128);
+}
+
+.phone-input-error {
+    height: 30px;
+    margin-bottom: 10px;
+    text-indent: 10px;
+    width: 288px;
+    border-color: #db3b29;
+    background-color: rgb(235, 144, 128);
+}
+
+.email-error-show {
+    display: block;
+    font-size: 13px;
+    width: 300px;
+    color: #db3b29;
+    margin-bottom: 10px;
+}
+
+.email-error-none {
+    display: none;
+}
+
+.phone-error-show {
+    display: block;
+    font-size: 13px;
+    width: 300px;
+    color: #db3b29;
+    margin-bottom: 10px;
+}
+
+.phone-error-none {
+    display: none;
+}
+
 //delete
 .delete-account-container {
     margin-top: 50px;

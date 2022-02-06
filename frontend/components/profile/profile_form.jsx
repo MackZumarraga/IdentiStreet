@@ -27,7 +27,8 @@ class MyProfileForm extends React.Component {
             this.props.updateCurrentUser(this.state);
             // console.log('Will update current user')
         } else {
-            console.log('Invalid form data')
+            // console.log('Invalid form data')
+            return null;
         }
         // this.props.fetchUsers();
     }
@@ -97,6 +98,11 @@ class MyProfileForm extends React.Component {
         const nameTempValue = this.state.name == null ? "" : this.state.name
         const phoneNoTempValue = this.state.phone_number == null ? "" : this.state.phone_number
 
+        const emailInputClass = this.validEmail() ? "profile-form-input" : "email-input-error"
+        const phoneInputClass = this.validPhone() ? "profile-form-input" : "phone-input-error"
+        const emailMessageClass = this.validEmail() ? "email-error-none" : "email-error-show"
+        const phoneMessageClass = this.validPhone() ? "phone-error-none" : "phone-error-show"
+
         return (
             <div>
                 <div className="profile-form-border">
@@ -113,20 +119,23 @@ class MyProfileForm extends React.Component {
                         <label className="input-holder">
                             <div className="input-label">EMAIL</div>
                             <input 
-                                className="profile-form-input"
+                                className={emailInputClass}
                                 type="text" 
                                 value={this.state.email}
+                                // placeholder="Hello"
                                 onChange={this.update('email')}
                             />
+                            <div className={emailMessageClass}>Email invalid or already exists</div>
                         </label>
                         <label className="input-holder">
                             <div className="input-label">PHONE</div>
                             <input 
-                                className="profile-form-input"
+                                className={phoneInputClass}
                                 type="text" 
                                 value={phoneNoTempValue}
                                 onChange={this.update('phone_number')}
                             />
+                            <div className={phoneMessageClass}>Phone invalid or already exists</div>
                         </label>
                         <button className="save-changes-button" type="submit">SAVE CHANGES</button>
                     </form>
