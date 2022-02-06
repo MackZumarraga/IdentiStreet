@@ -37,34 +37,42 @@ class MyProfileForm extends React.Component {
 
         return (
             <div>
-                <div>
-                    <form onSubmit={this.handleSubmit}>
-                        <label>NAME
-                            <input 
+                <div className="profile-form-border">
+                    <form className="profile-form-container-in" onSubmit={this.handleSubmit}>
+                        <label className="input-holder">
+                            <div className="input-label">NAME</div>
+                            <input
+                                className="profile-form-input" 
                                 type="text" 
                                 value={nameTempValue}
                                 onChange={this.update('name')}
                             />
                         </label>
-                        <label>EMAIL
+                        <label className="input-holder">
+                            <div className="input-label">EMAIL</div>
                             <input 
+                                className="profile-form-input"
                                 type="text" 
                                 value={this.state.email}
                                 onChange={this.update('email')}
                             />
                         </label>
-                        <label>PHONE
+                        <label className="input-holder">
+                            <div className="input-label">PHONE</div>
                             <input 
+                                className="profile-form-input"
                                 type="text" 
                                 value={phoneNoTempValue}
                                 onChange={this.update('phone_number')}
                             />
                         </label>
-                        <button type="submit">SAVE CHANGES</button>
+                        <button className="save-changes-button" type="submit">SAVE CHANGES</button>
                     </form>
                 </div>
-                <div>
-                    <button onClick={this.handleDelete}>DELETE ACCOUNT</button>
+                <div className="delete-account-container">
+                    <h3 className="delete-information">Delete Profile</h3>
+                    <p className="delete-text">Once you delete this account, there is no going back. Please be certain.</p>
+                    <button className="delete-profile-button" onClick={this.handleDelete}>DELETE ACCOUNT</button>
                 </div>
             </div>
         )

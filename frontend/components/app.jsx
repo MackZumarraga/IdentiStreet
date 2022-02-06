@@ -27,6 +27,8 @@ const App = () => (
       <HeaderContainer/>
       {/* <NavBar/> */}
       <Route exact path="/" component={SearchContainer}/>
+      <Route exact path={`/my_profile`} component={SearchContainer}/>
+      <Route exact path={`/my_profile/add_listing`} component={SearchContainer}/>
       {/* <Route exact path="/" component={Home}/> */}
       <Route exact path="/" component={HomeContainer}/>
       {/* <Route exact path={`/add`} component={ListingFormContainer}/> */}

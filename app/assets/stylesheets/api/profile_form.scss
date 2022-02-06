@@ -5,3 +5,116 @@
 .my-profile-form-container-none {
     display: none;
 }
+
+//main styling
+.my-profile-width-maker {
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    color: #62646a;
+}
+
+.my-profile-container {
+    width: 75vw;
+    max-width: 100%;
+    margin-left: 30px;
+}
+
+.profile-links-container {
+    display: block;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #E6E6E6;
+    padding-bottom: 13px;
+}
+
+.profile-link {
+    margin-right: 30px;
+    text-decoration: none;
+    font-size: 12px;
+
+    // border-bottom: 4px solid rgb(24, 118, 219);
+    color: rgb(3, 39, 101);
+    padding-bottom: 10px;
+}
+
+.profile-link:hover {
+    border-bottom: 4px solid rgb(24, 118, 219);
+}
+
+.personal-information {
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 34px;
+}
+
+//form
+.profile-form-border {
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.profile-form-container-in {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+}
+
+.input-holder {
+    display: flex;
+    flex-direction: column;
+    color: rgb(26, 31, 44);
+}
+
+.save-changes-button {
+    width: 288px;
+    background-color: rgb(24, 118, 219);
+    border: 1px solid rgb(24, 118, 219);
+    height: 48px;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    line-height: 15px;
+    margin-bottom: 60px;
+}
+
+.input-label {
+    font-size: 12px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.profile-form-input {
+    height: 30px;
+    margin-bottom: 30px;
+    text-indent: 10px;
+}
+
+//delete
+.delete-account-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.delete-profile-button {
+    color: #cf222e;
+    background-color: #f6f8fa;
+    border-color: rgba(27,31,36,0.15);
+    height: 50px;
+    width: 200px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.delete-information {
+    font-size: 24px;
+    line-height: 34px;
+}
+
+.delete-text {
+    font-size: 12px;
+    margin-bottom: 35px;
+}
