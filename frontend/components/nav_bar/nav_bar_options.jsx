@@ -73,18 +73,32 @@ class NavBarOptions extends React.Component {
     }
 
     handleFee(e) {
+        const {updateFilter, fetchListings} = this.props;
         e.preventDefault();
         debugger
-        this.props.updateFilter('broker_fee', e.currentTarget.value)
-        this.props.fetchListings(getState().ui.filters)
+        updateFilter('broker_fee', e.currentTarget.value)
+        updateFilter('location', '')
+        updateFilter('maxPrice', '')
+        updateFilter('minPrice', '')
+        updateFilter('bedrooms', '')
+        updateFilter('pets_allowed', '')
+
+        fetchListings(getState().ui.filters)
         this.props.history.push("/search")
     }
 
     handlePet(e) {
+        const {updateFilter, fetchListings} = this.props;
         e.preventDefault();
         debugger
-        this.props.updateFilter('pets_allowed', e.currentTarget.value)
-        this.props.fetchListings(getState().ui.filters)
+        updateFilter('pets_allowed', e.currentTarget.value)
+        updateFilter('location', '')
+        updateFilter('maxPrice', '')
+        updateFilter('minPrice', '')
+        updateFilter('bedrooms', '')
+        updateFilter('broker_fee', '')
+
+        fetchListings(getState().ui.filters)
         this.props.history.push("/search")
     }
 

@@ -59,6 +59,8 @@ class NavBarFilterBox extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.updateFilter('broker_fee', '')
+        this.props.updateFilter('pets_allowed', '')
         this.props.fetchListings(getState().ui.filters)
         this.props.history.push("/search")
     };
@@ -81,7 +83,12 @@ class NavBarFilterBox extends React.Component {
                         <div className="classic-search">
                             <label className="filter-box-label">
                                 <div className="label-title">LOCATION</div>
-                                <input type="text" placeholder='Manhattan' className="filter-box-input" onChange={this.update('location')}></input>
+                                <input 
+                                    type="text" 
+                                    placeholder='Manhattan' 
+                                    className="filter-box-input"
+                                    value={getState().ui.filters["location"]} 
+                                    onChange={this.update('location')}></input>
                             </label>
                             <label className="filter-box-range">
                                 <div>
