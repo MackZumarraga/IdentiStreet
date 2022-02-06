@@ -75,7 +75,7 @@
     font-weight: bold;
 }
 
-.areas-container > a {
+.areas-container > button {
     text-decoration: none;
     display: flex;
     align-content: space-between;
@@ -85,6 +85,32 @@
     color: #1A1F2C;
     box-sizing: border-box;
     font-weight: 100;
+    
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.areas-container > button:hover {
+    text-decoration: none;
+    display: flex;
+    align-content: space-between;
+    line-height: 1.7;
+    font-size: 11px;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    color: #1876DB;
+    box-sizing: border-box;
+    font-weight: 100;
+    
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 .popular-neighborhoods-container {
