@@ -29,6 +29,7 @@ const App = () => (
       <Route exact path="/" component={SearchContainer}/>
       <Route exact path={`/my_profile`} component={SearchContainer}/>
       <Route exact path={`/my_profile/add_listing`} component={SearchContainer}/>
+      <ProtectedRoute exact path={`/listing/:listingId/edit`} component={SearchContainer}/>
       {/* <Route exact path="/" component={Home}/> */}
       <Route exact path="/" component={HomeContainer}/>
       {/* <Route exact path={`/add`} component={ListingFormContainer}/> */}
@@ -39,6 +40,7 @@ const App = () => (
       
       {/* <ProtectedRoute exact path={`/add`} component={ListingFormContainer}/> */}
       {/* <ProtectedRoute exact path={`/account/:user_id`} component={AccountContainer}/> */}
+      {/* <ProtectedRoute path={`/listing/:listingId/edit`} component={EditListingFormContainer}/> */}
 
       <Switch>
         <ProtectedRoute path={`/listing/:listingId/edit`} component={EditListingFormContainer}/>

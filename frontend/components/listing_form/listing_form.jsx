@@ -263,10 +263,13 @@ class ListingForm extends React.Component {
         const handlerType = (this.props.formType === 'Submit') ? this.handleSubmit : this.handleUpdate
         const addressClass = addressClass
 
+        debugger
+        const myProfileInListingClass = (this.props.match.path === `/listing/:listingId/edit`) ? "my-profile-in-listing-form-container-none" : "my-profile-in-listing-form-container"
+
         return (
             <div className="listing-form-width-maker">
                 <div className="listing-form-my-profile-container">
-                    <div className="my-profile-in-listing-form-container">
+                    <div className={myProfileInListingClass}>
                         <MyProfile
                             fetchCurrentUser={fetchCurrentUser}
                             currentUser={currentUser}
