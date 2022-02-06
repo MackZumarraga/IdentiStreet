@@ -5,7 +5,9 @@ const defaultFilters = Object.freeze({
   minPrice: "",
   maxPrice: "",
   location: "",
-  bedrooms: ""
+  bedrooms: "",
+  broker_fee: "",
+  pets_allowed: ""
 });
 
 // const filtersReducer = (state = defaultFilters, action) => {

@@ -59,13 +59,31 @@ class NavBarOptions extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleClick = this.handleClick.bind(this)
+        this.handleClick = this.handleClick.bind(this);
+        this.handleFee = this.handleFee.bind(this);
+        this.handlePet = this.handlePet.bind(this);
     }
 
     handleClick(e) {
         e.preventDefault();
         debugger
         this.props.updateFilter('location', e.currentTarget.value)
+        this.props.fetchListings(getState().ui.filters)
+        this.props.history.push("/search")
+    }
+
+    handleFee(e) {
+        e.preventDefault();
+        debugger
+        this.props.updateFilter('broker_fee', e.currentTarget.value)
+        this.props.fetchListings(getState().ui.filters)
+        this.props.history.push("/search")
+    }
+
+    handlePet(e) {
+        e.preventDefault();
+        debugger
+        this.props.updateFilter('pets_allowed', e.currentTarget.value)
         this.props.fetchListings(getState().ui.filters)
         this.props.history.push("/search")
     }
@@ -88,8 +106,8 @@ class NavBarOptions extends React.Component {
                             <br/>
                             <br/>
                             <div>BROWSE</div>
-                            <Link to={`/searches/no-fee`}>No-Fee Apartments</Link>
-                            <Link to={`/searches/pet-friendly`}>Pet-Friendly Rentals</Link>
+                            <button value="false" onClick={this.handleFee}>No-Fee Apartments</button>
+                            <button value="true" onClick={this.handlePet}>Pet-Friendly Rentals</button>
                         </div>
                         <div className="popular-neighborhoods-container">POPULAR NEIGHBORHOODS 
                             <button value="Tribeca" onClick={this.handleClick}>Tribeca</button>

@@ -19,6 +19,9 @@ class Api::ListingsController < ApplicationController
         if !params[:bedrooms].nil? && params[:bedrooms].downcase == "studio"
             bedrooms = 0
         end
+
+        
+
         # debugger
         # @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
         # debugger
@@ -29,6 +32,11 @@ class Api::ListingsController < ApplicationController
         # debugger
         @listings = !bedrooms.nil? ? @listings.where(bedrooms: bedrooms) : @listings.all
         # @listings = Listing.all
+        # debugger
+        @listings = params[:broker_fee] == "false" ? @listings.where(broker_fee: false) : @listings.all
+        # debugger
+        @listings = params[:pets_allowed] == "true" ? @listings.where(pets_allowed: true) : @listings.all
+        # debugger
         render "api/listings/index"
     end
     
