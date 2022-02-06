@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 
 import { createListing } from '../../actions/listing_actions';
 import { fetchCurrentUser, updateCurrentUser, deleteCurrentUser } from '../../actions/profile_actions';
+import { fetchUsers } from '../../actions/profile_actions';
 
 import ListingForm from './listing_form';
 // import MyProfile from './my_profile';
@@ -58,7 +59,8 @@ const mapDispatchToProps = dispatch => ({
   submitListing: listing => dispatch(createListing(listing)),
   fetchCurrentUser: (currentUserId) => dispatch(fetchCurrentUser(currentUserId)),
   updateCurrentUser: (currentUser) => dispatch(updateCurrentUser(currentUser)),
-  deleteCurrentUser: (currentUserId) => dispatch(deleteCurrentUser(currentUserId)) 
+  deleteCurrentUser: (currentUserId) => dispatch(deleteCurrentUser(currentUserId)),
+  fetchUsers: () => dispatch(fetchUsers())  
 });
 
 export default connect(

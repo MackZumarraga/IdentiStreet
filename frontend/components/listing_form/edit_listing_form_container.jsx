@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchListing, updateListing } from '../../actions/listing_actions';
 import { fetchCurrentUser, updateCurrentUser, deleteCurrentUser } from '../../actions/profile_actions';
+import { fetchUsers } from '../../actions/profile_actions';
 import ListingForm from './listing_form'
 
 class EditListingForm extends React.Component {
@@ -21,7 +22,7 @@ class EditListingForm extends React.Component {
         "priceMessage": ""
       }
       const { listing, formType, submitListing } = this.props;
-      const { currentUser, fetchCurrentUser, updateCurrentUser, deleteCurrentUser } = this.props
+      const { currentUser, fetchCurrentUser, updateCurrentUser, deleteCurrentUser, fetchUsers } = this.props
 
       // Hint: The event will not exist on the first render - what do we need to do
       // to get it?
@@ -35,6 +36,7 @@ class EditListingForm extends React.Component {
           currentUser={currentUser}
           updateCurrentUser={updateCurrentUser}
           deleteCurrentUser={deleteCurrentUser}
+          fetchUsers={fetchUsers}
         />
       );
     }
@@ -62,7 +64,8 @@ class EditListingForm extends React.Component {
     submitListing: (listing, listingId) => dispatch(updateListing(listing, listingId)),
     fetchCurrentUser: (currentUserId) => dispatch(fetchCurrentUser(currentUserId)),
     updateCurrentUser: (currentUser) => dispatch(updateCurrentUser(currentUser)),
-    deleteCurrentUser: (currentUserId) => dispatch(deleteCurrentUser(currentUserId))
+    deleteCurrentUser: (currentUserId) => dispatch(deleteCurrentUser(currentUserId)),
+    fetchUsers: () => dispatch(fetchUsers())
   });
   
   export default connect(mstp, mdtp)(EditListingForm);

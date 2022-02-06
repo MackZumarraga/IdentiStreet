@@ -257,7 +257,7 @@ class ListingForm extends React.Component {
 
     render() {
 
-        const { currentUser, fetchCurrentUser, updateCurrentUser, deleteCurrentUser } = this.props
+        const { currentUser, fetchCurrentUser, updateCurrentUser, deleteCurrentUser, fetchUsers } = this.props
 
         const photosContainerClass = (this.props.formType === 'Submit') ? "photos-container" : "photos-container-none"
         const handlerType = (this.props.formType === 'Submit') ? this.handleSubmit : this.handleUpdate
@@ -275,6 +275,7 @@ class ListingForm extends React.Component {
                             currentUser={currentUser}
                             updateCurrentUser={updateCurrentUser}
                             deleteCurrentUser={deleteCurrentUser}
+                            fetchUsers={fetchUsers}
                         />
                     </div>
                     <form onSubmit={handlerType} className="big-form">

@@ -13,7 +13,15 @@ class MyProfile extends React.Component {
     render() {
         debugger
         const myProfileFormClass = this.props.match.path === `/my_profile` ? "my-profile-form-container-show" : "my-profile-form-container-none"
-        const { currentUser, fetchCurrentUser, updateCurrentUser, deleteCurrentUser, logout, fetchListings } = this.props
+        const { currentUser, 
+                fetchCurrentUser, 
+                updateCurrentUser, 
+                deleteCurrentUser, 
+                logout, 
+                fetchListings,
+                fetchUsers,
+                users
+                } = this.props
 
         debugger
         const myProfileContainerClass = this.props.match.path === '/my_profile/add_listing' ? "my-profile-in-listing-form-container" : "my-profile-container"
@@ -36,6 +44,8 @@ class MyProfile extends React.Component {
                             deleteCurrentUser={deleteCurrentUser}
                             logout={logout}
                             fetchListings={fetchListings}
+                            fetchUsers={fetchUsers}
+                            users={users}
                         />
                     </div>
                 </div>

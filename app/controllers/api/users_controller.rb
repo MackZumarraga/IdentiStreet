@@ -1,4 +1,10 @@
 class Api::UsersController < ApplicationController
+    def index
+      # debugger
+      @users = User.all
+      render "api/users/index"
+    end
+
     def create
       @user = User.new(user_params)
   

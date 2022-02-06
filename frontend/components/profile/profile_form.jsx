@@ -13,10 +13,15 @@ class MyProfileForm extends React.Component {
         this.update = this.update.bind(this);
     }
 
+    componentDidMount() {
+        this.props.fetchUsers();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         // this.props.updateCurrentUser(this.state).then(() => fetchCurrentUser(this.state.id));
         this.props.updateCurrentUser(this.state);
+        // this.props.fetchUsers();
     }
 
     handleDelete(e) {
@@ -27,7 +32,48 @@ class MyProfileForm extends React.Component {
     }
 
     update(field) {
+        // this.props.fetchUsers();
         return e => this.setState({[field]: e.currentTarget.value})
+    }
+
+    validEmail() {
+        debugger
+        const { users } = this.props
+        const { ownEmail } = this.state
+        const emails = [];
+
+        for (let i = 0; i < users.length; i++) {
+            const currEmail = users[i]["email"]
+            if (ownEmail !== currEmail) {
+                emails.push(users[i]["email"])
+            }
+        };
+
+        emailAtWords = ownEmail.split('@')
+        emailDotWords = ownEmail.split('.')
+
+        emails.includes(ownEmail) || 
+        !ownEmail.includes('@') || 
+        emailAtWords.length !== 2 || 
+        emailDotWords.length !== 2 ? false : true
+    }
+
+    validPhone() {
+        const { users } = this.props
+        const ownPhone = this.state["phone_number"]
+        const phones = [];
+        const alpha = "abcdefghijklmnopqrstuvwxyz"
+
+        for (let i = 0; i < users.length; i++) {
+            const currPhone = users[i]["phone_number"]
+            if (ownPhone !== currPhone) {
+                phones.push(currPhone)
+            }
+        };
+
+        const anyAlpha = ownPhone.split('').some(letter => alpha.includes(letter))
+
+        phones.includes(ownPhone) || ownPhone.length !== 10 || anyAlpha ? false : true
     }
 
     render() {
