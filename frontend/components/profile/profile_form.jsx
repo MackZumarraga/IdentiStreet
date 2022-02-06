@@ -24,8 +24,8 @@ class MyProfileForm extends React.Component {
         debugger
         // this.props.updateCurrentUser(this.state).then(() => fetchCurrentUser(this.state.id));
         if (this.validEmail() && this.validPhone()) {
-            // this.props.updateCurrentUser(this.state);
-            console.log('Will update current user')
+            this.props.updateCurrentUser(this.state);
+            // console.log('Will update current user')
         } else {
             console.log('Invalid form data')
         }
@@ -83,10 +83,10 @@ class MyProfileForm extends React.Component {
             }
         };
 
-        const anyAlpha = ownPhone.split('').some(letter => alpha.includes(letter))
+        const anyAlpha = typedPhone.split('').some(letter => alpha.includes(letter))
         
         
-        const result = (phones.includes(typedPhone) || ownPhone.length !== 10 || anyAlpha) ? false : true
+        const result = (phones.includes(typedPhone) || typedPhone.length !== 10 || anyAlpha) ? false : true
         debugger
         return result;
         
