@@ -67,7 +67,7 @@
 }
 
 .save-changes-button {
-    width: 288px;
+    width: 293px;
     background-color: rgb(24, 118, 219);
     border: 1px solid rgb(24, 118, 219);
     height: 48px;
@@ -76,6 +76,7 @@
     color: rgb(255, 255, 255);
     line-height: 15px;
     margin-bottom: 60px;
+    cursor: pointer;
 }
 
 .input-label {
@@ -88,6 +89,8 @@
     height: 30px;
     margin-bottom: 30px;
     text-indent: 10px;
+    border: 1px solid #949494;
+    width: 288px;
 }
 
 //delete
