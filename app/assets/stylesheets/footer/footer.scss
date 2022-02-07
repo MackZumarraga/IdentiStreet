@@ -1,6 +1,6 @@
 .footer-container {
     background-color: #272D39;
-    height: 1000px;
+    height: 100%;
     position: relative;
     width: 100%;
 }
@@ -15,9 +15,9 @@
 //navbar
 .footer-navbar {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     padding: 56px 0 0;
-    position: relative;
+    // position: relative;
     margin-bottom: 20px;
     width: 60vw;
     margin-left: 25px;
@@ -28,7 +28,7 @@
     flex-direction: column;
     justify-content: space-around;
     line-height: 1.5;
-    margin-right: 100px;
+    margin-right: 17%;
 }
 
 .footer-nav-item {
