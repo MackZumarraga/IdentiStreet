@@ -297,17 +297,17 @@ class Footer extends React.Component {
     
                 <ul className="favicons">
                     <li>
-                        <a className="github-link" href="https://github.com/MackZumarraga">
+                        <a className="github-link" href="https://github.com/MackZumarraga" target="_blank">
                             <img src="http://www.github.com/favicon.ico"/>
                         </a>
                     </li>
                     <li>
-                        <a className="github-link" href="https://www.linkedin.com/in/mackzumarraga/">
+                        <a className="github-link" href="https://www.linkedin.com/in/mackzumarraga/" target="_blank">
                             <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" className="linked-in-favicon"/>
                         </a>
                     </li>
                     <li>
-                        <a className="github-link" href="https://angel.co/u/mackinjosh-zumarraga">
+                        <a className="github-link" href="https://angel.co/u/mackinjosh-zumarraga" target="_blank">
                             <img src="https://img.icons8.com/nolan/344/angelist.png" className="angel-favicon"/>
                         </a>
                     </li>
