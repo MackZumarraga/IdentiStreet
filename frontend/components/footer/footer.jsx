@@ -129,7 +129,7 @@ class Footer extends React.Component {
                 <div className="footer-width-maker">
                     <div className="footer-navbar">
                         <div className="area-item-container">
-                        <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
+                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
                             <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
                             <button value="Queens" onClick={this.handleClick}>Queens</button>
                             <button value="Bronx" onClick={this.handleClick}>Bronx</button>
@@ -149,7 +149,7 @@ class Footer extends React.Component {
                             <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
                         </div>
                         <div className="area-item-container">
-                        <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
+                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
                             <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
                             <button value="Queens" onClick={this.handleClick}>Queens</button>
                             <button value="Bronx" onClick={this.handleClick}>Bronx</button>
@@ -170,7 +170,7 @@ class Footer extends React.Component {
     
                         </div>
                         <div className="area-item-container">
-                        <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
+                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
                             <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
                             <button value="Queens" onClick={this.handleClick}>Queens</button>
                             <button value="Bronx" onClick={this.handleClick}>Bronx</button>
@@ -190,22 +190,64 @@ class Footer extends React.Component {
                             <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
     
                         </div>
-                        <div className="footer-nav-item">
-                            <Link to={`/blog`}>BLOG</Link>
-                            <Link to={`/hiring`}>WE'RE HIRING</Link>
-                            <Link to={`/submit`}>SUBMIT YOUR LISTINGS</Link>
-                            <Link to={`/searches/all`}>BROWSE ALL HOMES</Link>
-    
+                        <div className="area-item-container">
+                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
+                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
+                            <button value="Queens" onClick={this.handleClick}>Queens</button>
+                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
+                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
+                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+                            
                             <br/>
                             <br/>
                             <br/>
                             <br/>
     
-                            <Link to={`/blog`}>BLOG</Link>
-                            <Link to={`/hiring`}>WE'RE HIRING</Link>
-                            <Link to={`/submit`}>SUBMIT YOUR LISTINGS</Link>
-                            <Link to={`/searches/all`}>BROWSE ALL HOMES</Link>
+                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
+                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
+                            <button value="Queens" onClick={this.handleClick}>Queens</button>
+                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
+                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
+                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+    
                         </div>
+                        <div className="area-item-container">
+                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
+                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
+                            <button value="Queens" onClick={this.handleClick}>Queens</button>
+                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
+                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
+                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+                            
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+    
+                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
+                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
+                            <button value="Queens" onClick={this.handleClick}>Queens</button>
+                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
+                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
+                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+    
+                        </div>
+                        {/* <div className="footer-nav-item">
+                            <Link to={`/blog`}>BLOG</Link>
+                            <Link to={`/hiring`}>WE'RE HIRING</Link>
+                            <Link to={`/submit`}>SUBMIT YOUR LISTINGS</Link>
+                            <Link to={`/searches/all`}>BROWSE ALL HOMES</Link>
+    
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+    
+                            <Link to={`/blog`}>BLOG</Link>
+                            <Link to={`/hiring`}>WE'RE HIRING</Link>
+                            <Link to={`/submit`}>SUBMIT YOUR LISTINGS</Link>
+                            <Link to={`/searches/all`}>BROWSE ALL HOMES</Link>
+                        </div> */}
                     </div>
                 </div>
     
@@ -223,8 +265,8 @@ class Footer extends React.Component {
                         </a>
                     </li>
                     <li>
-                        <a className="github-link" href="https://medium.com/@mackinjoshzumarraga">
-                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Medium-512.png" className="medium-favicon"/>
+                        <a className="github-link" href="https://angel.co/u/mackinjosh-zumarraga">
+                            <img src="https://img.icons8.com/nolan/344/angelist.png" className="angel-favicon"/>
                         </a>
                     </li>
                 </ul>
