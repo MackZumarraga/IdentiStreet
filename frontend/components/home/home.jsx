@@ -26,7 +26,7 @@ class Home extends React.Component {
 
     let trendingListings = []
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
       trendingListings.push(listings[Object.keys(listings)[i]])
     }
 
