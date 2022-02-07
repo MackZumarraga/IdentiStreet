@@ -232,22 +232,64 @@ class Footer extends React.Component {
                             <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
     
                         </div>
-                        {/* <div className="footer-nav-item">
-                            <Link to={`/blog`}>BLOG</Link>
-                            <Link to={`/hiring`}>WE'RE HIRING</Link>
-                            <Link to={`/submit`}>SUBMIT YOUR LISTINGS</Link>
-                            <Link to={`/searches/all`}>BROWSE ALL HOMES</Link>
+                        <div className="area-item-container">
+                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
+                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
+                            <button value="Queens" onClick={this.handleClick}>Queens</button>
+                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
+                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
+                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+                            
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+    
+                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
+                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
+                            <button value="Queens" onClick={this.handleClick}>Queens</button>
+                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
+                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
+                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+    
+                        </div>
+                        <div className="area-item-container">
+                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
+                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
+                            <button value="Queens" onClick={this.handleClick}>Queens</button>
+                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
+                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
+                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+                            
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+    
+                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
+                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
+                            <button value="Queens" onClick={this.handleClick}>Queens</button>
+                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
+                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
+                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+    
+                        </div>
+                        <div className="footer-nav-item">
+                            <Link to={`/`}>HOME</Link>
+                            <Link to={`/`}>HOME</Link>
+                            <Link to={`/`}>HOME</Link>
+                            <Link to={`/`}>HOME</Link>
     
                             <br/>
                             <br/>
                             <br/>
                             <br/>
     
-                            <Link to={`/blog`}>BLOG</Link>
-                            <Link to={`/hiring`}>WE'RE HIRING</Link>
-                            <Link to={`/submit`}>SUBMIT YOUR LISTINGS</Link>
-                            <Link to={`/searches/all`}>BROWSE ALL HOMES</Link>
-                        </div> */}
+                            <Link to={`/`}>HOME</Link>
+                            <Link to={`/`}>HOME</Link>
+                            <Link to={`/`}>HOME</Link>
+                            <Link to={`/`}>HOME</Link>
+                        </div>
                     </div>
                 </div>
     
