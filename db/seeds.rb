@@ -212,6 +212,7 @@ l4.photos.attach(io: l4file3, filename: 'living_room.jpg')
 # ######
 
 l5 = Listing.create!(
+    user_id: u1.id,
     address: "450 Greenwich St, New York NY 10013",
     area: "Manhattan",
     neighborhood: "Tribeca",
@@ -255,6 +256,7 @@ l5.photos.attach(io: l5file2, filename: 'bath_room.jpg')
 l5.photos.attach(io: l5file3, filename: 'living_room.jpg')
 
 l6 = Listing.create!(
+    user_id: u1.id,
     address: "17 Chittenden Ave, New York NY 10033",
     area: "Manhattan",
     neighborhood: "Washington Heights",
@@ -298,6 +300,7 @@ l6.photos.attach(io: l6file2, filename: 'bath_room.jpg')
 l6.photos.attach(io: l6file3, filename: 'living_room.jpg')
 
 l7 = Listing.create!(
+    user_id: u1.id,
     address: "191 Woodbine St, Brooklyn NY 11221",
     area: "Brooklyn",
     neighborhood: "Bushwick",
@@ -341,6 +344,7 @@ l7.photos.attach(io: l7file2, filename: 'bath_room.jpg')
 l7.photos.attach(io: l7file3, filename: 'living_room.jpg')
 
 l8 = Listing.create!(
+    user_id: u1.id,
     address: "47th St, Woodside, NY 11377",
     area: "Queens",
     neighborhood: "Sunnyside",
@@ -387,6 +391,7 @@ l8.photos.attach(io: l8file3, filename: 'living_room.jpg')
 # #####
 
 l9 = Listing.create!(
+    user_id: u1.id,
     address: "250 Academy Pl, Staten Island NY 10301",
     area: "Staten Island",
     neighborhood: "St.George",
@@ -430,6 +435,7 @@ l9.photos.attach(io: l9file2, filename: 'bath_room.jpg')
 l9.photos.attach(io: l9file3, filename: 'living_room.jpg')
 
 l10 = Listing.create!(
+    user_id: u1.id,
     address: "94 St Mary St, Yonkers NY 10701",
     area: "Bronx",
     neighborhood: "Yonkers",
@@ -473,6 +479,7 @@ l10.photos.attach(io: l10file2, filename: 'bath_room.jpg')
 l10.photos.attach(io: l10file3, filename: 'living_room.jpg')
 
 l11 = Listing.create!(
+    user_id: u2.id,
     address: "McLean Lot, 223 Bloomfield St, Hoboken NJ 07030",
     area: "New Jersey",
     neighborhood: "Hoboken",
@@ -516,6 +523,7 @@ l11.photos.attach(io: l11file2, filename: 'bath_room.jpg')
 l11.photos.attach(io: l11file3, filename: 'living_room.jpg')
 
 l12 = Listing.create!(
+    user_id: u2.id,
     address: "Plaza 5, Jersey City NJ 07302",
     area: "New Jersey",
     neighborhood: "Jersey City",
@@ -562,6 +570,7 @@ l12.photos.attach(io: l12file3, filename: 'living_room.jpg')
 # ##########
 
 l13 = Listing.create!(
+    user_id: u2.id,
     address: "457 W 51st St, New York NY 10019",
     area: "Manhattan",
     neighborhood: "Hell's Kitchen",
@@ -605,6 +614,7 @@ l13.photos.attach(io: l13file2, filename: 'bath_room.jpg')
 l13.photos.attach(io: l13file3, filename: 'living_room.jpg')
 
 l14 = Listing.create!(
+    user_id: u2.id,
     address: "335 5th St, Brooklyn NY 11215",
     area: "Brooklyn",
     neighborhood: "Park Slope",
@@ -648,6 +658,7 @@ l14.photos.attach(io: l14file2, filename: 'bath_room.jpg')
 l14.photos.attach(io: l14file3, filename: 'living_room.jpg')
 
 l15 = Listing.create!(
+    user_id: u2.id,
     address: "101 W 129th St, New York NY 10027",
     area: "Manhattan",
     neighborhood: "Harlem",
@@ -691,6 +702,7 @@ l15.photos.attach(io: l15file2, filename: 'bath_room.jpg')
 l15.photos.attach(io: l15file3, filename: 'living_room.jpg')
 
 l16 = Listing.create!(
+    user_id: u2.id,
     address: "640 Park Ave, New York NY 10065",
     area: "Manhattan",
     neighborhood: "Upper East Side",

@@ -107,6 +107,8 @@ class NavBarOptions extends React.Component {
         const {listing, fetchListings, openModal, currentUserId, favoriteListing, unfavoriteListing} = this.props
         const rentalDropdownClass = (this.props.match.path === `/listing/:id`) ? "rental-dropdown-button-in-show" : "rental-dropdown-button"
 
+        if (!listing) return null;
+
         return (
             <div className="rental-dropdown"> 
                 <button className={rentalDropdownClass}>RENT</button>
@@ -146,18 +148,22 @@ class NavBarOptions extends React.Component {
                             <div></div>
                             <div></div>
                         </div>
-                        <div className="featured-listing-container">
-                            {/* <img src="https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg" alt="apartment-photo" className="feature-rental"/> */}
-                            <div>Featured Listing</div>
-                            <ListingIndexItem
-                                listing={listing} 
-                                key={Math.random()} 
-                                fetchListings={fetchListings}
-                                openModal={openModal}
-                                currentUserId={currentUserId}
-                                favoriteListing={favoriteListing}
-                                unfavoriteListing={unfavoriteListing}
-                            />
+                        <div className="featured-listing-flexer">
+                            <div className="featured-listing-container">
+                                {/* <img src="https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg" alt="apartment-photo" className="feature-rental"/> */}
+                                <div>Featured Listing</div>
+                                <ListingIndexItem
+                                    listing={listing} 
+                                    key={Math.random()} 
+                                    fetchListings={fetchListings}
+                                    openModal={openModal}
+                                    currentUserId={currentUserId}
+                                    favoriteListing={favoriteListing}
+                                    unfavoriteListing={unfavoriteListing}
+                                />
+                            </div>
+                            <div className="featured-listing-title">NEW RENTAL IN {listing.area}</div>
+                            <div className="featured-listing-address">{listing.address}</div>
                         </div>
                     </div>
                 </div>
