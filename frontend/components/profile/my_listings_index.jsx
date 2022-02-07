@@ -37,7 +37,10 @@ class MyListingsIndex extends React.Component {
                 deleteCurrentUser, 
                 favoriteListing, 
                 unfavoriteListing, 
-                fetchUsers} = this.props
+                fetchUsers,
+                listing,
+                openModal
+            } = this.props
 
         debugger
         return (
@@ -50,6 +53,11 @@ class MyListingsIndex extends React.Component {
                         bedrooms={bedrooms}
                         updateFilter={updateFilter}
                         fetchListings={fetchListings}
+                        listing={listing}
+                        openModal={openModal}
+                        currentUserId={currentUserId}
+                        favoriteListing={favoriteListing}
+                        unfavoriteListing={unfavoriteListing}
                     />
                 </div>
                 <div>

@@ -12,6 +12,7 @@ import MyListingsIndex from './my_listings_index';
 
 const mapStateToProps = (state, ownProps) => ({
     listings: Object.values(state.entities.listings).filter(listing => listing["liked_by_current"] === true),
+    listing: Object.values(state.entities.listings)[0],
     errors: state.errors.session,
     currentUserId: state.session["id"],
     currentUser: state.entities.users[state.session.id]
@@ -26,7 +27,8 @@ const mapDispatchToProps = dispatch => ({
   deleteCurrentUser: (currentUserId) => dispatch(deleteCurrentUser(currentUserId)),
   favoriteListing: (userId, ListingId) => dispatch(favoriteListing(userId, ListingId)),
   unfavoriteListing: (userId, ListingId) => dispatch(unfavoriteListing(userId, ListingId)),
-  fetchUsers: () => dispatch(fetchUsers()) 
+  fetchUsers: () => dispatch(fetchUsers()),
+  openModal: modal => dispatch(openModal(modal)) 
 });
 
 export default connect(

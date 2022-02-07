@@ -8,6 +8,7 @@ import ListingIndex from './listing_index';
 
 const mstp = state => ({
     listings: Object.values(state.entities.listings),
+    listing: Object.values(state.entities.listings)[0],
     minPrice: state.ui.filters.minPrice,
     maxPrice: state.ui.filters.maxPrice,
     location: state.ui.filters.location,

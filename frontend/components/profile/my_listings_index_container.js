@@ -11,6 +11,7 @@ import MyListingsIndex from './my_listings_index';
 
 const mapStateToProps = (state, ownProps) => ({
     listings: Object.values(state.entities.listings).filter(listing => listing["user_id"] === state.session["id"]),
+    listing: Object.values(state.entities.listings)[0],
     errors: state.errors.session,
     currentUserId: state.session["id"],
     currentUser: state.entities.users[state.session.id]
@@ -23,7 +24,10 @@ const mapDispatchToProps = dispatch => ({
   fetchCurrentUser: (currentUserId) => dispatch(fetchCurrentUser(currentUserId)),
   updateCurrentUser: (currentUser) => dispatch(updateCurrentUser(currentUser)),
   deleteCurrentUser: (currentUserId) => dispatch(deleteCurrentUser(currentUserId)),
-  fetchUsers: () => dispatch(fetchUsers())
+  fetchUsers: () => dispatch(fetchUsers()),
+  favoriteListing: (userId, ListingId) => dispatch(favoriteListing(userId, ListingId)),
+  unfavoriteListing: (userId, ListingId) => dispatch(unfavoriteListing(userId, ListingId)),
+  openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(
