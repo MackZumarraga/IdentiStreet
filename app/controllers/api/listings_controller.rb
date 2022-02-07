@@ -41,8 +41,9 @@ class Api::ListingsController < ApplicationController
     end
     
     def show
+        # debugger
         @listing = Listing.find(params[:id])
-    
+        # debugger
         if @listing
             render "api/listings/show"
         else

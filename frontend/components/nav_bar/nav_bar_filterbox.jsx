@@ -73,9 +73,10 @@ class NavBarFilterBox extends React.Component {
 
     render() {
         const {minPrice, maxPrice, location, bedrooms} = this.props
-        
+        const filterBoxClass = (this.props.match.path === `/listing/:id`) ? "filter-box-in-show" : "filter-box"
+
         return (
-            <div className="filter-box"> 
+            <div className={filterBoxClass}> 
                 <div className="filter-box-container">
                     <h1 className="filter-box-title">NEW YORK CITY REAL ESTATE</h1>
                     <div className="filter-box-type-title">Rentals</div>

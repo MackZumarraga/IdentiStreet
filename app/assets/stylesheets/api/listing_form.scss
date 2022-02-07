@@ -104,8 +104,29 @@
 }
 
 .form-button-listing {
-    // width: 100px;
+    width: 293px;
+    background-color: #1876db;
+    border: 1px solid #1876db;
+    height: 48px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    line-height: 15px;
     margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.form-cancel-listing {
+    width: 293px;
+    background-color: #1876db;
+    border: 1px solid #1876db;
+    height: 48px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    line-height: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
 

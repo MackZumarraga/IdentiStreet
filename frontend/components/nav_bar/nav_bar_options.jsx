@@ -105,10 +105,11 @@ class NavBarOptions extends React.Component {
 
     render() {
         const {listing, fetchListings, openModal, currentUserId, favoriteListing, unfavoriteListing} = this.props
+        const rentalDropdownClass = (this.props.match.path === `/listing/:id`) ? "rental-dropdown-button-in-show" : "rental-dropdown-button"
 
         return (
             <div className="rental-dropdown"> 
-                <button className="rental-dropdown-button">RENT</button>
+                <button className={rentalDropdownClass}>RENT</button>
                 <div className="rental-dropdown-content-width-maker">
                     <div className="rental-dropdown-content">
                         <div className="areas-container">AREAS

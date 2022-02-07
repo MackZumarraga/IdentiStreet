@@ -34,6 +34,7 @@
     height: 700px;
     display: flex;
     min-width: 70%;
+    margin-bottom: 30px;
 }
 
 .listing-index-container::-webkit-scrollbar {
@@ -64,6 +65,16 @@
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     cursor: pointer;
     height: 350px;
+}
+
+.listing-index-item-trending {
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    height: 375px;
+    min-width: 300px;
+    max-width: 300px;
 }
 
 .listing-bottom {

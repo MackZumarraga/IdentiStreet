@@ -23,9 +23,9 @@ const Header = ({currentUser, logout, openModal, fetchListings}) => {
         /* <div>my activity link which holds tracked listings and saved searches</div>
             <div>account link which gives a dropdown to user profile and the logout button</div> */
         <div>
-            <button className="activity-button">
+            {/* <button className="activity-button">
                 <Link to={`/my_activity`} id="my-activity">My Activity</Link>
-            </button>
+            </button> */}
             <div className="account-dropdown">
                 <button className="account-dropdown-button">Account &nbsp;⌵</button>
                 <div className="account-dropdown-content">

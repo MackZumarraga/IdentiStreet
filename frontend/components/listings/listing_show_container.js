@@ -7,8 +7,12 @@ import ListingShow from './listing_show';
 
 
 const mapStateToProps = (state, ownProps) => ({
-listing: state.entities.listings[ownProps.match.params.id],
-currentUserId: state.session["id"]
+  listing: state.entities.listings[ownProps.match.params.id],
+  currentUserId: state.session["id"],
+  minPrice: state.ui.filters.minPrice,
+  maxPrice: state.ui.filters.maxPrice,
+  location: state.ui.filters.location,
+  bedrooms: state.ui.filters.bedrooms
 // liked_by_current: state.favorites.liked_by_current
 });
 

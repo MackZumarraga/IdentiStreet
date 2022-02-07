@@ -62,7 +62,8 @@ class NavBarSearch extends React.Component {
                     onChange={this.update()}
                     ></input>
                   <button className="search-button">
-                      <span className="search-button-space">Search</span>
+                      {/* <span className="search-button-space">Search</span> */}
+                      <img src={window.search} alt="" className="search-icon"/>
                   </button>
                 </form>
             </div>

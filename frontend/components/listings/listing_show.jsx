@@ -38,7 +38,7 @@ class ListingShow extends React.Component {
 
     handleSave(e) {
         const { listing, currentUserId, fetchListing, favoriteListing, unfavoriteListing, openModal } = this.props
-        const { listingId } = this.props.match.params.id
+        const listingId = this.props.match.params.id
 
         e.preventDefault();
         debugger
@@ -51,7 +51,7 @@ class ListingShow extends React.Component {
         if (listing.logged_in && !listing.liked_by_current) {
             favoriteListing(currentUserId, listing.id).then(() => fetchListing(listingId))
         } else if (listing.logged_in && listing.liked_by_current) {
-            unfavoriteListing(currentUserId, listing.id).then(() => fetchListings(listingId))
+            unfavoriteListing(currentUserId, listing.id).then(() => fetchListing(listingId))
         } else {
             openModal('login')
         };
@@ -71,7 +71,7 @@ class ListingShow extends React.Component {
 
         debugger
         const {address, price, broker_fee, bedrooms, baths, category, description, listing_agent, neighborhood, leasing_launch_date} = this.props.listing
-        const { updateFilter, fetchListings } = this.props
+        const { updateFilter, fetchListings, minPrice, maxPrice, location, listing } = this.props
 
         const {liked_by_current} = this.props.listing
         const openHeart = liked_by_current ? "open-heart-none" : "open-heart-show"
@@ -84,7 +84,12 @@ class ListingShow extends React.Component {
         return(
             <div className="listing-show-width-maker">
                 <div className="listing-show-container">
-                    <NavBar 
+                    <NavBar
+                        minPrice={minPrice}
+                        maxPrice={maxPrice}
+                        location={location}
+                        bedrooms={this.props.bedrooms}
+                        listing={listing} 
                         updateFilter={updateFilter}
                         fetchListings={fetchListings}
                     />
@@ -130,7 +135,7 @@ class ListingShow extends React.Component {
                                     <span id={saveText}>SAVE </span>
                                     <span id={savedText}>SAVED </span>
                                     </button>
-                                <button className={requestClass}>REQUEST A TOUR</button>
+                                {/* <button className={requestClass}>REQUEST A TOUR</button> */}
                                 <button className={editClass} onClick={this.handleUpdate}>EDIT</button>
                                 <button className={deleteClass} onClick={this.handleDelete}>DELETE</button>
                                 {/* <button>+ ADD NOTES TO THIS LISTING</button> */}

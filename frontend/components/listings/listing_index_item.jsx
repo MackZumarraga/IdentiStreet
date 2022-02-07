@@ -58,8 +58,10 @@ class ListingIndexItem extends React.Component {
         const ownListing = (this.props.currentUserId === this.props.listing.user_id) ? "own-listing-show" : "own-listing-none"
         const displayHeart = (this.props.currentUserId === this.props.listing.user_id) ? "favorite-listing-button-none" : "favorite-listing-button"
 
+        const listingIndexItemClass = (this.props.match.path === `/`) ? "listing-index-item-trending" : "listing-index-item"
+
         return (
-            <li className="listing-index-item" onClick={this.handleClick}>
+            <li className={listingIndexItemClass} onClick={this.handleClick}>
                 <div className="listing-top">
                     <img src={image_urls[0]} alt="listing-image" className="listing-image"/>
                 </div>

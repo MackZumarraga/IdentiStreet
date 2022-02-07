@@ -40,6 +40,20 @@
     padding: 0 15px;
 }
 
+.rental-dropdown-button-in-show {
+    text-decoration: none;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 48px;
+    font-weight: 700;
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #1A1F2C;
+    cursor: pointer;
+    height: 50px;
+}
+
 //nav bar options
 .rental-dropdown-content-width-maker {
     display: none;
@@ -58,7 +72,7 @@
     background-color: white;
     width: 76vw;
     border-bottom: 3px solid #E6E6E6;
-    
+    margin-left: -20px;
     // display: flex;
     // justify-content: space-evenly;
     // flex-direction: row;
@@ -165,7 +179,7 @@
 
 .featured-listing-container {
     width: 300px;
-    height: 240px;
+    height: 245px;
     margin-top: 10px;
     margin-left: 100px;
     margin-right: 20px;
@@ -189,7 +203,12 @@
     // justify-content: space-evenly;
     flex-direction: row;
 }
+
 .rental-dropdown:hover .rental-dropdown-button {
+    text-decoration: underline;
+}
+
+.rental-dropdown:hover .rental-dropdown-button-in-show {
     text-decoration: underline;
 }
 
@@ -222,7 +241,7 @@
 }
 
 .search-button {
-    background: #FFF;
+    background: none;
     border: 0;
 
     cursor: pointer;
@@ -235,14 +254,16 @@
     width: 23px;
 }
 
-
-
-.search-button-space {
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+.search-icon {
+    height: 17px;
 }
+
+// .search-button-space {
+//     border: 0;
+//     clip: rect(1px, 1px, 1px, 1px);
+//     height: 1px;
+//     overflow: hidden;
+//     padding: 0;
+//     position: absolute;
+//     width: 1px;
+// }

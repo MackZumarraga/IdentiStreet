@@ -147,7 +147,7 @@ class MyProfileForm extends React.Component {
                     </form>
                 </div>
                 <div className="delete-account-container">
-                    <h3 className="delete-information">Delete Profile</h3>
+                    <h3 className="delete-information">Delete Account</h3>
                     <p className="delete-text">Once you delete this account, there is no going back. Please be certain.</p>
                     <button className="delete-profile-button" onClick={this.handleDelete}>DELETE ACCOUNT</button>
                 </div>
