@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import ListingIndexItem from '../listings/listing_index_item';
 
 // export default () => (
 //     // <div>rent, buy, sell, buildings, resources, blog</div>
@@ -103,6 +104,7 @@ class NavBarOptions extends React.Component {
     }
 
     render() {
+        const {listing, fetchListings, openModal, currentUserId, favoriteListing, unfavoriteListing} = this.props
 
         return (
             <div className="rental-dropdown"> 
@@ -143,8 +145,18 @@ class NavBarOptions extends React.Component {
                             <div></div>
                             <div></div>
                         </div>
-                        <div>
-                            <img src="https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg" alt="apartment-photo" className="feature-rental"/>
+                        <div className="featured-listing-container">
+                            {/* <img src="https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg" alt="apartment-photo" className="feature-rental"/> */}
+                            <div>Featured Listing</div>
+                            <ListingIndexItem
+                                listing={listing} 
+                                key={Math.random()} 
+                                fetchListings={fetchListings}
+                                openModal={openModal}
+                                currentUserId={currentUserId}
+                                favoriteListing={favoriteListing}
+                                unfavoriteListing={unfavoriteListing}
+                            />
                         </div>
                     </div>
                 </div>
