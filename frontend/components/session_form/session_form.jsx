@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
         super(props);
 
         this.state = {
+            phone_number: '',
             email: '',
             password: ''
         };
@@ -66,7 +67,8 @@ class SessionForm extends React.Component {
 
     render() {
         const formTypeName = this.props.formType === 'signup' ? 'Sign Up' : 'Log In';
-        
+        const phoneNumberClass = this.props.formType === 'signup' ? 'label' : 'phone-number-none';
+
         return(
             <div className="session-form">
                 <br/>
@@ -81,7 +83,6 @@ class SessionForm extends React.Component {
                     <br/>
 
                     <p className="session-message">Take full advantage of IdentiStreet's features</p>
-
                     <br/>
                     <label>EMAIL
                         <br/>
@@ -92,6 +93,14 @@ class SessionForm extends React.Component {
                         <br/>
                         <input type="password" value={this.state.password} onChange={this.update('password')} className={this.errorTrue() ? "error-true" : null}/>
                     </label>
+                    <br/>
+                    <div className={phoneNumberClass}>
+                        <label>PHONE NUMBER
+                            <br/>
+                            <input type="text" value={this.state.phone_number} onChange={this.update('phone_number')} className={this.errorTrue() ? "error-true" : null}/>
+                        </label>
+                        <br/>   
+                    </div>
                     
                     <div className="errors">
                         {this.renderErrors()}

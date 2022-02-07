@@ -53,7 +53,7 @@ class MyProfileForm extends React.Component {
         const typedEmail = this.state["email"]
         const emails = []; //other emails different from current user's email
 
-        if (!users) return null;
+        if (!users || users.length === 1 || users.length == 0) return null;
 
         debugger
         for (let i = 0; i < users.length; i++) {
@@ -81,7 +81,7 @@ class MyProfileForm extends React.Component {
         const phones = [];
         const alpha = "abcdefghijklmnopqrstuvwxyz"
 
-        if (!users) return null;
+        if (!users || users.length === 1 || users.length == 0) return null;
 
         for (let i = 0; i < users.length; i++) {
             const currPhone = users[i]["phone_number"]

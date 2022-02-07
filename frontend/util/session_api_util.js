@@ -5,6 +5,7 @@ export const signup = (user) => {
       method: 'POST',
       data: {
           user: {
+              phone_number: user.phone_number,
               email: user.email,
               password: user.password
           }
