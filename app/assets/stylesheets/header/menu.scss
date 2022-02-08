@@ -177,13 +177,13 @@
     cursor: pointer;
 }
 
-.featured-listing-flexer {
-    display: block;
-}
+// .featured-listing-flexer {
+//     display: block;
+// }
 
-.featured-listing-flexer-none {
-    display: none;
-}
+// .featured-listing-flexer-none {
+//     display: none;
+// }
 
 .featured-listing-container {
     width: 300px;
@@ -205,6 +205,10 @@
     text-transform: uppercase;
 }
 
+.featured-listing-container-none {
+    display: none;
+}
+
 .featured-listing-title {
     margin-left: 100px;
 
@@ -214,6 +218,10 @@
     line-height: 22px;
     text-transform: uppercase;
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+.featured-listing-title-none {
+    display: none;
 }
 
 .featured-listing-address {
