@@ -28,10 +28,10 @@ IdentiStreet is a clone of StreetEasy, NYC's leading marketplace for real estate
 - the map displayed helps to visualize these rentals' locations.   
 	
 ### Show Page
-![image](https://user-images.githubusercontent.com/86270564/149605175-9ab9741b-af41-4cd5-b25b-924d49fd17af.png)
-![image](https://user-images.githubusercontent.com/86270564/149605239-3dd0ea51-99b0-464b-8e82-f2ec275144ec.png)
+![showpage](https://user-images.githubusercontent.com/86270564/153084825-20a859ab-16f0-4666-bbdc-290b84afa964.PNG)   
 
-- the show page displays more information about the listing including a description and a list of amenities.  
+
+- the show page displays more information about the listing including a description and a list of amenities.   
 
 
 #### Create Listing
@@ -93,9 +93,7 @@ handleSubmit(e) {
 ```
 
 ### Future Features
-- edit and delete listing
-- search and filter (corresponding map markers)
-- favoriting a listing
-- tracking searches
+- track searches
+- request a tour
 
 
