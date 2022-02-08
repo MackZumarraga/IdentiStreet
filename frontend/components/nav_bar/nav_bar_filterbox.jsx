@@ -103,7 +103,7 @@ class NavBarFilterBox extends React.Component {
                                     type="text" 
                                     placeholder='Manhattan' 
                                     className="filter-box-input"
-                                    // value={getState().ui.filters["location"]} 
+                                    value={getState().ui.filters["location"]} 
                                     onChange={this.update('location')}></input>
                             </label>
                             <label className="filter-box-range">
