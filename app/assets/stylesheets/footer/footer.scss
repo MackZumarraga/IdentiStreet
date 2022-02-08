@@ -51,6 +51,23 @@
     cursor: pointer;
 }
 
+#area-item-title {
+    text-decoration: none;
+    color: white;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
 .footer-nav-item > a {
     text-decoration: none;
     color: white;

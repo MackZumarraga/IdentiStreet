@@ -129,86 +129,65 @@ class Footer extends React.Component {
                 <div className="footer-width-maker">
                     <div className="footer-navbar">
                         <div className="area-item-container">
-                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
-                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
-                            <button value="Queens" onClick={this.handleClick}>Queens</button>
-                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
-                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
-                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+                            <button id="area-item-title" value="Manhattan" onClick={this.handleClick}>Manhattan</button>
+                            <button value="Roosevelt Island" onClick={this.handleClick}>Roosevelt Island</button>
+                            <button value="Financial District" onClick={this.handleClick}>Financial District</button>
+                            <button value="Soho" onClick={this.handleClick}>Soho</button>
+                            <button value="Hudson Square" onClick={this.handleClick}>Hudson Square</button>
+                            <button value="Little Italy" onClick={this.handleClick}>Little Italy</button>
     
                             <br/>
                             <br/>
                             <br/>
                             <br/>
     
-                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
-                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
-                            <button value="Queens" onClick={this.handleClick}>Queens</button>
-                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
-                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
-                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+                            <button id="area-item-title" value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
+                            <button value="Greenpoint" onClick={this.handleClick}>Greenpoint</button>
+                            <button value="Williamsburg" onClick={this.handleClick}>Williamsburg</button>
+                            <button value="East Williamsburg" onClick={this.handleClick}>East Williamsburg</button>
+                            <button value="Fort Greene" onClick={this.handleClick}>Fort Greene</button>
+                            <button value="Boreum Hill" onClick={this.handleClick}>Boreum Hill</button>
                         </div>
                         <div className="area-item-container">
-                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
-                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
-                            <button value="Queens" onClick={this.handleClick}>Queens</button>
-                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
-                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
-                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+                            <button id="area-item-title" value="Queens" onClick={this.handleClick}>Queens</button>
+                            <button value="Astoria" onClick={this.handleClick}>Astoria</button>
+                            <button value="Ditmars-Steinway" onClick={this.handleClick}>Ditmars-Steinway</button>
+                            <button value="Long Island City" onClick={this.handleClick}>Long Island City</button>
+                            <button value="Hunters Point" onClick={this.handleClick}>Hunters Point</button>
+                            <button value="Sunnyside" onClick={this.handleClick}>Sunnyside</button>
                             
                             <br/>
                             <br/>
                             <br/>
                             <br/>
     
-                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
-                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
-                            <button value="Queens" onClick={this.handleClick}>Queens</button>
-                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
-                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
-                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+                            <button id="area-item-title" value="Bronx" onClick={this.handleClick}>Bronx</button>
+                            <button value="Mott Haven" onClick={this.handleClick}>Mott Haven</button>
+                            <button value="North New York" onClick={this.handleClick}>North New York</button>
+                            <button value="Melrose" onClick={this.handleClick}>Melrose</button>
+                            <button value="Port Morris" onClick={this.handleClick}>Port Morris</button>
+                            <button value="Claremont" onClick={this.handleClick}>Claremont</button>
     
                         </div>
                         <div className="area-item-container">
-                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
-                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
-                            <button value="Queens" onClick={this.handleClick}>Queens</button>
-                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
-                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
-                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+                            <button id="area-item-title" value="Staten Island" onClick={this.handleClick}>Staten Island</button>
+                            <button value="North Shore" onClick={this.handleClick}>North Shore</button>
+                            <button value="Arlington" onClick={this.handleClick}>Arlington</button>
+                            <button value="Elm Park" onClick={this.handleClick}>Elm Park</button>
+                            <button value="Howland Hook" onClick={this.handleClick}>Howland Hook</button>
+                            <button value="Park Hill" onClick={this.handleClick}>Park Hill</button>
                             
                             <br/>
                             <br/>
                             <br/>
                             <br/>
     
-                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
-                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
-                            <button value="Queens" onClick={this.handleClick}>Queens</button>
-                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
-                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
-                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
-    
-                        </div>
-                        <div className="area-item-container">
-                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
-                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
-                            <button value="Queens" onClick={this.handleClick}>Queens</button>
-                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
-                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
-                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
-                            
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-    
-                            <button value="Manhattan" onClick={this.handleClick}>Manhattan</button>
-                            <button value="Brooklyn" onClick={this.handleClick}>Brooklyn</button>
-                            <button value="Queens" onClick={this.handleClick}>Queens</button>
-                            <button value="Bronx" onClick={this.handleClick}>Bronx</button>
-                            <button value="Staten Island" onClick={this.handleClick}>Staten Island</button>
-                            <button value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+                            <button id="area-item-title" value="New Jersey" onClick={this.handleClick}>New Jersey</button>
+                            <button value="Cliffside Park" onClick={this.handleClick}>Cliffside Park</button>
+                            <button value="Edgewater" onClick={this.handleClick}>Edgewater</button>
+                            <button value="Fort Lee" onClick={this.handleClick}>Fort Lee</button>
+                            <button value="Jersey City" onClick={this.handleClick}>Jersey City</button>
+                            <button value="Journal Square" onClick={this.handleClick}>Journal Square</button>
     
                         </div>
                     </div>

@@ -64,7 +64,9 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     cursor: pointer;
-    height: 350px;
+    height: 100%;
+    flex-wrap: wrap;
+    max-height: 400px;
 }
 
 .listing-index-item-trending {

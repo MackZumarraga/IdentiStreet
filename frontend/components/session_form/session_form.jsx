@@ -68,6 +68,7 @@ class SessionForm extends React.Component {
     render() {
         const formTypeName = this.props.formType === 'signup' ? 'Sign Up' : 'Log In';
         const phoneNumberClass = this.props.formType === 'signup' ? 'label' : 'phone-number-none';
+        const demoClass = this.props.formType === 'signup' ? 'demo-none' : 'demo-show';
 
         return(
             <div className="session-form">
@@ -113,9 +114,11 @@ class SessionForm extends React.Component {
 
                     <div className="or"></div>
 
-                    <br/>
+                    <div className={demoClass}>
+                        <br/>
+                        <button className="demo" onClick={this.handleDemoSubmit}>Demo</button>
+                    </div>
                     
-                    <button className="demo" onClick={this.handleDemoSubmit}>Demo</button>
 
                     <br/>
 
