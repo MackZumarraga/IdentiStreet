@@ -54,6 +54,7 @@ class ListingIndex extends React.Component {
                         listing={listing}
                     />
                 </div>
+                <div className={!listing ? "search-error-show" : "search-error-none"}>Your search - {getState().ui.filters.location} - did not match any listing</div>
                 <div className="index-body-container">
                     <div className="listing-index-container">
                         <ul className="listing-ul">

@@ -1,6 +1,18 @@
 // Place all the styles related to the api/listings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.search-error-show {
+    text-align: center;
+    width: 80vw;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 21px;
+    line-height: 1.7;
+    color: #556285;
+}
+
+.search-error-none {
+    display: none;
+}
 
 .listing-index-width-maker {
     width: 100vw;
