@@ -24,6 +24,8 @@ class NavBarSearch extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this); 
         this.update = this.update.bind(this);
+        this.capitalize = this.capitalize.bind(this);
+        this.transform = this.transform.bind(this);
     }
 
     // componentWillUnmount() {
@@ -33,7 +35,7 @@ class NavBarSearch extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         debugger
-        this.props.updateFilter('location', this.state["location"])
+        this.props.updateFilter('location', this.transform(this.state["location"]))
         this.props.fetchListings(getState().ui.filters)
         this.setState({location: ""})
         this.props.history.push("/search")
@@ -47,6 +49,20 @@ class NavBarSearch extends React.Component {
     update() {
         debugger
         return e => this.setState({location: e.currentTarget.value})
+    }
+
+    capitalize(word) {
+        const lower = word.toLowerCase();
+        const first = word.charAt(0).toUpperCase();
+        const remain = lower.slice(1);
+        return first + remain;
+    }
+
+    transform(entry) {
+        const capitalized = [];
+        const words = entry.split(" ") || entry.split("-");
+        words.forEach(word => capitalized.push(this.capitalize(word)))
+        return capitalized.join(" ")
     }
 
     render() {
