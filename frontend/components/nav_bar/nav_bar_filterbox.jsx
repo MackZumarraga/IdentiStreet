@@ -51,6 +51,8 @@ class NavBarFilterBox extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this); 
         this.update = this.update.bind(this);
+        this.capitalize = this.capitalize.bind(this);
+        this.transform = this.transform.bind(this);
     }
 
     // componentDidMount() {
@@ -67,9 +69,22 @@ class NavBarFilterBox extends React.Component {
 
     update(filter) {
         // debugger
-        return e => this.props.updateFilter(filter, e.currentTarget.value)
+        return e => this.props.updateFilter(filter, this.transform(e.currentTarget.value))
     }
 
+    capitalize(word) {
+        const lower = word.toLowerCase();
+        const first = word.charAt(0).toUpperCase();
+        const remain = lower.slice(1);
+        return first + remain;
+    }
+
+    transform(entry) {
+        const capitalized = [];
+        const words = entry.split(" ") || entry.split("-");
+        words.forEach(word => capitalized.push(this.capitalize(word)))
+        return capitalized.join(" ")
+    }
 
     render() {
         const {minPrice, maxPrice, location, bedrooms} = this.props
@@ -88,7 +103,7 @@ class NavBarFilterBox extends React.Component {
                                     type="text" 
                                     placeholder='Manhattan' 
                                     className="filter-box-input"
-                                    value={getState().ui.filters["location"]} 
+                                    // value={getState().ui.filters["location"]} 
                                     onChange={this.update('location')}></input>
                             </label>
                             <label className="filter-box-range">
