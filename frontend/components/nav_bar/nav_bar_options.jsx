@@ -108,10 +108,12 @@ class NavBarOptions extends React.Component {
         const rentalDropdownClass = (this.props.match.path === `/listing/:id`) ? "rental-dropdown-button-in-show" : "rental-dropdown-button"
 
         if (!listing) return null;
+        // const featuredListingFlexerClass = (!listing) ? "featured-listing-flexer" : "featured-listing-flexer-none"
 
         return (
             <div className="rental-dropdown"> 
                 <button className={rentalDropdownClass}>RENT</button>
+                {/* <button className="rental-dropdown-button">RENT</button> */}
                 <div className="rental-dropdown-content-width-maker">
                     <div className="rental-dropdown-content">
                         <div className="areas-container">AREAS
@@ -148,7 +150,8 @@ class NavBarOptions extends React.Component {
                             <div></div>
                             <div></div>
                         </div>
-                        <div className="featured-listing-flexer">
+                        {/* <div className={featuredListingFlexerClass}> */}
+                        <div>
                             <div className="featured-listing-container">
                                 {/* <img src="https://cdn.pixabay.com/photo/2021/11/08/00/30/living-room-6778197_960_720.jpg" alt="apartment-photo" className="feature-rental"/> */}
                                 <div>Featured Listing</div>
