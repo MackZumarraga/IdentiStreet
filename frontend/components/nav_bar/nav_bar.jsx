@@ -32,6 +32,9 @@ class NavBar extends React.Component {
             unfavoriteListing
           } = this.props
       debugger
+      
+      // if (!listing) return null;
+
       return (
         <div className="menu-filter-width-maker">
           <div className="menu-filter-container">
