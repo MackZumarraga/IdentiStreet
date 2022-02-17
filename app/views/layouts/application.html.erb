@@ -7,15 +7,23 @@
     <title>IdentiStreet</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+
     <meta property="og:title" content="IdentiStreet" />
-    <meta property='og:image' content="<%= image_url('identistreet.PNG') %>"/>
-    <meta property="og:description" content="IdentiStreet is a clone of StreetEasy.com with full CRUD functionality. Just like the actual website, the listings come with information such as description, photos, map location, and amenities."/>
-    <meta property="og:url" content="https://identistreet.herokuapp.com/"/>
+     <meta property="og:image" content="https://mackzumarraga.github.io/Portfolio-MackZumarraga/images/identistreet.PNG" />
+     <meta
+       property="og:description"
+       content="IdentiStreet is a clone of StreetEasy.com with full CRUD functionality. Just like the actual website, the listings come with information such as description, photos, map location, and amenities."
+     />
+     <meta
+       property="og:url"
+       content="https://identistreet.herokuapp.com/"
+     />
 
     <script src='https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google_api_key %>'></script>
     
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <script>
